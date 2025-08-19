@@ -56,7 +56,7 @@
         "logo"
       ],
       "settings": {
-        "main_menu_link_list": "main-menu",
+        "main_menu_link_list": "main-menu-new",
         "hover_menu": true,
         "mega_menu_images": true,
         "main_menu_alignment": "left",
