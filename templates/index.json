@@ -25,6 +25,7 @@
             "link_text_2": "",
             "color_accent": "#321004",
             "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify://shop_images/Rectangle_5.png",
             "parallax_direction": "top",
             "overlay_opacity": 0
           }
@@ -72,7 +73,7 @@
         "image-3"
       ],
       "settings": {
-        "section_height": "100vh",
+        "section_height": "natural",
         "mobile_height": "100vh",
         "parallax": false,
         "style": "bars",
