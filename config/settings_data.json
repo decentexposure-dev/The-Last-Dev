@@ -26,6 +26,7 @@
     "color_drawer_border": "#e8e8e1",
     "color_drawer_button": "#321004",
     "color_modal_overlays": "#e6e6e6",
+    "color_image_text": "#1b0d0d",
     "color_image_overlay": "#321004",
     "color_image_overlay_text_shadow": 20,
     "type_header_font_family": "dm_sans_n7",
