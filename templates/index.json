@@ -229,6 +229,7 @@
         "content",
         "timer"
       ],
+      "disabled": true,
       "settings": {
         "layout": "hero",
         "full_width": false,
@@ -236,99 +237,6 @@
         "background_color": "#512c13",
         "overlay_color": "#1c1d1d",
         "overlay_opacity": 30,
-        "lazyload_images": true
-      }
-    },
-    "rich-text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "title": "Rich text"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "enlarge_text": true,
-            "text": "<p>Fashion inspired by where we're from — the sunny shores of California.<br/>Products provided by <a href=\"https://www.piko.com/\" title=\"https://www.piko.com/\">PIKO</a></p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
-      "settings": {
-        "align_text": "center",
-        "narrow_column": true,
-        "divider": false
-      }
-    },
-    "promo-grid-2": {
-      "type": "promo-grid",
-      "blocks": {
-        "advanced": {
-          "type": "advanced",
-          "settings": {
-            "subheading": "essentials",
-            "heading": "b&w Capsule",
-            "textarea": "Get the perfect look for your fall classic wardrobe.",
-            "cta_text1": "",
-            "cta_link1": "",
-            "cta_text2": "Shop All",
-            "cta_link2": "",
-            "video_url": "",
-            "width": "100",
-            "height": 660,
-            "text_size": 90,
-            "text_align": "vertical-center horizontal-center",
-            "color_accent": "#333541",
-            "boxed": false,
-            "framed": false
-          }
-        },
-        "sale_collection-1": {
-          "type": "sale_collection",
-          "settings": {
-            "sale_collection": "dresses-maxi-dresses",
-            "top_text": "Up to",
-            "middle_text": "50% off",
-            "bottom_text": "Select products",
-            "width": "50",
-            "color_tint": "#ffffff",
-            "color_tint_opacity": 10,
-            "boxed": true,
-            "framed": false
-          }
-        },
-        "sale_collection-2": {
-          "type": "sale_collection",
-          "settings": {
-            "sale_collection": "tops",
-            "top_text": "Up to",
-            "middle_text": "25% off",
-            "bottom_text": "summer tops",
-            "width": "50",
-            "color_tint": "#ffffff",
-            "color_tint_opacity": 6,
-            "boxed": true,
-            "framed": false
-          }
-        }
-      },
-      "block_order": [
-        "advanced",
-        "sale_collection-1",
-        "sale_collection-2"
-      ],
-      "settings": {
-        "full_width": false,
-        "gutter_size": 15,
-        "space_above": false,
-        "space_below": false,
         "lazyload_images": true
       }
     },
@@ -347,6 +255,7 @@
       "block_order": [
         "product"
       ],
+      "disabled": true,
       "settings": {
         "title": "Shop the look",
         "heading_size": "h2",
@@ -360,6 +269,7 @@
     },
     "map": {
       "type": "map",
+      "disabled": true,
       "settings": {
         "map_title": "Local pickup available",
         "address": "<p>301 Front St W<br/>Toronto, Canada</p><p>Mon - Fri, 8:30am - 10:30pm<br/>Saturday, 8:30am - 10:30pm<br/>Sunday, 8:30am - 10:30pm</p>",
@@ -369,19 +279,43 @@
         "lazyload_images": true
       }
     },
-    "blog-posts": {
-      "type": "blog-posts",
+    "slideshow_XUTMWx": {
+      "type": "slideshow",
+      "blocks": {
+        "image_t3jtKx": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "Don’t Wait.\n<em>Inventory Moves Fast.</em>",
+            "title_size": 40,
+            "subheading": "Explore hundreds of styles with prices you won’t see twice.",
+            "link": "#",
+            "link_text": "Shop All Deals",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#1b4b23",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/Rectangle_34.png",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_t3jtKx"
+      ],
+      "custom_css": [
+        ".slideshow-wrapper {--colorHeroText: #1b0d0d;}"
+      ],
+      "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
       "settings": {
-        "title": "From the journal",
-        "blog": "news",
-        "post_limit": 3,
-        "blog_show_tags": false,
-        "blog_show_date": true,
-        "blog_show_comments": false,
-        "blog_show_author": false,
-        "view_all": true,
-        "blog_image_size": "landscape",
-        "divider": false
+        "section_height": "natural",
+        "mobile_height": "auto",
+        "parallax": false,
+        "style": "bars",
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "lazyload_images": true
       }
     }
   },
@@ -391,10 +325,8 @@
     "promo-grid-1",
     "featured-collection",
     "countdown",
-    "rich-text",
-    "promo-grid-2",
     "hotspots",
     "map",
-    "blog-posts"
+    "slideshow_XUTMWx"
   ]
 }
