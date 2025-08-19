@@ -138,18 +138,19 @@
         "advanced-1": {
           "type": "advanced",
           "settings": {
-            "subheading": "New arrival",
-            "heading": "Denim",
+            "subheading": "Men’s Clearance",
+            "heading": "",
             "textarea": "",
-            "cta_text1": "Explore collection",
+            "cta_text1": "",
             "cta_link1": "",
             "cta_text2": "",
             "cta_link2": "",
+            "image": "shopify://shop_images/Rectangle_15.png",
             "video_url": "",
-            "width": "50",
-            "height": 700,
-            "text_size": 140,
-            "text_align": "vertical-center horizontal-center",
+            "width": "33",
+            "height": 600,
+            "text_size": 110,
+            "text_align": "vertical-bottom horizontal-left",
             "color_accent": "#424d4e",
             "boxed": false,
             "framed": false
@@ -158,19 +159,41 @@
         "advanced-2": {
           "type": "advanced",
           "settings": {
-            "subheading": "",
-            "heading": "Gift cards",
-            "textarea": "Help support local business by buying a gift card. \nLocal pickup available!",
-            "cta_text1": "Shop gift cards",
+            "subheading": "Women’s Clearance",
+            "heading": "",
+            "textarea": "",
+            "cta_text1": "",
             "cta_link1": "",
             "cta_text2": "",
             "cta_link2": "",
+            "image": "shopify://shop_images/Rectangle_16.png",
             "video_url": "",
-            "width": "50",
+            "width": "33",
             "height": 600,
-            "text_size": 95,
-            "text_align": "vertical-center horizontal-center",
+            "text_size": 110,
+            "text_align": "vertical-bottom horizontal-left",
             "color_accent": "#ffffff",
+            "boxed": false,
+            "framed": false
+          }
+        },
+        "advanced_XiMcrD": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "Deals Under $50",
+            "heading": "",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/Rectangle_17.png",
+            "video_url": "",
+            "width": "33",
+            "height": 600,
+            "text_size": 110,
+            "text_align": "vertical-bottom horizontal-left",
+            "color_accent": "rgba(0,0,0,0)",
             "boxed": false,
             "framed": false
           }
@@ -178,10 +201,11 @@
       },
       "block_order": [
         "advanced-1",
-        "advanced-2"
+        "advanced-2",
+        "advanced_XiMcrD"
       ],
       "settings": {
-        "full_width": true,
+        "full_width": false,
         "gutter_size": 20,
         "space_above": false,
         "space_below": false,
