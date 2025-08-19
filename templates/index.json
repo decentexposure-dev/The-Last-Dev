@@ -72,6 +72,9 @@
         "image-2",
         "image-3"
       ],
+      "custom_css": [
+        ".slideshow-wrapper{--colorHeroText: #1b0d0d;}"
+      ],
       "settings": {
         "section_height": "natural",
         "mobile_height": "100vh",
