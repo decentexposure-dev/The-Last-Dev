@@ -97,7 +97,7 @@
           "type": "collection",
           "settings": {
             "collection": "",
-            "title": "",
+            "title": "Women’s Clearance",
             "focal_point": "center center"
           }
         },
@@ -105,7 +105,7 @@
           "type": "collection",
           "settings": {
             "collection": "",
-            "title": "",
+            "title": "Deals Under $50",
             "focal_point": "center center"
           }
         }
@@ -116,7 +116,7 @@
         "collection-3"
       ],
       "settings": {
-        "title": "Shop by category",
+        "title": "Explore our Top Picks",
         "divider": false,
         "per_row": 3,
         "enable_gutter": true
