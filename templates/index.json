@@ -91,7 +91,7 @@
         "heading_pGLyFP": {
           "type": "heading",
           "settings": {
-            "title": "Explore our Top Picks"
+            "title": "Explore our <em>Top Picks</em>"
           }
         }
       },
