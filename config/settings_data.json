@@ -46,6 +46,7 @@
     "button_style": "square",
     "icon_weight": "3px",
     "icon_linecaps": "round",
+    "type_custom_font_family": "dm_serif_display_i4",
     "quick_shop_enable": true,
     "product_grid_image_size": "portrait",
     "product_grid_image_fill": true,
