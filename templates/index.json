@@ -85,46 +85,6 @@
         "lazyload_images": true
       }
     },
-    "featured-collections": {
-      "type": "featured-collections",
-      "blocks": {
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": "mens-socks",
-            "title": "",
-            "focal_point": "center center"
-          }
-        },
-        "collection-2": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "title": "Women’s Clearance",
-            "focal_point": "center center"
-          }
-        },
-        "collection-3": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "title": "Deals Under $50",
-            "focal_point": "center center"
-          }
-        }
-      },
-      "block_order": [
-        "collection-1",
-        "collection-2",
-        "collection-3"
-      ],
-      "settings": {
-        "title": "Explore our <em>Top Picks</em>",
-        "divider": false,
-        "per_row": 3,
-        "enable_gutter": true
-      }
-    },
     "rich_text_RFyUMR": {
       "type": "rich-text",
       "blocks": {
@@ -151,8 +111,8 @@
         "advanced-1": {
           "type": "advanced",
           "settings": {
-            "subheading": "Men’s Clearance",
-            "heading": "",
+            "subheading": "",
+            "heading": "Men’s Clearance",
             "textarea": "",
             "cta_text1": "",
             "cta_link1": "",
@@ -172,8 +132,8 @@
         "advanced-2": {
           "type": "advanced",
           "settings": {
-            "subheading": "Women’s Clearance",
-            "heading": "",
+            "subheading": "",
+            "heading": "Women’s Clearance",
             "textarea": "",
             "cta_text1": "",
             "cta_link1": "",
@@ -183,7 +143,7 @@
             "video_url": "",
             "width": "33",
             "height": 600,
-            "text_size": 110,
+            "text_size": 75,
             "text_align": "vertical-bottom horizontal-left",
             "color_accent": "#ffffff",
             "boxed": false,
@@ -193,8 +153,8 @@
         "advanced_XiMcrD": {
           "type": "advanced",
           "settings": {
-            "subheading": "Deals Under $50",
-            "heading": "",
+            "subheading": "",
+            "heading": "Deals Under $50",
             "textarea": "",
             "cta_text1": "",
             "cta_link1": "",
@@ -424,7 +384,6 @@
   },
   "order": [
     "slideshow",
-    "featured-collections",
     "rich_text_RFyUMR",
     "promo-grid-1",
     "featured-collection",
