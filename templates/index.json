@@ -24,7 +24,7 @@
             "link_2": "",
             "link_text_2": "",
             "color_accent": "#321004",
-            "text_align": "vertical-center horizontal-center",
+            "text_align": "vertical-bottom horizontal-center",
             "parallax_direction": "top",
             "overlay_opacity": 0
           }
