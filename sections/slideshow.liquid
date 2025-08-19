@@ -1,4 +1,4 @@
-<div
+<div {% if section.settings.container_width %} class="page-width"{% endif %}
   data-section-id="{{ section.id }}"
   data-section-type="slideshow-section"
   {% if section.settings.parallax %}data-parallax="true"{% endif %}>
@@ -291,6 +291,12 @@
   "class": "index-section--hero",
   "max_blocks": 5,
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "container_width",
+      "label": "Container width",
+      "default": false
+    },
     {
       "type": "select",
       "id": "section_height",
