@@ -76,6 +76,7 @@
         ".slideshow-wrapper {--colorHeroText: #1b0d0d;}"
       ],
       "settings": {
+        "container_width": false,
         "section_height": "natural",
         "mobile_height": "100vh",
         "parallax": false,
@@ -309,6 +310,7 @@
       ],
       "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
       "settings": {
+        "container_width": true,
         "section_height": "natural",
         "mobile_height": "auto",
         "parallax": false,
