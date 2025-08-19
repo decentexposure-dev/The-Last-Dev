@@ -98,6 +98,9 @@
       "block_order": [
         "heading_pGLyFP"
       ],
+      "custom_css": [
+        "@media only screen and (min-width: 769px) {{margin-top: 70px; margin-bottom: 50px; }}"
+      ],
       "name": "t:sections.rich-text.presets.rich_text.name",
       "settings": {
         "align_text": "center",
