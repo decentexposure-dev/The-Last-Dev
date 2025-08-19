@@ -360,7 +360,8 @@
         "image_t3jtKx"
       ],
       "custom_css": [
-        ".slideshow-wrapper {--colorHeroText: #1b0d0d;}"
+        ".slideshow-wrapper {--colorHeroText: #1b0d0d;}",
+        "{margin-bottom:70px;}"
       ],
       "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
       "settings": {
