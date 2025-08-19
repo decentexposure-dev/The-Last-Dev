@@ -551,6 +551,12 @@
             "label": "t:settings_schema.typography.settings.icon_linecaps.options.round.label"
           }
         ]
+      },
+      {
+        "type": "font_picker",
+        "id": "type_custom_font_family",
+        "label": "Custom",
+        "default": "fahkwang_n3"
       }
     ]
   },
