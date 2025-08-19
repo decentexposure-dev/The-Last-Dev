@@ -45,6 +45,7 @@
         "logo": {
           "type": "logo",
           "settings": {
+            "logo": "shopify://shop_images/logo.png",
             "desktop_logo_width": 120,
             "mobile_logo_width": 120
           }
