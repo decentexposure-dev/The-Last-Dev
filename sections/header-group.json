@@ -36,7 +36,7 @@
         "announcement-1"
       ],
       "settings": {
-        "announcement_compact": false
+        "announcement_compact": true
       }
     },
     "header": {
