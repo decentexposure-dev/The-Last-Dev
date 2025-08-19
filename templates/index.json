@@ -73,7 +73,7 @@
         "image-3"
       ],
       "custom_css": [
-        ".slideshow-wrapper{--colorHeroText: #1b0d0d;}"
+        ".slideshow-wrapper {--colorHeroText: #1b0d0d;}"
       ],
       "settings": {
         "section_height": "natural",
@@ -119,7 +119,7 @@
         "collection-3"
       ],
       "settings": {
-        "title": "Explore our Top Picks",
+        "title": "Explore our <em>Top Picks</em>",
         "divider": false,
         "per_row": 3,
         "enable_gutter": true
