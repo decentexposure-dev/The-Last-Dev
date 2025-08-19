@@ -280,6 +280,19 @@
         "lazyload_images": true
       }
     },
+    "featured_collection_fRVrGx": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.featured_collection.name",
+      "settings": {
+        "title": "<em>Women’s</em> Footwear",
+        "home_featured_products": "authentic-originals-womens",
+        "per_row": 4,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": false,
+        "divider": false
+      }
+    },
     "slideshow_XUTMWx": {
       "type": "slideshow",
       "blocks": {
@@ -329,6 +342,7 @@
     "countdown",
     "hotspots",
     "map",
+    "featured_collection_fRVrGx",
     "slideshow_XUTMWx"
   ]
 }
