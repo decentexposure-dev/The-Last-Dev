@@ -9,6 +9,7 @@
  */
 {
   "current": {
+    "color_body_bg": "#faf7f2",
     "color_body_text": "#1b0d0d",
     "color_price": "#1b0d0d",
     "color_savings_text": "#d74a5d",
