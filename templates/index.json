@@ -132,6 +132,26 @@
         "lazyload_images": true
       }
     },
+    "rich_text_RFyUMR": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_pGLyFP": {
+          "type": "heading",
+          "settings": {
+            "title": "Explore our Top Picks"
+          }
+        }
+      },
+      "block_order": [
+        "heading_pGLyFP"
+      ],
+      "name": "t:sections.rich-text.presets.rich_text.name",
+      "settings": {
+        "align_text": "center",
+        "narrow_column": false,
+        "divider": false
+      }
+    },
     "promo-grid-1": {
       "type": "promo-grid",
       "blocks": {
@@ -411,6 +431,7 @@
     "slideshow",
     "featured-collection",
     "countdown",
+    "rich_text_RFyUMR",
     "promo-grid-1",
     "rich-text",
     "promo-grid-2",
