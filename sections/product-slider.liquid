@@ -24,7 +24,7 @@
       <div class="product-slider js-product-slider" data-flickity='{"contain": true, "pageDots": false, "prevNextButtons": true, "groupCells": true }'>
         {% for product in collection.products %}
           <div class="product-slider-item">
-            {% render 'product-card',
+            {% render 'product-grid-item',
               product: product,
               show_secondary_image: true,
               show_vendor: false,
