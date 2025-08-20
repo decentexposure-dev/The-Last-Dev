@@ -36,3 +36,24 @@
     {% endif %}
   {% endif %}
 </div>
+
+<style>
+    .product-slider-wrapper {
+  margin: 40px auto;
+}
+.product-slider .product-slider-item {
+  width: 25%; /* 4 products visible */
+  padding: 0 10px;
+}
+@media (max-width: 768px) {
+  .product-slider .product-slider-item {
+    width: 50%; /* 2 products visible on tablet */
+  }
+}
+@media (max-width: 480px) {
+  .product-slider .product-slider-item {
+    width: 100%; /* 1 product visible on mobile */
+  }
+}
+
+</style>
