@@ -1,0 +1,38 @@
+{% schema %}
+{
+  "name": "Product Slider",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Choose Collection"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Slider",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="product-slider-wrapper page-width">
+  {% if section.settings.collection != blank %}
+    {% assign collection = collections[section.settings.collection] %}
+    {% if collection.products.size > 0 %}
+      <div class="product-slider js-product-slider" data-flickity='{"contain": true, "pageDots": false, "prevNextButtons": true, "groupCells": true }'>
+        {% for product in collection.products %}
+          <div class="product-slider-item">
+            {% render 'product-card',
+              product: product,
+              show_secondary_image: true,
+              show_vendor: false,
+              show_rating: true
+            %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endif %}
+</div>
