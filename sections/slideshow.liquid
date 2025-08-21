@@ -229,7 +229,7 @@
                   <div class="page-width">
                     <div class="hero__text-content {{ block.settings.text_align }}">
                       <div class="hero__text-shadow">
-                        {%- unless block.settings.block_image != blank -%}
+                        {%- unless block.settings.block_image == blank -%}
                           <div class="hero__text--image">
                             <img src="{{ block.settings.block_image | img_url: 'master' }}" alt="">
                           </div>
