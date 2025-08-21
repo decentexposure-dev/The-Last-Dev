@@ -63,42 +63,33 @@
         "menu_zFrQCX": {
           "type": "menu",
           "settings": {
-            "show_footer_title": false,
-            "menu": "footer",
-            "container_width": 25
+            "show_footer_title": true,
+            "menu": "men",
+            "container_width": 16
           }
         },
         "menu-1": {
           "type": "menu",
           "settings": {
-            "show_footer_title": false,
-            "menu": "main-menu",
-            "container_width": 20
+            "show_footer_title": true,
+            "menu": "women",
+            "container_width": 16
           }
         },
         "menu-2": {
           "type": "menu",
           "settings": {
-            "show_footer_title": false,
-            "menu": "footer",
-            "container_width": 20
+            "show_footer_title": true,
+            "menu": "brands",
+            "container_width": 16
           }
         },
         "menu-3": {
           "type": "menu",
           "settings": {
-            "show_footer_title": false,
-            "menu": "footer",
+            "show_footer_title": true,
+            "menu": "customer-service",
             "container_width": 20
-          }
-        },
-        "newsletter": {
-          "type": "newsletter",
-          "settings": {
-            "show_footer_title": false,
-            "title": "Sign up and save",
-            "text": "<p>Be the first to know about our biggest and best sales. We'll never send more than one email a month.</p>",
-            "container_width": 33
           }
         }
       },
@@ -106,8 +97,7 @@
         "menu_zFrQCX",
         "menu-1",
         "menu-2",
-        "menu-3",
-        "newsletter"
+        "menu-3"
       ],
       "settings": {
         "show_locale_selector": true,
