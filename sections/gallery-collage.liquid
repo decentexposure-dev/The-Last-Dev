@@ -21,7 +21,8 @@
 <div class="collage-gallery">
   {% for block in section.blocks %}
     {% if block.settings.gallery_image %}
-      <div class="collage-item">
+      <div class="collage-item 
+        {% if forloop.first or forloop.last %}full{% else %}half{% endif %}">
         <img src="{{ block.settings.gallery_image | img_url: '800x' }}" alt="Gallery image" loading="lazy">
       </div>
     {% endif %}
