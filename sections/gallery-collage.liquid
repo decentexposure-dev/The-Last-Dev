@@ -16,7 +16,7 @@
   ]
 }
 {% endschema %}
-<div class="page-width">
+
 <div class="collage-gallery">
   {% assign blocks = section.blocks %}
 
@@ -28,36 +28,35 @@
   {% endif %}
 
   {% if blocks.size > 2 %}
-    <!-- 2nd + 3rd stacked -->
-    <div class="collage-stack">
-      <div class="collage-item stack-60">
+    <!-- 2nd + 3rd stacked (30/70) -->
+    <div class="collage-stack stack-30-70">
+      <div class="collage-item stack-top">
         <img src="{{ blocks[1].settings.gallery_image | img_url: '800x' }}" alt="Gallery image">
       </div>
-      <div class="collage-item stack-40">
+      <div class="collage-item stack-bottom">
         <img src="{{ blocks[2].settings.gallery_image | img_url: '800x' }}" alt="Gallery image">
       </div>
     </div>
   {% endif %}
 
   {% if blocks.size > 4 %}
-    <!-- 4th + 5th stacked -->
-    <div class="collage-stack">
-      <div class="collage-item stack-60">
+    <!-- 4th + 5th stacked (70/30) -->
+    <div class="collage-stack stack-70-30">
+      <div class="collage-item stack-top">
         <img src="{{ blocks[3].settings.gallery_image | img_url: '800x' }}" alt="Gallery image">
       </div>
-      <div class="collage-item stack-40">
+      <div class="collage-item stack-bottom">
         <img src="{{ blocks[4].settings.gallery_image | img_url: '800x' }}" alt="Gallery image">
       </div>
     </div>
   {% endif %}
 
   {% if blocks.size > 5 %}
-    <!-- Last full -->
+    <!-- 6th full -->
     <div class="collage-item full">
       <img src="{{ blocks[5].settings.gallery_image | img_url: '800x' }}" alt="Gallery image">
     </div>
   {% endif %}
-</div>
 </div>
 
 <style>
@@ -80,12 +79,21 @@
   height: 500px;
 }
 
-/* Stacked columns */
+/* Stacked column base */
 .collage-stack {
   display: grid;
-  grid-template-rows: 60% 40%;
   height: 500px;
   gap: 12px;
+}
+
+/* 2nd + 3rd (30/70) */
+.stack-30-70 {
+  grid-template-rows: 30% 70%;
+}
+
+/* 4th + 5th (70/30) */
+.stack-70-30 {
+  grid-template-rows: 70% 30%;
 }
 
 .collage-item img {
