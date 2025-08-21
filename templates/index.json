@@ -340,14 +340,13 @@
           "type": "title",
           "settings": {
             "title": "Be First to",
-            "heading_size": "h2",
-            "image": "shopify://shop_images/Primary_Sand_2.png"
+            "heading_size": "h2"
           }
         },
         "text_finAfK": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Sign up to get first dibs on new drops, exclusive offers, and outlet-only collections.</strong></p>"
+            "text": "<p>Sign up to get first dibs on new drops, exclusive offers, and outlet-only collections.</p>"
           }
         },
         "form_G3CjRm": {
