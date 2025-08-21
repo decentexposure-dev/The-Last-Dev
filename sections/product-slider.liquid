@@ -55,7 +55,7 @@
     </div>
   {%- endif -%}
 
-  <div class="page-width{% if section.settings.mobile_scrollable %} page-width--flush-small{% endif %}">
+  <div class="page-width{% if section.settings.mobile_scrollable %} page-width--flush-small{% endif %} carousel-wrapper">
     <div{% if section.settings.mobile_scrollable %} class="grid-overflow-wrapper"{% endif %}>
       <div id="productSlider-{{ section.id }}" class="grid grid--uniform product-slider js-product-slide"{% if section.settings.mobile_scrollable %} data-aos="overflow__animation"{% endif %}
       >
@@ -140,9 +140,14 @@
 
 <script>
   
-    // initialize Flickity (if you prefer JS-init instead of data-attribute):
-    var carouselElem = document.querySelector('#productSlider-{{ section.id }}');
-    var flkty = new Flickity(carouselElem, {
+  // Grab each carousel wrapper
+  document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+    const carouselElem = wrapper.querySelector('#productSlider-{{ section.id }}');
+    const prevBtn = wrapper.querySelector('.flickity-prev-custom');
+    const nextBtn = wrapper.querySelector('.flickity-next-custom');
+
+    // Initialize Flickity for this wrapper
+    const flkty = new Flickity(carouselElem, {
       cellAlign: 'left',
       contain: true,
       groupCells: true,
@@ -151,40 +156,13 @@
       wrapAround: false       // set to true if you want arrows to never disable
     });
 
-    // custom buttons
-    var prevBtn = document.querySelector('.flickity-prev-{{ section.id }}');
-    var nextBtn = document.querySelector('.flickity-next-{{ section.id }}');
+    // Hook up custom buttons
+    prevBtn.addEventListener('click', () => flkty.previous());
+    nextBtn.addEventListener('click', () => flkty.next());
+  });
 
-    prevBtn.addEventListener('click', function () { flkty.previous(); });
-    nextBtn.addEventListener('click', function () { flkty.next(); });
 
-    // keyboard activation (Enter / Space)
-    [prevBtn, nextBtn].forEach(function(btn){
-      btn.addEventListener('keydown', function(e){
-        if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
-          e.preventDefault();
-          btn.click();
-        }
-      });
-    });
-
-    // update disabled state for non-wrapAround carousels
-    function updateDisabledState() {
-      if (flkty.options.wrapAround) {
-        prevBtn.setAttribute('aria-disabled', 'false');
-        nextBtn.setAttribute('aria-disabled', 'false');
-        return;
-      }
-      var selected = flkty.selectedIndex;
-      var lastIndex = flkty.slides.length - 1;
-      prevBtn.setAttribute('aria-disabled', selected === 0 ? 'true' : 'false');
-      nextBtn.setAttribute('aria-disabled', selected === lastIndex ? 'true' : 'false');
-    }
-
-    // initial state + after selection changes
-    updateDisabledState();
-    flkty.on('select', updateDisabledState);
-
+    
     // Optional: support for external controls (e.g., enable/disable from code)
     // Example: flkty.next(), flkty.previous(), flkty.select(2), etc.
   </script>
