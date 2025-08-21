@@ -229,6 +229,11 @@
                   <div class="page-width">
                     <div class="hero__text-content {{ block.settings.text_align }}">
                       <div class="hero__text-shadow">
+                        {%- unless block.settings.block_image != blank -%}
+                          <div class="hero__text--image">
+                            <img src="{{ block.settings.block_image | img_url: 'master' }}" alt="">
+                          </div>
+                        {%- endunless -%}  
                         {%- unless block.settings.top_subheading == blank -%}
                           <div class="hero__top-subtitle">
                             <div class="animation-cropper"><div class="animation-contents">
@@ -425,6 +430,11 @@
       "type": "image",
       "name": "t:sections.slideshow.blocks.slide.name",
       "settings": [
+        {
+          "type": "image_picker",
+          "id": "block_image",
+          "label": "Image block"
+        },
         {
           "type": "text",
           "id": "top_subheading",
