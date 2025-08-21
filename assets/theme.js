@@ -8225,36 +8225,7 @@ theme.recentlyViewed = {
     return Testimonials;
   })();
   
-  theme.productSlider = (function() {
-    var defaults = {
-      adaptiveHeight: true,
-      avoidReflow: true,
-      pageDots: true,
-      prevNextButtons: false
-    };
-  
-    function productSlider(container) {
-      this.container = container;
-      this.timeout;
-      var sectionId = container.getAttribute('data-section-id');
-      this.slideshow = container.querySelector('#productSlider-' + sectionId);
-      this.namespace = '.testimonial-' + sectionId;
-  
-      if (!this.slideshow) { return }
-  
-      theme.initWhenVisible({
-        element: this.container,
-        callback: this.init.bind(this),
-        threshold: 600
-      });
-    }
-
-    productSlider.prototype = Object.assign({}, productSlider.prototype, {
-      this.flickity = new theme.Slideshow(this.slideshow, defaults);
-    });
-
-    return productSlider;
-  })();
+ 
 
   theme.isStorageSupported = function(type) {
     // Return false if we are in an iframe without access to sessionStorage
