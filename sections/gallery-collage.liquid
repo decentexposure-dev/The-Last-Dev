@@ -16,7 +16,7 @@
   ]
 }
 {% endschema %}
-
+<div class="page-width">
 <div class="collage-gallery">
   {% assign blocks = section.blocks %}
 
@@ -57,6 +57,7 @@
       <img src="{{ blocks[5].settings.gallery_image | img_url: '800x' }}" alt="Gallery image">
     </div>
   {% endif %}
+</div>
 </div>
 
 <style>
