@@ -27,7 +27,7 @@
         {{ block.settings.text }}
 
         {% if block.settings.show_social %}
-        <ul class="no-bullets site-footer__linklist">
+        <ul class="no-bullets site-footer__linklist footer-social">
           {%- if settings.social_instagram_link != blank -%}
           <li>
             <a target="_blank" rel="noopener" href="{{ settings.social_instagram_link }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Instagram' }}">
