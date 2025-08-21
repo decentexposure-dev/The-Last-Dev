@@ -321,6 +321,13 @@
         "lazyload_images": true
       }
     },
+    "product_slider_W9AHfK": {
+      "type": "product-slider",
+      "name": "Product Slider",
+      "settings": {
+        "collection": "authentic-originals-mens"
+      }
+    },
     "featured_collection_fRVrGx": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.featured_collection.name",
@@ -361,7 +368,7 @@
       ],
       "custom_css": [
         ".slideshow-wrapper {--colorHeroText: #1b0d0d;}",
-        "{margin-bottom:70px;}"
+        " {margin-bottom: 70px;}"
       ],
       "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
       "settings": {
@@ -385,6 +392,7 @@
     "hotspots",
     "map",
     "slideshow_VVkjm9",
+    "product_slider_W9AHfK",
     "featured_collection_fRVrGx",
     "slideshow_XUTMWx"
   ]
