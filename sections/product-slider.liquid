@@ -156,18 +156,43 @@
   }
 });
 
-
 document.querySelectorAll('.custom-slider-wrapper').forEach(wrapper => {
   const slider = wrapper.querySelector('.product-slider');
-  const flkty = Flickity.data(slider);
   const prev = wrapper.querySelector('.flickity-prev-{{ section.id }}');
   const next = wrapper.querySelector('.flickity-next-{{ section.id }}');
 
+  const flkty = Flickity.data(slider);
+
   if (flkty) {
-    prev?.addEventListener('click', () => flkty.previous());
-    next?.addEventListener('click', () => flkty.next());
+    // update button states on load + when slide changes
+    function updateButtons() {
+      // disable prev if first slide
+      if (flkty.selectedIndex === 0) {
+        prevBtn.disabled = true;
+      } else {
+        prevBtn.disabled = false;
+      }
+
+      // disable next if last slide
+      if (flkty.selectedIndex === flkty.slides.length - 1) {
+        nextBtn.disabled = true;
+      } else {
+        nextBtn.disabled = false;
+      }
+    }
+
+    // run on init
+    updateButtons();
+
+    // run whenever the slide changes
+    flkty.on('change', updateButtons);
+
+    // button clicks
+    prevBtn.addEventListener('click', () => flkty.previous());
+    nextBtn.addEventListener('click', () => flkty.next());
   }
 });
+
 
 
 </script>
