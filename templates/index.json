@@ -429,7 +429,10 @@
         "image_bJrB4J"
       ],
       "name": "Collage Gallery",
-      "settings": {}
+      "settings": {
+        "title": "What our <em>Community says</em>",
+        "text": "See how others are styling their finds"
+      }
     },
     "product_slider_XMUbWX": {
       "type": "product-slider",
