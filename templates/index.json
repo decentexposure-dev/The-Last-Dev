@@ -329,8 +329,8 @@
         "home_featured_products": "authentic-original",
         "per_row": 4,
         "rows": 3,
-        "mobile_scrollable": true,
-        "view_all": true,
+        "mobile_scrollable": false,
+        "view_all": false,
         "divider": false
       }
     },
