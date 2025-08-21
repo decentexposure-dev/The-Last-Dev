@@ -368,7 +368,8 @@
         "color_background": "#f9f9f9",
         "color_text": "#1c1d1d",
         "top_padding": true,
-        "bottom_padding": true
+        "bottom_padding": true,
+        "bgimage": "shopify://shop_images/Rectangle_26.png"
       }
     },
     "product_slider_XMUbWX": {
