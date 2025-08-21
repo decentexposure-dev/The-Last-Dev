@@ -190,85 +190,6 @@
         "lazyload_images": true
       }
     },
-    "featured-collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Popular picks",
-        "home_featured_products": "spring",
-        "per_row": 5,
-        "rows": 2,
-        "mobile_scrollable": true,
-        "view_all": true,
-        "divider": false
-      }
-    },
-    "countdown": {
-      "type": "countdown",
-      "blocks": {
-        "content": {
-          "type": "content",
-          "settings": {
-            "heading": "BLACK FRIDAY",
-            "heading_size": "h1",
-            "text": "<p>get 20% off if you spend 120$ or more!</p>",
-            "content_alignment": "center"
-          }
-        },
-        "timer": {
-          "type": "timer",
-          "settings": {
-            "year": "2023",
-            "month": "04",
-            "day": "1",
-            "hour": "03",
-            "minute": "00",
-            "hide_timer": false,
-            "text": ""
-          }
-        }
-      },
-      "block_order": [
-        "content",
-        "timer"
-      ],
-      "disabled": true,
-      "settings": {
-        "layout": "hero",
-        "full_width": false,
-        "text_color": "#ffffff",
-        "background_color": "#512c13",
-        "overlay_color": "#1c1d1d",
-        "overlay_opacity": 30,
-        "lazyload_images": true
-      }
-    },
-    "hotspots": {
-      "type": "hotspots",
-      "blocks": {
-        "product": {
-          "type": "product",
-          "settings": {
-            "featured_product": "rosewood-dlmn-knotted-high-low-top",
-            "vertical": 25,
-            "horizontal": 25
-          }
-        }
-      },
-      "block_order": [
-        "product"
-      ],
-      "disabled": true,
-      "settings": {
-        "title": "Shop the look",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "indent_image": false,
-        "image_position": "left",
-        "hotspot_style": "tag",
-        "hotspot_color": "#321004",
-        "lazyload_images": true
-      }
-    },
     "map": {
       "type": "map",
       "disabled": true,
@@ -499,9 +420,6 @@
     "slideshow",
     "rich_text_RFyUMR",
     "promo-grid-1",
-    "featured-collection",
-    "countdown",
-    "hotspots",
     "map",
     "slideshow_VVkjm9",
     "product_slider_W9AHfK",
