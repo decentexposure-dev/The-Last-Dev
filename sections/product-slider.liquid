@@ -158,8 +158,8 @@
 
 document.querySelectorAll('.custom-slider-wrapper').forEach(wrapper => {
   const slider = wrapper.querySelector('.product-slider');
-  const prev = wrapper.querySelector('.flickity-prev-{{ section.id }}');
-  const next = wrapper.querySelector('.flickity-next-{{ section.id }}');
+  const prevBtn = wrapper.querySelector('.flickity-prev-{{ section.id }}');
+  const nextBtn = wrapper.querySelector('.flickity-next-{{ section.id }}');
 
   const flkty = Flickity.data(slider);
 
@@ -192,6 +192,8 @@ document.querySelectorAll('.custom-slider-wrapper').forEach(wrapper => {
     nextBtn.addEventListener('click', () => flkty.next());
   }
 });
+
+
 
 
 
