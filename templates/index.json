@@ -334,6 +334,7 @@
         "view_all": false,
         "divider": false,
         "bgcolor": "#f5f1e9",
+        "remove_margin": true,
         "padding_top": 36,
         "padding_bottom": 36,
         "padding_top_mb": 36,
@@ -390,6 +391,7 @@
         "view_all": false,
         "divider": false,
         "bgcolor": "#f5f1e9",
+        "remove_margin": true,
         "padding_top": 68,
         "padding_bottom": 52,
         "padding_top_mb": 36,
@@ -423,7 +425,7 @@
       ],
       "custom_css": [
         ".slideshow-wrapper {--colorHeroText: #1b0d0d;}",
-        " {margin-bottom: 70px;}"
+        " {margin-bottom: 70px; margin-top: 70px;}"
       ],
       "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
       "settings": {
