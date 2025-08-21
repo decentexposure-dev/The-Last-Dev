@@ -187,24 +187,31 @@
     // Example: flkty.next(), flkty.previous(), flkty.select(2), etc.
   </script>
 
-  <style>
-    #CollectionSection-{{ section.id }} .section-header{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    #CollectionSection-{{ section.id }} .flickity-controls {
-      display: flex;
-      gap: 10px;
-    }
-    #CollectionSection-{{ section.id }} .flickity-controls button {
-      width: 20px;
-      height: 20px;
-      position: relative;
-      background: transparent;
-      border-radius: 0;
-    }
-  </style>
+<style>
+  #CollectionSection-{{ section.id }} .section-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #CollectionSection-{{ section.id }} .flickity-controls {
+    display: flex;
+    gap: 10px;
+  }
+  #CollectionSection-{{ section.id }} .flickity-controls button {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+  }
+  #CollectionSection-{{ section.id }} .flickity-button.flickity-prev-custom {
+    transform: rotate(180deg);
+  }
+  #CollectionSection-{{ section.id }} .flickity-button svg {
+    max-width: 100%;
+  }
+</style>
 
 {% schema %}
 {
