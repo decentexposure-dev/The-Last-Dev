@@ -6,8 +6,10 @@
       <h2 class="section-header__title">{{ section.settings.title }}</h2>
     </div>
   {%- endif -%}
-
-  <div class="grid grid--uniform{% unless section.settings.enable_gutter %} grid--no-gutters{% endunless %}">
+  </div>
+<div class="page-width page-width--flash">
+    <div class="grid-overflow-wrapper">
+  <div class="grid grid--uniform{% unless section.settings.enable_gutter %} grid--no-gutters{% endunless %}"  data-aos="overflow__animation">
     {%- liquid
       assign isEmpty = true
       if section.blocks.size > 0
@@ -53,6 +55,7 @@
       </div>
     {%- endif -%}
 
+  </div>
   </div>
 </div>
 
