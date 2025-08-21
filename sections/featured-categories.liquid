@@ -34,8 +34,12 @@
 
       <div class="grid__item {{ gridView }}" {{ block.shopify_attributes }}>
         <a href="{{ block.settings.link }}" class="" data-aos="row-of-{{ section.settings.per_row }}">
+         
           <div class="category-img">
+            {% if block.settings.image != blank %}
             <img src="{{ block.settings.image | img_url: 'master' }}" alt="">
+            {% endif %}
+            
           </div>
           <div class="">{{ block.settings.title }}</div>
         </a>
