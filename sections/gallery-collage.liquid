@@ -1,6 +1,6 @@
 <div data-section-id="{{ section.id }}"
-  data-section-type="gallery-collage"
-    class="gallery-collage">
+  data-section-type="gallery-collage-section"
+    class="gallery-collage-section">
     {%- if section.settings.title != blank or section.settings.view_all -%}
     <div class="page-width">
         <div class="section-header">
@@ -60,6 +60,11 @@
 </div>
 
 <style>
+.gallery-collage-section .section-header .rte {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
 .collage-gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
