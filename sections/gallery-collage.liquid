@@ -1,0 +1,54 @@
+{% schema %}
+{
+  "name": "Collage Gallery",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        { "type": "image_picker", "id": "gallery_image", "label": "Image" }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "Collage Gallery" }
+  ]
+}
+{% endschema %}
+
+<div class="collage-gallery">
+  {% for block in section.blocks %}
+    {% if block.settings.gallery_image %}
+      <div class="collage-item">
+        <img src="{{ block.settings.gallery_image | img_url: '800x' }}" alt="Gallery image" loading="lazy">
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<style>
+.collage-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 200px;
+  gap: 10px;
+}
+
+.collage-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.collage-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .3s ease;
+}
+
+.collage-item:hover img {
+  transform: scale(1.05);
+}
+</style>
