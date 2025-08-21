@@ -158,8 +158,8 @@
 
 document.querySelectorAll('.custom-slider-wrapper').forEach(wrapper => {
   const slider = wrapper.querySelector('.product-slider');
-  const prevBtn = wrapper.querySelector('.custom-prev');
-  const nextBtn = wrapper.querySelector('.custom-next');
+  const prevBtn = wrapper.querySelector('.flickity-prev-{{ section.id }}');
+  const nextBtn = wrapper.querySelector('.flickity-next-{{ section.id }}');
 
   // Get existing Flickity instance (Impulse auto-inits sliders)
   const flkty = Flickity.data(slider);
