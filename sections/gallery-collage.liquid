@@ -109,6 +109,12 @@
 .collage-item:hover img {
   transform: scale(1.05);
 }
+
+@media only screen and (max-width: 768px) {
+    .collage-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    }
+}
 </style>
 
 {% schema %}
