@@ -83,7 +83,8 @@
         "style": "bars",
         "autoplay": true,
         "autoplay_speed": 5,
-        "lazyload_images": true
+        "lazyload_images": true,
+        "class_name": ""
       }
     },
     "rich_text_RFyUMR": {
@@ -318,7 +319,8 @@
         "style": "bars",
         "autoplay": false,
         "autoplay_speed": 5,
-        "lazyload_images": true
+        "lazyload_images": true,
+        "class_name": "freedombanner"
       }
     },
     "product_slider_W9AHfK": {
@@ -422,7 +424,8 @@
         "style": "bars",
         "autoplay": false,
         "autoplay_speed": 5,
-        "lazyload_images": true
+        "lazyload_images": true,
+        "class_name": ""
       }
     }
   },
