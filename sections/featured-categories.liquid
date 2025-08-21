@@ -76,6 +76,11 @@
     .categories-scroller .grid-overflow-wrapper .grid {
         display: flex;
         white-space: nowrap;
+        padding-left: max(40px, calc((100vw - 1500px + 80px - 22px) /2));
+    }
+     .categories-scroller .grid-overflow-wrapper .grid .grid__item:first-child {
+        margin-left: max(40px, calc((100vw - 1500px + 80px - 22px) /2));
+        scroll-margin-left: max(40px, calc((100vw - 1500px + 80px - 22px) /2));
     }
     .categories-scroller [data-aos="overflow__animation"] {
         transform: translate(100vw);
