@@ -179,7 +179,7 @@
         "image_xHc6eE"
       ],
       "custom_css": [
-        ".slideshow-wrapper {--colorHeroText: #f3ecdb;}",
+        ".slideshow-wrapper {--colorHeroText: #F3ECDB;}",
         ".hero__text-shadow {text-align: left; max-width: 350px;}"
       ],
       "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
