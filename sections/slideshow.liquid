@@ -4,7 +4,7 @@
   {% if section.settings.parallax %}data-parallax="true"{% endif %}>
 
   {%- if section.blocks.size > 0 -%}
-    <div class="slideshow-wrapper">
+    <div class="slideshow-wrapper {{ section.settings.class_name }}">
       {%- if section.settings.autoplay and section.settings.style == 'bars' and section.blocks.size > 1 -%}
         {%- style -%}
           [data-bars][data-autoplay="true"] .flickity-page-dots .dot:after {
@@ -413,7 +413,12 @@
       "label": "t:common.lazyload_images.label",
       "info": "t:common.lazyload_images.info",
       "default": true
-    }
+    },
+    {
+      "type": "text",
+      "id": "class_name",
+      "label": "Class name"
+    },
   ],
   "blocks": [
     {
