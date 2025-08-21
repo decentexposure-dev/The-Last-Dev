@@ -40,7 +40,7 @@
       ],
       "settings": {
         "container_width": false,
-        "section_height": "natural",
+        "section_height": "100vh",
         "mobile_height": "100vh",
         "parallax": false,
         "style": "bars",
