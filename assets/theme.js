@@ -8251,7 +8251,9 @@ theme.recentlyViewed = {
 
     productSlider.prototype = Object.assign({}, productSlider.prototype, {
       this.flickity = new theme.Slideshow(this.slideshow, defaults);
-    })
+    });
+
+    return Testimonials;
   })();
 
   theme.isStorageSupported = function(type) {
