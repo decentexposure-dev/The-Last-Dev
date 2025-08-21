@@ -17,6 +17,7 @@
 }
 {% endschema %}
 
+<div class="page-width">
 <div class="collage-gallery">
   {% assign blocks = section.blocks %}
 
@@ -58,18 +59,18 @@
     </div>
   {% endif %}
 </div>
+</div>
 
 <style>
 .collage-gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  gap: 20px;
   align-items: stretch;
 }
 
 .collage-item,
 .collage-stack {
-  border-radius: 12px;
   overflow: hidden;
   position: relative;
 }
