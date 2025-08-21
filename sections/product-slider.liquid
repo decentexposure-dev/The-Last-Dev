@@ -159,8 +159,8 @@
 document.querySelectorAll('.custom-slider-wrapper').forEach(wrapper => {
   const slider = wrapper.querySelector('.product-slider');
   const flkty = Flickity.data(slider);
-  const prev = wrapper.querySelector('.custom-prev');
-  const next = wrapper.querySelector('.custom-next');
+  const prev = wrapper.querySelector('.flickity-prev-custom');
+  const next = wrapper.querySelector('.flickity-next-custom');
 
   if (flkty) {
     prev?.addEventListener('click', () => flkty.previous());
