@@ -108,6 +108,10 @@
             width: 24%;
         }
     }
+    /* Hide scrollbar but keep scroll functionality */
+.categories-scroller .grid-overflow-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
     .category-item {
       background-color: var(--bg-color);
       color: var(--text-color);
