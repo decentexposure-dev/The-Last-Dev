@@ -220,6 +220,11 @@
 </style>
 
 {%- style -%}
+  {% if section.settings.remove_margin %}
+    #shopify-section-{{ section.id }}.index-section{
+      margin:0;
+    }
+  {% endif %}  
   #CollectionSection-{{ section.id }} {
     padding-top: {{ section.settings.padding_top_mb }}px;
     padding-bottom: {{ section.settings.padding_bottom_mb }}px;
@@ -285,6 +290,12 @@
       "id": "bgcolor",
       "label": "Background color",
       "default": "#F5F1E9"
+    },
+    {
+      "type": "checkbox",
+      "id": "remove_margin",
+      "label": "Remove section margin",
+      "default": true
     },
     {
       "type": "header",
