@@ -159,46 +159,51 @@
         "image_r7KMN7": {
           "type": "image",
           "settings": {
-            "title": "Title",
+            "image": "shopify://shop_images/Object_1.png",
+            "title": "Apparels",
             "link": "",
-            "bgcolor": "",
-            "color": ""
+            "bgcolor": "#f3ecdb",
+            "color": "#1b0d0d"
           }
         },
         "image_4EpEpm": {
           "type": "image",
           "settings": {
-            "title": "Title",
+            "image": "shopify://shop_images/image_2.png",
+            "title": "Footwear",
             "link": "",
-            "bgcolor": "",
-            "color": ""
+            "bgcolor": "#f3ecdb",
+            "color": "#1b0d0d"
           }
         },
         "image_EKXppG": {
           "type": "image",
           "settings": {
-            "title": "Title",
+            "image": "shopify://shop_images/cap_1.png",
+            "title": "Accessories",
             "link": "",
-            "bgcolor": "",
-            "color": ""
+            "bgcolor": "#f3ecdb",
+            "color": "#1b0d0d"
           }
         },
         "image_RDkEBR": {
           "type": "image",
           "settings": {
-            "title": "Title",
+            "image": "shopify://shop_images/Bookmark_Favorite_Label.png",
+            "title": "Under $50",
             "link": "",
-            "bgcolor": "",
-            "color": ""
+            "bgcolor": "#1b0d0d",
+            "color": "#f3ecdb"
           }
         },
         "image_Nh6L3r": {
           "type": "image",
           "settings": {
-            "title": "Title",
+            "image": "shopify://shop_images/Bookmark_Favorite_Label.png",
+            "title": "Under $50",
             "link": "",
-            "bgcolor": "",
-            "color": ""
+            "bgcolor": "#1b0d0d",
+            "color": "#f3ecdb"
           }
         }
       },
