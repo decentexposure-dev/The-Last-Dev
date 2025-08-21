@@ -1,3 +1,16 @@
+{%- if section.settings.title != blank or section.settings.view_all -%}
+<div class="page-width">
+    <div class="section-header">
+    <h2 class="section-header__title">
+        {{ section.settings.title }}
+    </h2>
+    {%- if section.settings.text != blank -%}
+        <div class="rte">{{ section.settings.text }}</div>
+    {%- endif -%}
+    </div>
+</div>
+{%- endif -%}
+
 <div class="page-width">
 <div class="collage-gallery">
   {% assign blocks = section.blocks %}
@@ -99,6 +112,12 @@
       "id": "title",
       "label": "t:sections.featured-collection.settings.title.label",
       "default": "What our Community says"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "t:sections.background-image-text.settings.text.label",
+      "default": "See how others are styling their finds"
     },
   ],
   "blocks": [
