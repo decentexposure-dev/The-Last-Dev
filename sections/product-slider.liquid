@@ -161,15 +161,15 @@ document.querySelectorAll('.custom-slider-wrapper').forEach(wrapper => {
   const prevBtn = wrapper.querySelector('.custom-prev');
   const nextBtn = wrapper.querySelector('.custom-next');
 
-  // get Flickity instance already created by Impulse
+  // Get existing Flickity instance (Impulse auto-inits sliders)
   const flkty = Flickity.data(slider);
 
   if (flkty) {
-    // button clicks control only this slider
+    // Buttons ONLY control THIS slider
     prevBtn.addEventListener('click', () => flkty.previous());
     nextBtn.addEventListener('click', () => flkty.next());
 
-    // disable/enable buttons at edges
+    // Disable buttons at edges
     function updateButtons() {
       prevBtn.disabled = flkty.selectedIndex === 0;
       nextBtn.disabled = flkty.selectedIndex === flkty.slides.length - 1;
