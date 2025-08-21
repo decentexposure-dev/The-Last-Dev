@@ -32,21 +32,23 @@
 
 <style>
 .collage-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
   gap: 12px;
+  align-items: flex-end; /* align bottoms so half items sit lower */
+  overflow-x: auto;
+  padding: 10px 0;
 }
 
 /* Full height items (first & last) */
 .collage-item.full {
-  grid-row: span 2;
-  height: 100%;
-  min-height: 500px;
+  height: 400px; /* adjust as needed */
+  flex: 0 0 auto;
 }
 
 /* Half height items (middle ones) */
 .collage-item.half {
-  min-height: 250px;
+  height: 200px; /* 50% height */
+  flex: 0 0 auto;
 }
 
 .collage-item {
@@ -56,9 +58,10 @@
 }
 
 .collage-item img {
-  width: 100%;
+  width: auto;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform .3s ease;
 }
 
