@@ -8330,6 +8330,7 @@ theme.recentlyViewed = {
     theme.sections.register('newsletter-popup', theme.NewsletterPopup);
     theme.sections.register('collection-header', theme.CollectionHeader);
     theme.sections.register('collection-grid', theme.Collection);
+    theme.sections.register('product-slider', theme.productSlider);
 
     theme.initGlobals();
     theme.initQuickShop();
