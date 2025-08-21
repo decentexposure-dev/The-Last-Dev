@@ -117,7 +117,7 @@
       </p>
     {%- endif -%}
     <p class="footer__small-text  footer-left-right">
-      {%- for link in linklists[block.settings.menu].links -%}
+      {%- for link in linklists.footer-bottom.links -%}
         <a href="{{ link.url }}">{{ link.title }}</a>
       {%- endfor -%}
     </p>
