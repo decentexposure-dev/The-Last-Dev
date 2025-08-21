@@ -65,7 +65,7 @@
           "settings": {
             "show_footer_title": true,
             "menu": "men",
-            "container_width": 16
+            "container_width": 15
           }
         },
         "menu-1": {
@@ -73,7 +73,7 @@
           "settings": {
             "show_footer_title": true,
             "menu": "women",
-            "container_width": 16
+            "container_width": 15
           }
         },
         "menu-2": {
@@ -81,7 +81,7 @@
           "settings": {
             "show_footer_title": true,
             "menu": "brands",
-            "container_width": 16
+            "container_width": 14
           }
         },
         "menu-3": {
@@ -89,7 +89,7 @@
           "settings": {
             "show_footer_title": true,
             "menu": "customer-service",
-            "container_width": 16
+            "container_width": 15
           }
         },
         "custom_kkariG": {
@@ -100,7 +100,7 @@
             "text": "",
             "show_payment": false,
             "show_social": true,
-            "container_width": 16
+            "container_width": 15
           }
         },
         "custom_PPgi3f": {
