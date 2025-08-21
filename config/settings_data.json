@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "color_body_bg": "#faf7f2",
+    "color_body_bg": "#ffffff",
     "color_body_text": "#1b0d0d",
     "color_price": "#1b0d0d",
     "color_savings_text": "#d74a5d",
@@ -51,7 +51,6 @@
     "button_style": "square",
     "icon_weight": "3px",
     "icon_linecaps": "round",
-    "type_custom_font_family": "dm_serif_display_i4",
     "quick_shop_enable": false,
     "product_grid_image_size": "natural",
     "product_grid_image_fill": true,
@@ -64,6 +63,7 @@
     "social_facebook_link": "https://www.facebook.com/shopify",
     "social_pinterest_link": "https://www.pinterest.com/shopify",
     "social_instagram_link": "https://instagram.com/shopify",
+    "type_custom_font_family": "dm_serif_display_i4",
     "checkout_accent_color": "#111111",
     "checkout_body_background_color": "#ffffff",
     "checkout_button_color": "#111111",
