@@ -41,7 +41,7 @@
             {% endif %}
             
           </div>
-          <div class="">{{ block.settings.title }}</div>
+          <div class="category-title h3">{{ block.settings.title }}</div>
         </a>
 
       </div>
@@ -110,6 +110,26 @@
     .category-item {
       background-color: var(--bg-color);
       color: var(--text-color);
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px;
+      min-height: 400px;
+    }
+    .category-img {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: center;
+    }
+    .category-title {
+      font-size: 24px;
+      font-weight: bold;
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
     }
 </style>
     
