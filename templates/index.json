@@ -186,19 +186,7 @@
         "full_width": false,
         "gutter_size": 20,
         "space_above": false,
-        "space_below": false,
-        "lazyload_images": true
-      }
-    },
-    "map": {
-      "type": "map",
-      "disabled": true,
-      "settings": {
-        "map_title": "Local pickup available",
-        "address": "<p>301 Front St W<br/>Toronto, Canada</p><p>Mon - Fri, 8:30am - 10:30pm<br/>Saturday, 8:30am - 10:30pm<br/>Sunday, 8:30am - 10:30pm</p>",
-        "map_address": "301 Front St W, Toronto, ON M5V 2T6",
-        "api_key": "",
-        "show_button": true,
+        "space_below": true,
         "lazyload_images": true
       }
     },
@@ -420,7 +408,6 @@
     "slideshow",
     "rich_text_RFyUMR",
     "promo-grid-1",
-    "map",
     "slideshow_VVkjm9",
     "product_slider_W9AHfK",
     "newsletter_zfYc6d",
