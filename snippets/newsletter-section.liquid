@@ -25,7 +25,7 @@
               {%- when 'title' -%}
                 {%- if block.settings.title != blank -%}
                   <p class="{% if block.settings.heading_size != blank %}{{ block.settings.heading_size }}{% else %}h2{% endif %}">{{ block.settings.title | escape }}
-                    {% if block.setting.image != blank %} {{ block.setting.image | image_url: width: 200 | image_tag: class: 'news-head' }}{% endif %}
+                    {% if block.setting.image != blank %}<img src="{{ block.setting.image | img_url: 'master' }}" alt="">{% endif %}
                   </p>
                 {%- endif -%}
               {%- when 'text' -%}
