@@ -161,24 +161,36 @@ document.querySelectorAll('.custom-slider-wrapper').forEach(wrapper => {
   const prevBtn = wrapper.querySelector('.custom-prev');
   const nextBtn = wrapper.querySelector('.custom-next');
 
-  // Get existing Flickity instance (Impulse auto-inits sliders)
-  const flkty = Flickity.data(slider);
+  function initCustomButtons() {
+    const flkty = Flickity.data(slider);
+    if (!flkty) return; // still not ready yet
 
-  if (flkty) {
-    // Buttons ONLY control THIS slider
-    prevBtn.addEventListener('click', () => flkty.previous());
-    nextBtn.addEventListener('click', () => flkty.next());
+    // Attach buttons only once
+    if (!slider.classList.contains('custom-arrows-attached')) {
+      slider.classList.add('custom-arrows-attached');
 
-    // Disable buttons at edges
-    function updateButtons() {
-      prevBtn.disabled = flkty.selectedIndex === 0;
-      nextBtn.disabled = flkty.selectedIndex === flkty.slides.length - 1;
+      // Control only THIS slider
+      prevBtn.addEventListener('click', () => flkty.previous());
+      nextBtn.addEventListener('click', () => flkty.next());
+
+      // Disable arrows at edges
+      function updateButtons() {
+        prevBtn.disabled = flkty.selectedIndex === 0;
+        nextBtn.disabled = flkty.selectedIndex === flkty.slides.length - 1;
+      }
+
+      updateButtons();
+      flkty.on('change', updateButtons);
     }
-
-    updateButtons();
-    flkty.on('change', updateButtons);
   }
+
+  // Run once now
+  initCustomButtons();
+
+  // Run again after a short delay (Impulse lazy-init)
+  setTimeout(initCustomButtons, 500);
 });
+
 
 
 
