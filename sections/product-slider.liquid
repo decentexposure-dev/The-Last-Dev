@@ -20,31 +20,37 @@
         {%- endif -%}
 
         <!-- custom controls -->
-    <div class="flickity-controls" aria-hidden="false">
-      <button class="flickity-button flickity-prev-custom"
-              type="button"
-              role="button"
-              aria-label="Previous slide"
-              aria-disabled="false"
-              tabindex="0">
-        <!-- left arrow -->
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-        </svg>
-      </button>
+        <div class="flickity-controls" aria-hidden="false">
+          <button class="flickity-button flickity-prev-custom"
+                  type="button"
+                  role="button"
+                  aria-label="Previous slide"
+                  aria-disabled="false"
+                  tabindex="0">
+            <!-- left arrow -->
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M31.6666 20.0001H8.33325" stroke="#1B0D0D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M23.3333 28.3333L31.6666 20" stroke="#1B0D0D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M23.3333 11.6667L31.6666 20.0001" stroke="#1B0D0D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
 
-      <button class="flickity-button flickity-next-custom"
-              type="button"
-              role="button"
-              aria-label="Next slide"
-              aria-disabled="false"
-              tabindex="0">
-        <!-- right arrow -->
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/>
-        </svg>
-      </button>
-    </div>
+          </button>
+
+          <button class="flickity-button flickity-next-custom"
+                  type="button"
+                  role="button"
+                  aria-label="Next slide"
+                  aria-disabled="false"
+                  tabindex="0">
+            <!-- right arrow -->
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M31.6666 20.0001H8.33325" stroke="#1B0D0D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M23.3333 28.3333L31.6666 20" stroke="#1B0D0D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M23.3333 11.6667L31.6666 20.0001" stroke="#1B0D0D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+
+          </button>
+        </div>
       </div>
     </div>
   {%- endif -%}
