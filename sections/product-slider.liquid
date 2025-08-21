@@ -21,7 +21,7 @@
 
         <!-- custom controls -->
         <div class="flickity-controls" aria-hidden="false">
-          <button class="flickity-button flickity-prev-custom"
+          <button class="flickity-button flickity-prev-custom flickity-prev-{{ section.id }}"
                   type="button"
                   role="button"
                   aria-label="Previous slide"
@@ -36,7 +36,7 @@
 
           </button>
 
-          <button class="flickity-button flickity-next-custom"
+          <button class="flickity-button flickity-next-custom flickity-next-{{ section.id }}"
                   type="button"
                   role="button"
                   aria-label="Next slide"
@@ -151,8 +151,8 @@
     });
 
     // custom buttons
-    var prevBtn = document.querySelector('.flickity-prev-custom');
-    var nextBtn = document.querySelector('.flickity-next-custom');
+    var prevBtn = document.querySelector('.flickity-prev-{{ section.id }}');
+    var nextBtn = document.querySelector('.flickity-next-{{ section.id }}');
 
     prevBtn.addEventListener('click', function () { flkty.previous(); });
     nextBtn.addEventListener('click', function () { flkty.next(); });
