@@ -67,6 +67,10 @@
                 render 'footer-menu', block: block
               when 'follow_shop_cta'
                 render 'follow-shop-cta', block: block
+              when 'payment'
+                render 'footer-custom-text', block: block, container_width: block.settings.container_width  
+              when 'social'
+                render 'footer-custom-text', block: block, container_width: block.settings.container_width  
             endcase
           -%}
         </div>
