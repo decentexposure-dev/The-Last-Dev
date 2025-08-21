@@ -168,16 +168,14 @@ document.querySelectorAll('.custom-slider-wrapper').forEach(wrapper => {
     function updateButtons() {
       // disable prev if first slide
       if (flkty.selectedIndex === 0) {
-        //prevBtn.disabled = true;
-        prevBtn.setAttribute('aria-disabled', selected === 0 ? 'true' : 'false');
+        prevBtn.disabled = true;
       } else {
         prevBtn.disabled = false;
       }
 
       // disable next if last slide
       if (flkty.selectedIndex === flkty.slides.length - 1) {
-        //nextBtn.disabled = true;
-        nextBtn.setAttribute('aria-disabled', selected === 0 ? 'true' : 'false');
+        nextBtn.disabled = true;
       } else {
         nextBtn.disabled = false;
       }
@@ -282,7 +280,9 @@ document.querySelectorAll('.custom-slider-wrapper').forEach(wrapper => {
   #CollectionSection-{{ section.id }} .flickity-button svg {
     max-width: 100%;
   }
-  #CollectionSection-{{ section.id }} .flickity-button[aria-disabled="true"] {
+  #CollectionSection-{{ section.id }} .flickity-button[aria-disabled="true"],
+  #CollectionSection-{{ section.id }} .flickity-button.disabled {
+    display: block;
     opacity: 0.5;
   }
 </style>
