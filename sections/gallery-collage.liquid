@@ -17,52 +17,69 @@
 }
 {% endschema %}
 
-<div class="page-width">
 <div class="collage-gallery">
   {% for block in section.blocks %}
-    {% if block.settings.gallery_image %}
-      <div class="collage-item 
-        {% if forloop.first or forloop.last %}full{% else %}half{% endif %}">
-        <img src="{{ block.settings.gallery_image | img_url: '800x' }}" alt="Gallery image" loading="lazy">
+    {% if forloop.first %}
+      <!-- First full height -->
+      <div class="collage-item full">
+        <img src="{{ block.settings.gallery_image | img_url: '800x' }}" alt="Gallery image">
+      </div>
+    {% elsif forloop.index == 2 %}
+      <!-- 2nd + 3rd stacked column -->
+      <div class="collage-stack">
+        <div class="collage-item stack-60">
+          <img src="{{ block.settings.gallery_image | img_url: '800x' }}" alt="Gallery image">
+        </div>
+        {% assign third = section.blocks[forloop.index0] | plus: 1 %}
+        {% if section.blocks[forloop.index] %}
+        <div class="collage-item stack-40">
+          <img src="{{ section.blocks[forloop.index].settings.gallery_image | img_url: '800x' }}" alt="Gallery image">
+        </div>
+        {% endif %}
+      </div>
+    {% elsif forloop.last %}
+      <!-- Last full height -->
+      <div class="collage-item full">
+        <img src="{{ block.settings.gallery_image | img_url: '800x' }}" alt="Gallery image">
       </div>
     {% endif %}
   {% endfor %}
 </div>
-</div>
 
 <style>
 .collage-gallery {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 3 main columns */
   gap: 12px;
-  align-items: flex-end; /* align bottoms so half items sit lower */
-  overflow-x: auto;
-  padding: 10px 0;
+  align-items: stretch;
 }
 
-/* Full height items (first & last) */
-.collage-item.full {
-  height: 400px; /* adjust as needed */
-  flex: 0 0 auto;
-}
-
-/* Half height items (middle ones) */
-.collage-item.half {
-  height: 200px; /* 50% height */
-  flex: 0 0 auto;
-}
-
-.collage-item {
-  position: relative;
-  overflow: hidden;
+.collage-item,
+.collage-stack {
   border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* First & Last = full height */
+.collage-item.full {
+  height: 500px;
+}
+
+/* Middle stacked column */
+.collage-stack {
+  display: grid;
+  grid-template-rows: 60% 40%;
+  height: 500px;
+  gap: 12px;
 }
 
 .collage-item img {
-  width: auto;
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
   transition: transform .3s ease;
+  display: block;
 }
 
 .collage-item:hover img {
