@@ -211,6 +211,9 @@
   #CollectionSection-{{ section.id }} .flickity-button svg {
     max-width: 100%;
   }
+  #CollectionSection-{{ section.id }} .flickity-button[aria-disabled="true"] {
+    opacity: 0.5;
+  }
 </style>
 
 {% schema %}
