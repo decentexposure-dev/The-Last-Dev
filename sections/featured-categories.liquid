@@ -33,7 +33,7 @@
       -%}
 
       <div class="grid__item {{ gridView }}" {{ block.shopify_attributes }}>
-        <a href="{{ block.settings.link }}" class="category-item" style="-bg-color:{{ block.settings.bgcolor }}; -text-color:{{ block.settings.color }}" data-aos="row-of-{{ section.settings.per_row }}">
+        <a href="{{ block.settings.link }}" class="category-item" style="--bg-color:{{ block.settings.bgcolor }}; --text-color:{{ block.settings.color }}" data-aos="row-of-{{ section.settings.per_row }}">
          
           <div class="category-img">
             {% if block.settings.image != blank %}
@@ -106,6 +106,10 @@
             flex: 0 0 24%;
             width: 24%;
         }
+    }
+    .category-item {
+      background-color: var(--bg-color);
+      color: var(--text-color);
     }
 </style>
     
