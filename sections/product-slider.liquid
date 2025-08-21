@@ -243,6 +243,49 @@
   }
 {%- endstyle -%}
 
+
+
+<div class="carousel-wrapper">
+  <button class="button--prev">Prev</button>
+  <div class="carousel">
+    <div class="carousel-cell">1</div>
+    <div class="carousel-cell">2</div>
+    <div class="carousel-cell">3</div>
+  </div>
+  <button class="button--next">Next</button>
+</div>
+
+<div class="carousel-wrapper">
+  <button class="button--prev">Prev</button>
+  <div class="carousel">
+    <div class="carousel-cell">A</div>
+    <div class="carousel-cell">B</div>
+    <div class="carousel-cell">C</div>
+  </div>
+  <button class="button--next">Next</button>
+</div>
+
+<script>
+  // Grab each carousel wrapper
+document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+  const carouselElem = wrapper.querySelector('.carousel');
+  const prevBtn = wrapper.querySelector('.button--prev');
+  const nextBtn = wrapper.querySelector('.button--next');
+
+  // Initialize Flickity for this wrapper
+  const flkty = new Flickity(carouselElem, {
+    cellAlign: 'left',
+    contain: true,
+    prevNextButtons: false, // disable built-in buttons
+    pageDots: false
+  });
+
+  // Hook up custom buttons
+  prevBtn.addEventListener('click', () => flkty.previous());
+  nextBtn.addEventListener('click', () => flkty.next());
+});
+
+</script>
 {% schema %}
 {
   "name": "Product Slider",
