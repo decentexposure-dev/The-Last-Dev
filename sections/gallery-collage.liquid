@@ -17,6 +17,7 @@
 }
 {% endschema %}
 
+<div class="page-width">
 <div class="collage-gallery">
   {% for block in section.blocks %}
     {% if block.settings.gallery_image %}
@@ -25,6 +26,7 @@
       </div>
     {% endif %}
   {% endfor %}
+</div>
 </div>
 
 <style>
