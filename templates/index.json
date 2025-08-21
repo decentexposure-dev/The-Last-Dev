@@ -325,7 +325,7 @@
       "type": "product-slider",
       "name": "Product Slider",
       "settings": {
-        "title": "Recommended for you",
+        "title": "Recommended for <em>you</em>",
         "home_featured_products": "authentic-original",
         "per_row": 4,
         "rows": 3,
