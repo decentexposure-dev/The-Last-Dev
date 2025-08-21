@@ -61,6 +61,22 @@
 
 {%- if section.settings.divider -%}</div>{%- endif -%}
 
+<style>
+    .page-width.page-width--flash {
+        padding: 0;
+    }
+    .categories-scroller .grid-overflow-wrapper {
+        -webkit-overflow-scrolling: touch;
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+    .categories-scroller .grid-overflow-wrapper .grid {
+        display: flex;
+        white-space: nowrap;
+    }
+</style>
+    
+
 {% schema %}
 {
   "name": "Categories",
