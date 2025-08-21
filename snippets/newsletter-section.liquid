@@ -24,7 +24,9 @@
                 {% render block %}
               {%- when 'title' -%}
                 {%- if block.settings.title != blank -%}
-                  <p class="{% if block.settings.heading_size != blank %}{{ block.settings.heading_size }}{% else %}h2{% endif %}">{{ block.settings.title | escape }}</p>
+                  <p class="{% if block.settings.heading_size != blank %}{{ block.settings.heading_size }}{% else %}h2{% endif %}">{{ block.settings.title | escape }}
+                    {% if block.setting.image != blank %}{{ block.setting.image | image_url: width: '100x' | image_tag }} {% endif %}
+                  </p>
                 {%- endif -%}
               {%- when 'text' -%}
                 {%- if block.settings.text != blank -%}
