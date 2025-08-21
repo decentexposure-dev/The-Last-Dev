@@ -21,7 +21,7 @@
 
         <!-- custom controls -->
         <div class="flickity-controls" aria-hidden="false">
-          <button class="flickity-button flickity-prev-custom flickity-prev-{{ section.id }}"
+          <button class="flickity-button flickity-prev-custom custom-prev flickity-prev-{{ section.id }}"
                   type="button"
                   role="button"
                   aria-label="Previous slide"
@@ -36,7 +36,7 @@
 
           </button>
 
-          <button class="flickity-button flickity-next-custom flickity-next-{{ section.id }}"
+          <button class="flickity-button flickity-next-custom custom-next flickity-next-{{ section.id }}"
                   type="button"
                   role="button"
                   aria-label="Next slide"
@@ -158,8 +158,8 @@
 
 document.querySelectorAll('.custom-slider-wrapper').forEach(wrapper => {
   const slider = wrapper.querySelector('.product-slider');
-  const prevBtn = wrapper.querySelector('.flickity-prev-{{ section.id }}');
-  const nextBtn = wrapper.querySelector('.flickity-next-{{ section.id }}');
+  const prevBtn = wrapper.querySelector('.custom-prev');
+  const nextBtn = wrapper.querySelector('.custom-next');
 
   const flkty = Flickity.data(slider);
 
