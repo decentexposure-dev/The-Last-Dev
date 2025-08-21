@@ -153,6 +153,70 @@
         "lazyload_images": true
       }
     },
+    "featured_categories_PwC8zh": {
+      "type": "featured-categories",
+      "blocks": {
+        "image_eJ97C6": {
+          "type": "image",
+          "settings": {
+            "title": "Title",
+            "link": "",
+            "bgcolor": "",
+            "color": ""
+          }
+        },
+        "image_NYmbWF": {
+          "type": "image",
+          "settings": {
+            "title": "Title",
+            "link": "",
+            "bgcolor": "",
+            "color": ""
+          }
+        },
+        "image_BxQzCr": {
+          "type": "image",
+          "settings": {
+            "title": "Title",
+            "link": "",
+            "bgcolor": "",
+            "color": ""
+          }
+        },
+        "image_4BiJ9g": {
+          "type": "image",
+          "settings": {
+            "title": "Title",
+            "link": "",
+            "bgcolor": "",
+            "color": ""
+          }
+        },
+        "image_NhGeiT": {
+          "type": "image",
+          "settings": {
+            "title": "Title",
+            "link": "",
+            "bgcolor": "",
+            "color": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_eJ97C6",
+        "image_NYmbWF",
+        "image_BxQzCr",
+        "image_4BiJ9g",
+        "image_NhGeiT"
+      ],
+      "name": "Categories",
+      "settings": {
+        "title": "Explore What’s Hot",
+        "divider": false,
+        "per_row": 4,
+        "enable_gutter": true
+      }
+    },
     "slideshow_VVkjm9": {
       "type": "slideshow",
       "blocks": {
@@ -179,7 +243,7 @@
         "image_xHc6eE"
       ],
       "custom_css": [
-        ".slideshow-wrapper {--colorHeroText: #F3ECDB;}",
+        ".slideshow-wrapper {--colorHeroText: #f3ecdb;}",
         ".hero__text-shadow {text-align: left; max-width: 350px;}"
       ],
       "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
@@ -371,6 +435,7 @@
     "slideshow",
     "rich_text_RFyUMR",
     "promo-grid-1",
+    "featured_categories_PwC8zh",
     "slideshow_VVkjm9",
     "product_slider_W9AHfK",
     "newsletter_zfYc6d",
