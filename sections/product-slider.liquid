@@ -142,6 +142,8 @@
   document.querySelectorAll('.product-slider').forEach(slider => {
   // check if already initialized by Impulse
   let flkty = Flickity.data(slider);
+  const prev = wrapper.querySelector('.flickity-prev-custom');
+  const next = wrapper.querySelector('.flickity-next-custom');
 
   // If not, initialize it
   if (!flkty) {
@@ -152,6 +154,11 @@
       pageDots: false,
       prevNextButtons: false // use custom buttons if needed
     });
+  }
+
+  if (flkty) {
+    prev?.addEventListener('click', () => flkty.previous());
+    next?.addEventListener('click', () => flkty.next());
   }
 });
 
