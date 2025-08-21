@@ -333,6 +333,18 @@
         "divider": false
       }
     },
+    "product_slider_XMUbWX": {
+      "type": "product-slider",
+      "name": "Product Slider",
+      "settings": {
+        "title": "<em>Women’s </em>Footwear",
+        "home_featured_products": "authentic-originals-womens",
+        "per_row": 4,
+        "rows": 2,
+        "view_all": false,
+        "divider": false
+      }
+    },
     "featured_collection_fRVrGx": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.featured_collection.name",
@@ -398,6 +410,7 @@
     "map",
     "slideshow_VVkjm9",
     "product_slider_W9AHfK",
+    "product_slider_XMUbWX",
     "featured_collection_fRVrGx",
     "slideshow_XUTMWx"
   ]
