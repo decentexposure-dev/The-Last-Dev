@@ -380,6 +380,57 @@
         "bgimage": "shopify://shop_images/Rectangle_26.png"
       }
     },
+    "gallery_collage_GgcLBK": {
+      "type": "gallery-collage",
+      "blocks": {
+        "image_gg3Wp9": {
+          "type": "image",
+          "settings": {
+            "gallery_image": "shopify://shop_images/Rectangle_28.png"
+          }
+        },
+        "image_HP7MCt": {
+          "type": "image",
+          "settings": {
+            "gallery_image": "shopify://shop_images/Rectangle_31.png"
+          }
+        },
+        "image_wh6JCw": {
+          "type": "image",
+          "settings": {
+            "gallery_image": "shopify://shop_images/Rectangle_32.png"
+          }
+        },
+        "image_JgECMP": {
+          "type": "image",
+          "settings": {
+            "gallery_image": "shopify://shop_images/Rectangle_29.png"
+          }
+        },
+        "image_3gXfiE": {
+          "type": "image",
+          "settings": {
+            "gallery_image": "shopify://shop_images/Rectangle_30.png"
+          }
+        },
+        "image_bJrB4J": {
+          "type": "image",
+          "settings": {
+            "gallery_image": "shopify://shop_images/Rectangle_33.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_gg3Wp9",
+        "image_HP7MCt",
+        "image_wh6JCw",
+        "image_JgECMP",
+        "image_3gXfiE",
+        "image_bJrB4J"
+      ],
+      "name": "Collage Gallery",
+      "settings": {}
+    },
     "product_slider_XMUbWX": {
       "type": "product-slider",
       "name": "Product Slider",
@@ -452,6 +503,7 @@
     "slideshow_VVkjm9",
     "product_slider_W9AHfK",
     "newsletter_zfYc6d",
+    "gallery_collage_GgcLBK",
     "product_slider_XMUbWX",
     "slideshow_XUTMWx"
   ]
