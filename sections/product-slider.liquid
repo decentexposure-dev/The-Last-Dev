@@ -181,6 +181,18 @@
     // Example: flkty.next(), flkty.previous(), flkty.select(2), etc.
   </script>
 
+  <style>
+    #CollectionSection-{{ section.id }} .section-header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #CollectionSection-{{ section.id }} .flickity-controls {
+      display: flex;
+      gap: 10px;
+    }
+  </style>
+
 {% schema %}
 {
   "name": "Product Slider",
