@@ -15,6 +15,7 @@
         "image-1": {
           "type": "image",
           "settings": {
+            "block_image": "shopify://shop_images/Group_16.png",
             "top_subheading": "",
             "title": "Final Days. <em>Extra Savings.</em>",
             "title_size": 48,
