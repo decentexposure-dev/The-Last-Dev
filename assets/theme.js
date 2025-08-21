@@ -8253,7 +8253,7 @@ theme.recentlyViewed = {
       this.flickity = new theme.Slideshow(this.slideshow, defaults);
     });
 
-    return Testimonials;
+    return productSlider;
   })();
 
   theme.isStorageSupported = function(type) {
