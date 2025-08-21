@@ -18,38 +18,51 @@
 {% endschema %}
 
 <div class="collage-gallery">
-  {% for block in section.blocks %}
-    {% if forloop.first %}
-      <!-- First full height -->
-      <div class="collage-item full">
-        <img src="{{ block.settings.gallery_image | img_url: '800x' }}" alt="Gallery image">
+  {% assign blocks = section.blocks %}
+
+  {% if blocks.size > 0 %}
+    <!-- 1st full -->
+    <div class="collage-item full">
+      <img src="{{ blocks[0].settings.gallery_image | img_url: '800x' }}" alt="Gallery image">
+    </div>
+  {% endif %}
+
+  {% if blocks.size > 2 %}
+    <!-- 2nd + 3rd stacked -->
+    <div class="collage-stack">
+      <div class="collage-item stack-60">
+        <img src="{{ blocks[1].settings.gallery_image | img_url: '800x' }}" alt="Gallery image">
       </div>
-    {% elsif forloop.index == 2 %}
-      <!-- 2nd + 3rd stacked column -->
-      <div class="collage-stack">
-        <div class="collage-item stack-60">
-          <img src="{{ block.settings.gallery_image | img_url: '800x' }}" alt="Gallery image">
-        </div>
-        {% assign third = section.blocks[forloop.index0] | plus: 1 %}
-        {% if section.blocks[forloop.index] %}
-        <div class="collage-item stack-40">
-          <img src="{{ section.blocks[forloop.index].settings.gallery_image | img_url: '800x' }}" alt="Gallery image">
-        </div>
-        {% endif %}
+      <div class="collage-item stack-40">
+        <img src="{{ blocks[2].settings.gallery_image | img_url: '800x' }}" alt="Gallery image">
       </div>
-    {% elsif forloop.last %}
-      <!-- Last full height -->
-      <div class="collage-item full">
-        <img src="{{ block.settings.gallery_image | img_url: '800x' }}" alt="Gallery image">
+    </div>
+  {% endif %}
+
+  {% if blocks.size > 4 %}
+    <!-- 4th + 5th stacked -->
+    <div class="collage-stack">
+      <div class="collage-item stack-60">
+        <img src="{{ blocks[3].settings.gallery_image | img_url: '800x' }}" alt="Gallery image">
       </div>
-    {% endif %}
-  {% endfor %}
+      <div class="collage-item stack-40">
+        <img src="{{ blocks[4].settings.gallery_image | img_url: '800x' }}" alt="Gallery image">
+      </div>
+    </div>
+  {% endif %}
+
+  {% if blocks.size > 5 %}
+    <!-- Last full -->
+    <div class="collage-item full">
+      <img src="{{ blocks[5].settings.gallery_image | img_url: '800x' }}" alt="Gallery image">
+    </div>
+  {% endif %}
 </div>
 
 <style>
 .collage-gallery {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* 3 main columns */
+  grid-template-columns: repeat(4, 1fr);
   gap: 12px;
   align-items: stretch;
 }
@@ -61,12 +74,12 @@
   position: relative;
 }
 
-/* First & Last = full height */
+/* Full height columns */
 .collage-item.full {
   height: 500px;
 }
 
-/* Middle stacked column */
+/* Stacked columns */
 .collage-stack {
   display: grid;
   grid-template-rows: 60% 40%;
