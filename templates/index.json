@@ -211,7 +211,7 @@
       ],
       "name": "Categories",
       "settings": {
-        "title": "Explore What’s Hot",
+        "title": "Explore <em>What’s Hot</em>",
         "divider": false,
         "per_row": 4,
         "enable_gutter": true
