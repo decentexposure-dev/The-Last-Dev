@@ -11,6 +11,9 @@
   {% if section.settings.bgimage != blank %}
     .newsletter-{{ section.id }}{
       background-image:url({{ section.settings.bgimage | img_url: 'master' }});
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
     }
   {% endif %}  
 {%- endstyle -%}
