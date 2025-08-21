@@ -8225,7 +8225,6 @@ theme.recentlyViewed = {
     return Testimonials;
   })();
   
- 
 
   theme.isStorageSupported = function(type) {
     // Return false if we are in an iframe without access to sessionStorage
@@ -8331,7 +8330,6 @@ theme.recentlyViewed = {
     theme.sections.register('newsletter-popup', theme.NewsletterPopup);
     theme.sections.register('collection-header', theme.CollectionHeader);
     theme.sections.register('collection-grid', theme.Collection);
-    theme.sections.register('product-slider', theme.productSlider);
 
     theme.initGlobals();
     theme.initQuickShop();
