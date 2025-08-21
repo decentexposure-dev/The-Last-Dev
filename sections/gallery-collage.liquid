@@ -1,58 +1,62 @@
-{%- if section.settings.title != blank or section.settings.view_all -%}
-<div class="page-width">
-    <div class="section-header">
-    <h2 class="section-header__title">
-        {{ section.settings.title }}
-    </h2>
-    {%- if section.settings.text != blank -%}
-        <div class="rte">{{ section.settings.text }}</div>
+<div data-section-id="{{ section.id }}"
+  data-section-type="gallery-collage"
+    class="gallery-collage">
+    {%- if section.settings.title != blank or section.settings.view_all -%}
+    <div class="page-width">
+        <div class="section-header">
+        <h2 class="section-header__title">
+            {{ section.settings.title }}
+        </h2>
+        {%- if section.settings.text != blank -%}
+            <div class="rte">{{ section.settings.text }}</div>
+        {%- endif -%}
+        </div>
+    </div>
     {%- endif -%}
-    </div>
-</div>
-{%- endif -%}
 
-<div class="page-width">
-<div class="collage-gallery">
-  {% assign blocks = section.blocks %}
+    <div class="page-width">
+        <div class="collage-gallery">
+        {% assign blocks = section.blocks %}
 
-  {% if blocks.size > 0 %}
-    <!-- 1st full -->
-    <div class="collage-item full"  data-aos>
-      <img src="{{ blocks[0].settings.gallery_image | img_url: 'master' }}" alt="Gallery image">
-    </div>
-  {% endif %}
+        {% if blocks.size > 0 %}
+            <!-- 1st full -->
+            <div class="collage-item full"  data-aos>
+            <img src="{{ blocks[0].settings.gallery_image | img_url: 'master' }}" alt="Gallery image">
+            </div>
+        {% endif %}
 
-  {% if blocks.size > 2 %}
-    <!-- 2nd + 3rd stacked (30/70) -->
-    <div class="collage-stack stack-30-70"  data-aos>
-      <div class="collage-item stack-top">
-        <img src="{{ blocks[1].settings.gallery_image | img_url: 'master' }}" alt="Gallery image">
-      </div>
-      <div class="collage-item stack-bottom" data-aos>
-        <img src="{{ blocks[2].settings.gallery_image | img_url: 'master' }}" alt="Gallery image">
-      </div>
-    </div>
-  {% endif %}
+        {% if blocks.size > 2 %}
+            <!-- 2nd + 3rd stacked (30/70) -->
+            <div class="collage-stack stack-30-70"  data-aos>
+            <div class="collage-item stack-top">
+                <img src="{{ blocks[1].settings.gallery_image | img_url: 'master' }}" alt="Gallery image">
+            </div>
+            <div class="collage-item stack-bottom" data-aos>
+                <img src="{{ blocks[2].settings.gallery_image | img_url: 'master' }}" alt="Gallery image">
+            </div>
+            </div>
+        {% endif %}
 
-  {% if blocks.size > 4 %}
-    <!-- 4th + 5th stacked (70/30) -->
-    <div class="collage-stack stack-70-30" data-aos>
-      <div class="collage-item stack-top">
-        <img src="{{ blocks[3].settings.gallery_image | img_url: 'master' }}" alt="Gallery image">
-      </div>
-      <div class="collage-item stack-bottom" data-aos>
-        <img src="{{ blocks[4].settings.gallery_image | img_url: 'master' }}" alt="Gallery image">
-      </div>
-    </div>
-  {% endif %}
+        {% if blocks.size > 4 %}
+            <!-- 4th + 5th stacked (70/30) -->
+            <div class="collage-stack stack-70-30" data-aos>
+            <div class="collage-item stack-top">
+                <img src="{{ blocks[3].settings.gallery_image | img_url: 'master' }}" alt="Gallery image">
+            </div>
+            <div class="collage-item stack-bottom" data-aos>
+                <img src="{{ blocks[4].settings.gallery_image | img_url: 'master' }}" alt="Gallery image">
+            </div>
+            </div>
+        {% endif %}
 
-  {% if blocks.size > 5 %}
-    <!-- 6th full -->
-    <div class="collage-item full" data-aos>
-      <img src="{{ blocks[5].settings.gallery_image | img_url: 'master' }}" alt="Gallery image">
+        {% if blocks.size > 5 %}
+            <!-- 6th full -->
+            <div class="collage-item full" data-aos>
+            <img src="{{ blocks[5].settings.gallery_image | img_url: 'master' }}" alt="Gallery image">
+            </div>
+        {% endif %}
+        </div>
     </div>
-  {% endif %}
-</div>
 </div>
 
 <style>
