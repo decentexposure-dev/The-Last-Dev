@@ -161,35 +161,22 @@ document.querySelectorAll('.custom-slider-wrapper').forEach(wrapper => {
   const prevBtn = wrapper.querySelector('.custom-prev');
   const nextBtn = wrapper.querySelector('.custom-next');
 
+  // get Flickity instance already created by Impulse
   const flkty = Flickity.data(slider);
 
   if (flkty) {
-    // update button states on load + when slide changes
-    function updateButtons() {
-      // disable prev if first slide
-      if (flkty.selectedIndex === 0) {
-        prevBtn.disabled = true;
-      } else {
-        prevBtn.disabled = false;
-      }
-
-      // disable next if last slide
-      if (flkty.selectedIndex === flkty.slides.length - 1) {
-        nextBtn.disabled = true;
-      } else {
-        nextBtn.disabled = false;
-      }
-    }
-
-    // run on init
-    updateButtons();
-
-    // run whenever the slide changes
-    flkty.on('change', updateButtons);
-
-    // button clicks
+    // button clicks control only this slider
     prevBtn.addEventListener('click', () => flkty.previous());
     nextBtn.addEventListener('click', () => flkty.next());
+
+    // disable/enable buttons at edges
+    function updateButtons() {
+      prevBtn.disabled = flkty.selectedIndex === 0;
+      nextBtn.disabled = flkty.selectedIndex === flkty.slides.length - 1;
+    }
+
+    updateButtons();
+    flkty.on('change', updateButtons);
   }
 });
 
