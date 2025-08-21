@@ -32,15 +32,15 @@
         endcapture
       -%}
 
-      {%- render 'collection-grid-item',
-        collection: collection,
-        block: block,
-        gridView: gridView,
-        background_position: background_position,
-        per_row: section.settings.per_row,
-        sizeVariable: gridView,
-        fallback: 'variable'
-      -%}
+      <div class="grid__item {{ gridView }}" {{ block.shopify_attributes }}>
+        <a href="{{ block.settings.link }}" class="" data-aos="row-of-{{ section.settings.per_row }}">
+          <div class="category-img">
+            <img src="{{ block.settings.image | img_url: 'master' }}" alt="">
+          </div>
+          <div class="">{{ block.settings.title }}</div>
+        </a>
+
+      </div>
     {%- endfor -%}
 
     {%- if isEmpty -%}
