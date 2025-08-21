@@ -13,7 +13,15 @@
     <!-- 2nd + 3rd stacked (30/70) -->
     <div class="collage-stack stack-30-70"  data-aos>
       <div class="collage-item stack-top">
-        <img src="{{ blocks[1].settings.gallery_image | img_url: 'master' }}" alt="Gallery image">
+        {%- render 'image-element',
+        img: blocks[1].settings.gallery_image,
+        widths: '180, 360, 540, 750, 900, 1080',
+        loading: true,
+        sizeVariable: sizeVariable,
+        fallback: fallback,
+        classes: 'feature-row__image',
+        -%}
+       
       </div>
       <div class="collage-item stack-bottom" data-aos>
         <img src="{{ blocks[2].settings.gallery_image | img_url: 'master' }}" alt="Gallery image">
