@@ -89,6 +89,28 @@
           "settings": {
             "show_footer_title": true,
             "menu": "customer-service",
+            "container_width": 16
+          }
+        },
+        "custom_kkariG": {
+          "type": "custom",
+          "settings": {
+            "show_footer_title": true,
+            "title": "Stay Connected",
+            "text": "",
+            "show_payment": false,
+            "show_social": true,
+            "container_width": 16
+          }
+        },
+        "custom_PPgi3f": {
+          "type": "custom",
+          "settings": {
+            "show_footer_title": true,
+            "title": "Payment Methods",
+            "text": "",
+            "show_payment": true,
+            "show_social": false,
             "container_width": 20
           }
         }
@@ -97,7 +119,9 @@
         "menu_zFrQCX",
         "menu-1",
         "menu-2",
-        "menu-3"
+        "menu-3",
+        "custom_kkariG",
+        "custom_PPgi3f"
       ],
       "settings": {
         "show_locale_selector": true,
