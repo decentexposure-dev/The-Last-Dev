@@ -365,8 +365,8 @@
         "image_width": "33",
         "image_mask": "none",
         "image_position": "right",
-        "color_background": "#f9f9f9",
-        "color_text": "#1c1d1d",
+        "color_background": "#1b0d0d",
+        "color_text": "#f3ecdb",
         "top_padding": true,
         "bottom_padding": true,
         "bgimage": "shopify://shop_images/Rectangle_26.png"
