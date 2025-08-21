@@ -328,7 +328,7 @@
         "title": "Featured collection",
         "home_featured_products": "authentic-original",
         "per_row": 4,
-        "rows": 1,
+        "rows": 3,
         "mobile_scrollable": true,
         "view_all": true,
         "divider": false
