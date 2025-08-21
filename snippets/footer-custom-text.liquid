@@ -25,6 +25,20 @@
         {%- endif -%}
 
         {{ block.settings.text }}
+
+        {% if block.settings.show_social %}
+        <ul class="no-bullets site-footer__linklist">
+          {%- for link in linklists[block.settings.menu].links -%}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {%- endfor -%}
+        </ul>
+        {% endif %}
+
+        {% if block.settings.show_payment %}
+          <div class="footerpayment">
+
+          </div>
+        {% endif %}  
       </div>
     </div>
   </div>
