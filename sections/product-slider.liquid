@@ -139,11 +139,28 @@
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
 <script>
- document.querySelectorAll('.custom-slider-wrapper').forEach(wrapper => {
+ document.querySelectorAll('.product-slider').forEach(slider => {
+  // check if already initialized by Impulse
+  let flkty = Flickity.data(slider);
+
+  // If not, initialize it
+  if (!flkty) {
+    new Flickity(slider, {
+      cellAlign: 'left',
+      contain: true,
+      groupCells: true,
+      pageDots: false,
+      prevNextButtons: false // use custom buttons if needed
+    });
+  }
+});
+
+
+document.querySelectorAll('.custom-slider-wrapper').forEach(wrapper => {
   const slider = wrapper.querySelector('.product-slider');
   const flkty = Flickity.data(slider);
-  const prev = wrapper.querySelector('.flickity-prev-custom');
-  const next = wrapper.querySelector('.flickity-next-custom');
+  const prev = wrapper.querySelector('.custom-prev');
+  const next = wrapper.querySelector('.custom-next');
 
   if (flkty) {
     prev?.addEventListener('click', () => flkty.previous());
