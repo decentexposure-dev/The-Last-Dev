@@ -56,7 +56,7 @@
   {%- endif -%}
 
   <div class="page-width{% if section.settings.mobile_scrollable %} page-width--flush-small{% endif %}">
-    <div{% if section.settings.mobile_scrollable %} class="grid-overflow-wrapper"{% endif %}>
+    <div id="custom-slider-wrapper" {% if section.settings.mobile_scrollable %} class="grid-overflow-wrapper"{% endif %}>
       <div id="productSlider-{{ section.id }}" class="grid grid--uniform product-slider js-product-slide"{% if section.settings.mobile_scrollable %} data-aos="overflow__animation"{% endif %}
       >
         {%- liquid
@@ -139,9 +139,9 @@
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
 <script>
-  
+  document.querySelectorAll('#custom-slider-wrapper').forEach(wrapper => {
     // initialize Flickity (if you prefer JS-init instead of data-attribute):
-    var carouselElem = document.querySelector('#productSlider-{{ section.id }}');
+    var carouselElem = document.querySelector('.product-slider');
     var flkty = new Flickity(carouselElem, {
       cellAlign: 'left',
       contain: true,
@@ -187,6 +187,8 @@
 
     // Optional: support for external controls (e.g., enable/disable from code)
     // Example: flkty.next(), flkty.previous(), flkty.select(2), etc.
+
+    });
   </script>
 
 <style>
