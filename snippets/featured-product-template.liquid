@@ -77,8 +77,7 @@
     <div class="page-width">
         <div class="product-section-wrap">
         <div class="product-section-header">
-            <div class="product-section-header-title">
-              {%- if settings.vendor_enable -%}
+            {%- if settings.vendor_enable -%}
                 <div class="product-single__vendor">
                   {%- assign vendor_handle = product.vendor | handleize -%}
                   {%- if collections[vendor_handle] != empty -%}
@@ -90,6 +89,8 @@
                   {%- endif -%}
                 </div>
               {%- endif -%}
+            <div class="product-section-header-in">  
+            <div class="product-section-header-title">             
                 <h1 class="h2 product-single__title">
                   {%- unless product.empty? -%}
                     {{ product.title }}
@@ -145,6 +146,7 @@
                     </span>
                     {%- endif -%}
                 </div>
+            </div>
             </div>
         </div>
         
