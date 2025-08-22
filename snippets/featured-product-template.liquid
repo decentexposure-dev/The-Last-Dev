@@ -175,7 +175,7 @@
         {%- for block in blocks -%}
             {%- case block.type -%}
                 {%- when 'variant_picker' -%}
-                    <div class="product-block" {% if block.settings.product_dynamic_variants_enable %}data-dynamic-variants-enabled{% endif %} {{ block.shopify_attributes }}>
+                    <div class="variantpicker product-block" {% if block.settings.product_dynamic_variants_enable %}data-dynamic-variants-enabled{% endif %} {{ block.shopify_attributes }}>
                       {%- unless product.has_only_default_variant -%}
                         {%- for option in product.options_with_values -%}
                           {%- liquid
@@ -221,7 +221,7 @@
                       {%- endunless -%}
                     </div>
                   {%- when 'buy_buttons' -%}
-                    <div class="product-block" {{ block.shopify_attributes }}>
+                    <div class="buynowbutton product-block" {{ block.shopify_attributes }}>
                       {%- unless product.empty? -%}
                         <div class="product-block">
                           {%- render 'product-form',
