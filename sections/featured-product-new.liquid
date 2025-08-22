@@ -19,6 +19,15 @@
 
 {%- if section.settings.divider -%}</div>{%- endif -%}
 
+
+<style>
+{% if section.settings.bgimage != blank %}
+    .product-section{
+        background-image:url({{ section.settings.bgimage | img_url: 'master' }});
+    }
+{% endif %}    
+</style>
+
 {% schema %}
 {
   "name": "Product section",
@@ -39,6 +48,11 @@
       "type": "checkbox",
       "id": "sku_enable",
       "label": "t:sections.featured-product.settings.sku_enable.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "bgimage",
+      "label": "Background image"
     },
     {
       "type": "header",
