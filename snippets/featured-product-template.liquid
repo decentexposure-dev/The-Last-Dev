@@ -77,8 +77,7 @@
     <div class="page-width">
         <div class="product-section-wrap">
         <div class="product-section-header">
-            <div class="grid">
-            <div class="grid__item medium-up--one-half product-section-header-title">
+            <div class="product-section-header-title">
               {%- if settings.vendor_enable -%}
                 <div class="product-single__vendor">
                   {%- assign vendor_handle = product.vendor | handleize -%}
@@ -99,7 +98,7 @@
                   {%- endunless -%}
                 </h1>
             </div>
-            <div class="grid__item medium-up--one-half product-section-header-price">
+            <div class="product-section-header-price">
               <div class="product-block product-block--price" {{ block.shopify_attributes }}>
                     {%- assign hide_sale_price = true -%}
                     {%- if product.compare_at_price_max > product.price -%}
@@ -146,7 +145,6 @@
                     </span>
                     {%- endif -%}
                 </div>
-            </div>
             </div>
         </div>
         
