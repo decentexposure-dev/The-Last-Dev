@@ -1,4 +1,4 @@
-{%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
+
 
 {%- assign product = all_products[section.settings.featured_product] -%}
 {%- render 'product-template',
@@ -16,8 +16,6 @@
   video_style: section.settings.product_video_style,
   context: 'featured-product',
 -%}
-
-{%- if section.settings.divider -%}</div>{%- endif -%}
 
 
 <style>
@@ -46,12 +44,6 @@
       "type": "product",
       "id": "featured_product",
       "label": "t:sections.featured-product.settings.featured_product.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "divider",
-      "label": "t:sections.featured-product.settings.divider.label",
-      "default": false
     },
     {
       "type": "checkbox",
