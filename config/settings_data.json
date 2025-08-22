@@ -57,6 +57,7 @@
     "product_grid_image_size": "natural",
     "product_grid_image_fill": true,
     "product_hover_image": true,
+    "swatch_style": "square",
     "collection_grid_style": "overlaid",
     "collection_grid_shape": "portrait",
     "collection_grid_image": "product",
