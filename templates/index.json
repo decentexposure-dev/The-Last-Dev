@@ -160,12 +160,6 @@
           "type": "price",
           "settings": {}
         },
-        "description_wGbKpt": {
-          "type": "description",
-          "settings": {
-            "is_tab": false
-          }
-        },
         "variant_picker_iJz8DY": {
           "type": "variant_picker",
           "settings": {
@@ -186,7 +180,6 @@
       },
       "block_order": [
         "price_JzqmMC",
-        "description_wGbKpt",
         "variant_picker_iJz8DY",
         "buy_buttons_hc6LGp"
       ],
