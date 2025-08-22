@@ -107,6 +107,7 @@
                         {%- assign hide_sale_price = false -%}
                     {%- endif -%}
 
+                    <div class="">
                     <span data-product-price
                     class="product__price{% if current_variant.compare_at_price > current_variant.price %} on-sale{% endif %}">
                     {%- unless product.empty? -%}
@@ -115,6 +116,7 @@
                         {{ 1999 | money }}
                     {%- endunless -%}
                     </span>
+                    </div>
 
                     {%- if settings.product_save_amount -%}
                     {%- if settings.product_save_type == 'dollar' -%}
