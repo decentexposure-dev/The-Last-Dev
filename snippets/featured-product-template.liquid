@@ -254,19 +254,7 @@
         <div class="grid__item {{ product_description_width }}">
 
           <div class="product-single__meta">
-            <div class="product-block product-block--header">
-              {%- if settings.show_breadcrumbs and isModal != true -%}
-                {%- render 'breadcrumbs' -%}
-              {%- endif -%}
 
-              {%- if sku_enable -%}
-                <p data-sku class="product-single__sku">
-                  {%- if current_variant.sku -%}
-                    {{ current_variant.sku }}
-                  {%- endif -%}
-                </p>
-              {%- endif -%}
-            </div>
 
             <div data-product-blocks>
               {%- capture form_id -%}AddToCartForm-{{ section_id }}-{{ product.id }}{%- endcapture -%}
