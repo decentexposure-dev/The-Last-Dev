@@ -13354,7 +13354,7 @@ h1 em, h2 em  {
  
 }
 .product-section-wrap .product-block {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 .product-section-header-price {
   font-size: 32px;
@@ -13425,4 +13425,23 @@ h1 em, h2 em  {
 }
 .product-section-image .product__thumb-arrow.product__thumb-arrow--prev svg {
   transform: rotate(180deg);
+}
+.product-section-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.product-section-bottom .variantpicker {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.product-section-bottom .variantpicker .variant-wrapper {
+  margin: 0;
+}
+.product-section-bottom .variantpicker .variant__label[for] {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: none;
+  letter-spacing: 0;
 }
