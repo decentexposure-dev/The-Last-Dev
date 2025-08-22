@@ -75,6 +75,7 @@
 
   <div class="page-content page-content--product product-section-featured">
     <div class="page-width">
+        <div class="product-section-wrap">
         <div class="grid product-section-header">
             <div class="grid__item medium-up--one-half product-section-header-title">
               {%- if settings.vendor_enable -%}
@@ -243,12 +244,9 @@
             {%- endcase -%}    
         {%- endfor -%}  
         </div>   
+        </div>
         
-        
-
-    </div>
-  </div>
-  {%- unless product.empty? -%}
+        {%- unless product.empty? -%}
               <textarea class="hide" aria-hidden="true" aria-label="Product JSON" data-variant-json>
                 {{ product.variants | json }}
               </textarea>
@@ -258,4 +256,8 @@
                 </textarea>
               {%- endif -%}
             {%- endunless -%}
+
+    </div>
+  </div>
+  
 </div>
