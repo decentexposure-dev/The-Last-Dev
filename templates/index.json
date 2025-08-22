@@ -186,7 +186,6 @@
       "name": "Product section",
       "settings": {
         "featured_product": "moab-speed-2-leather-waterproof-mens-1",
-        "divider": false,
         "sku_enable": false,
         "bgimage": "shopify://shop_images/Rectangle_80.png",
         "bgcolor": "#402323",
@@ -194,8 +193,8 @@
         "image_position": "left",
         "image_size": "medium",
         "product_zoom_enable": true,
-        "thumbnail_position": "beside",
-        "thumbnail_arrows": false,
+        "thumbnail_position": "below",
+        "thumbnail_arrows": true,
         "mobile_layout": "partial",
         "enable_video_looping": true,
         "product_video_style": "muted"
