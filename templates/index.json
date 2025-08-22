@@ -276,8 +276,8 @@
         "divider": false,
         "bgcolor": "#f5f1e9",
         "remove_margin": true,
-        "padding_top": 36,
-        "padding_bottom": 36,
+        "padding_top": 64,
+        "padding_bottom": 44,
         "padding_top_mb": 36,
         "padding_bottom_mb": 36
       }
