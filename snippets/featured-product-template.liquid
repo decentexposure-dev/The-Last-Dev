@@ -126,7 +126,7 @@
                     {%- endif -%}
                     <span data-save-price class="product__price-savings{% if hide_sale_price %} hide{% endif %}">
                         {%- unless hide_sale_price -%}
-                        {{ 'products.general.save_html' | t: saved_amount: saved_amount }}
+                        - {{  saved_amount }} OFF
                         {%- endunless -%}
                     </span>
                     {%- endif -%}
