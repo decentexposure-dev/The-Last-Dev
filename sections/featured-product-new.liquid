@@ -21,11 +21,16 @@
 
 
 <style>
-{% if section.settings.bgimage != blank %}
     .product-section{
+        {% if section.settings.bgimage != blank %}
         background-image:url({{ section.settings.bgimage | img_url: 'master' }});
+        {% endif %}  
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        background-color:{{ section.settings.bgcolor }};
+        color:{{ section.settings.color }};
     }
-{% endif %}    
 </style>
 
 {% schema %}
@@ -50,9 +55,25 @@
       "label": "t:sections.featured-product.settings.sku_enable.label"
     },
     {
+      "type": "header",
+      "content": "Style"
+    },
+    {
       "type": "image_picker",
       "id": "bgimage",
       "label": "Background image"
+    },
+    {
+      "type": "color",
+      "id": "bgcolor",
+      "label": "Background color",
+      "default": "#402323"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Text color",
+      "default": "#F3ECDB"
     },
     {
       "type": "header",
