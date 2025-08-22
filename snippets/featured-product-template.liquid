@@ -255,49 +255,6 @@
               {%- endif -%}
             {%- endunless -%}
 
-      <div class="grid{% unless image_position == 'left' %} grid--product-images-right{% endunless %}{% if mobile_layout == 'partial' %} grid--product-images--partial{% endif %}">
-        {%- if image_position == 'left' -%}
-          <div class="grid__item {{ product_image_width }} product-single__sticky">
-            
-          </div>
-        {%- endif -%}
-
-        <div class="grid__item {{ product_description_width }}">
-
-          <div class="product-single__meta">
-
-
-            <div data-product-blocks>
-
-            </div>
-
-            
-          </div>
-        </div>
-
-        {%- unless image_position == 'left' -%}
-          <div class="grid__item {{ product_image_width }} product-single__sticky">
-            {%- render 'product-images',
-              section_id: section_id,
-              product: product,
-              isModal: isModal,
-              image_position: image_position,
-              product_zoom_enable: product_zoom_enable,
-              product_zoom_size: product_zoom_size,
-              product_image_size: product_image_size,
-              thumbnail_arrows: thumbnail_arrows,
-              thumbnail_position: thumbnail_position,
-              video_looping: video_looping,
-              video_style: video_style,
-              context: context,
-              sizes: sizes,
-              sizeVariable: product_image_width,
-              fallback: fallback,
-              mobile_layout: mobile_layout,
-            -%}
-          </div>
-        {%- endunless -%}
-      </div>
     </div>
   </div>
 </div>
