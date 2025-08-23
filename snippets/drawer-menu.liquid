@@ -134,11 +134,13 @@
                 {% if link.active or link.child_active %}style="height: auto;"{% endif %}>
                 <div class="collapsible-content__inner">
                   <ul class="mobile-nav__sublist">
-                    aaa
-                    </ul>
-                    </div>
-                    </div>
-                {% endif %}
+                    <li class="mobile-nav__item">
+                      {{ megamenu_blocks_mobile }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            {% endif %}
         </li>
       {% else %}  
           <li class="mobile-nav__item appear-animation appear-delay-{{ animation_row }}">
