@@ -23,22 +23,18 @@
     -%}
 
     
-  {% assign matched_block = false %}  
+    {% assign matched_block = false %}
   {% for block in mega_blocks %}
     {% if link.title  == block.settings.title %}
       {% assign matched_block = true %} 
     {% endif %}
   {% endfor %}
 
-    
+
     {%- assign mega_menu_names = '' -%}
-    {%- assign downcased_link_title = link.title | downcase -%}
     {%- for block in section.blocks -%}
-      {%- if block.type == 'mega_menu' -%}     
-        {%- assign downcased_mega_menu_name = block.settings.title | downcase -%}
-        {%- if mega_menu_names contains downcased_link_title -%}
-          
-        {%- endif -%}  
+      {%- if block.type == 'mega_menu' -%}
+        {%- assign mega_menu_names = mega_menu_names | append: block.settings.title | append: ',' -%}
       {%- endif -%}
     {%- endfor -%}
 
