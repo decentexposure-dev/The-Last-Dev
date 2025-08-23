@@ -23,10 +23,10 @@
     -%}
 
     
-    {% assign matched_block = blank %}
+    {% assign matched_block = false %}
   {% for block in mega_blocks %}
     {% if link.title  == block.settings.title %}
-      {% assign matched_block = block %} {{ block.title }}
+      {% assign matched_block = true %} {{ matched_block }}
     {% endif %}
   {% endfor %}
   
