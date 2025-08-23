@@ -36,6 +36,8 @@
       {%- assign custom_mega_menu = true -%}
     {%- endif -%}  
 
+    {% assign custom_mega_menu = section.blocks | where: 'type', 'mega_menu' | where: 'settings.title', link.title | first %}
+
     <li class="site-nav__item site-nav__expanded-item{% if has_dropdown %} site-nav--has-dropdown{% endif %}{% if is_megamenu or custom_mega_menu %} site-nav--is-megamenu{% endif %}">
       {% if is_megamenu or has_dropdown or custom_mega_menu  %}
         <details
