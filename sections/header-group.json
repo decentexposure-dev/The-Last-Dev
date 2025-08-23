@@ -60,7 +60,7 @@
             "column_1_heading": "Footwear",
             "column_1_link": "shopify://collections/boat-shoes-womens",
             "column_1_menu": "",
-            "column_1_width": 24,
+            "column_1_width": 25,
             "column_2": true,
             "column_2_image": "shopify://shop_images/Rectangle_76.png",
             "column_2_heading": "Apparel",
@@ -72,19 +72,19 @@
             "column_3_heading": "Accessories",
             "column_3_link": "",
             "column_3_menu": "",
-            "column_3_width": 24,
+            "column_3_width": 25,
             "column_4": true,
             "column_4_image": "shopify://shop_images/Rectangle_78.png",
             "column_4_heading": "Under $50",
             "column_4_link": "",
             "column_4_menu": "",
-            "column_4_width": 16,
+            "column_4_width": 16.5,
             "column_5": true,
             "column_5_image": "shopify://shop_images/Rectangle_79.png",
             "column_5_heading": "Under $100",
             "column_5_link": "",
             "column_5_menu": "",
-            "column_5_width": 16
+            "column_5_width": 16.5
           }
         }
       },
