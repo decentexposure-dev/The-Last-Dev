@@ -25,9 +25,8 @@
     
     {% assign matched_block = blank %}
   {% for block in mega_blocks %}
-    {% if link.title | handle == block.settings.title %}
+    {% if link.title  == block.settings.title %}
       {% assign matched_block = block %}
-      {{ block.settings.title }}
     {% endif %}
   {% endfor %}
 
