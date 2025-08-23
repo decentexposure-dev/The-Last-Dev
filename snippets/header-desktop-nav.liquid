@@ -6,7 +6,7 @@
     assign offset = 0
   endunless
 -%}
-{% assign mega_blocks = section.blocks | where: 'type', 'mega_menu' %}
+
 <ul
   class="site-nav site-navigation small--hide"
 >
@@ -22,23 +22,16 @@
       endif
     -%}
 
-    
+    {% assign mega_blocks = section.blocks | where: 'type', 'mega_menu' %}
     {% assign matched_block = false %}
     {%- assign mega_menu_names = '' -%}
-  {% for block in mega_blocks %}
-    {% if link.title  == block.settings.title %}
-      {% assign matched_block = true %} 
-    {% endif %}
-    {%- assign mega_menu_names = mega_menu_names | append: block.settings.title | append: ',' -%}
-  {% endfor %}
+    {% for block in mega_blocks %}
+      {% if link.title  == block.settings.title %}
+        {% assign matched_block = true %} 
+      {% endif %}
+      {%- assign mega_menu_names = mega_menu_names | append: block.settings.title | append: ',' -%}
+    {% endfor %}
 
-
-    
-    {%- for block in section.blocks -%}
-      {%- if block.type == 'mega_menu' -%}
-        
-      {%- endif -%}
-    {%- endfor -%}
 
       {%- assign mega_menu_names = mega_menu_names | downcase | split: ',' | compact -%}
 
