@@ -29,9 +29,9 @@
       {%- assign mega_menu_names = mega_menu_names | append: block.settings.title | append: ',' -%}
       {% if link.title  == block.settings.title %}
         {% assign matched_block = true %} 
-      {% endif %}     
+      {% endif %}     {{ mega_menu_names }}
     {% endfor %}
-{{ mega_menu_names }}
+
     {%- assign mega_menu_names = mega_menu_names | downcase | split: ',' | compact -%}
 
       {%- assign downcased_link_title = link.title | downcase -%}
