@@ -128,37 +128,8 @@
         {%- endfor -%}  
       {%- endif -%} 
 
-    {% if matched_block %}  
-      <li class="site-nav__item site-nav__expanded-item{% if has_dropdown %} site-nav--has-dropdown{% endif %}{% if is_megamenu %} site-nav--is-megamenu{% endif %}">
-      {% if is_megamenu or has_dropdown %}
-        <details
-          data-hover="{{ hover_menu }}"
-          id="site-nav-item--{{ forloop.index }}"
-          class="site-nav__details"
-        >
-          <summary
-            data-link="{{ link.url }}"
-            aria-expanded="false"
-            aria-controls="site-nav-item--{{ forloop.index }}"
-            class="site-nav__link site-nav__link--underline{% if has_dropdown %} site-nav__link--has-dropdown{% endif %}"
-          >
-            {{ link.title }} <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="m1.57 1.59 12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none"/></svg>
-          </summary>
-          <div class="site-nav__dropdown megamenu text-left">
-            {{  megamenuimages }}
-            </div>
-              </details>
-      {% else %}
-        <a
-          href="{{ link.url }}"
-          class="site-nav__link site-nav__link--underline{% if has_dropdown %} site-nav__link--has-dropdown{% endif %}"
-        >
-          {{ link.title }}
-        </a>
-      {% endif %}
-      </li>
-
-    {% else %}  
+     
+     
     <li class="site-nav__item site-nav__expanded-item{% if has_dropdown %} site-nav--has-dropdown{% endif %}{% if is_megamenu %} site-nav--is-megamenu{% endif %}">
       {% if is_megamenu or has_dropdown %}
         <details
@@ -283,6 +254,6 @@
         </details>
       {% endif %}
     </li>
-  {% endif %}
+  
   {%- endfor -%}
 </ul>
