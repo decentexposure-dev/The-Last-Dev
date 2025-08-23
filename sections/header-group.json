@@ -54,6 +54,7 @@
         "mega_menu_7n8Lx6": {
           "type": "mega_menu",
           "settings": {
+            "bgimage": "shopify://shop_images/Rectangle_74.png",
             "title": "Women",
             "column_1": true,
             "column_1_image": "shopify://shop_images/Rectangle_75.png",
