@@ -39,8 +39,8 @@
 
     {% assign megaBlock = section.blocks | where: 'type', 'mega_menu' | where: 'settings.title', link.title | first %}
 
-    <li class="site-nav__item site-nav__expanded-item{% if has_dropdown %} site-nav--has-dropdown{% endif %}{% if is_megamenu %} site-nav--is-megamenu{% endif %}">
-      {% if is_megamenu or has_dropdown %}
+    <li class="site-nav__item site-nav__expanded-item{% if has_dropdown %} site-nav--has-dropdown{% endif %}{% if is_megamenu or megaBlock %} site-nav--is-megamenu{% endif %}">
+      {% if is_megamenu or has_dropdown or megaBlock %}
         <details
           data-hover="{{ hover_menu }}"
           id="site-nav-item--{{ forloop.index }}"
