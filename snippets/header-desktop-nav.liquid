@@ -24,17 +24,19 @@
 
     
     {% assign matched_block = false %}
+    {%- assign mega_menu_names = '' -%}
   {% for block in mega_blocks %}
     {% if link.title  == block.settings.title %}
       {% assign matched_block = true %} 
     {% endif %}
+    {%- assign mega_menu_names = mega_menu_names | append: block.settings.title | append: ',' -%}
   {% endfor %}
 
 
-    {%- assign mega_menu_names = '' -%}
+    
     {%- for block in section.blocks -%}
       {%- if block.type == 'mega_menu' -%}
-        {%- assign mega_menu_names = mega_menu_names | append: block.settings.title | append: ',' -%}
+        
       {%- endif -%}
     {%- endfor -%}
 
