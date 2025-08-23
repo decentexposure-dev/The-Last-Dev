@@ -96,9 +96,22 @@
                       .menucolumn__item--{{ forloop.index }} {
                         width: {{ block.settings[column_width] }}%;
                       }
-
                     }
                   {%- endstyle -%}
+                    
+                      <a href="{{ block.settings[show_column] }}">
+                        {% if block.settings[column_image] != blank %}
+                        <div class="svg-mask svg-mask--landscape">
+                        {%- render 'image-element',
+                          img: block.settings[column_image],
+                          sizeVariable: '20vw',
+                          alt: block.settings[column_heading]
+                          classes: 'megamenu__collection-image',
+                        -%}
+                        </div>
+                      {% endif %}
+                      </a>
+                    
                   </div>
                   {% endif %}
                     {% endfor %}
