@@ -111,8 +111,15 @@
                         -%}
                         </div>
                       {% endif %}
-                      <div class="h5">{{ block.settings[column_heading] }}</div>
+                      <div class="h5 menucolumn-title">{{ block.settings[column_heading] }}</div>
                       </a>
+                      <div class="">
+                        {%- for link in block.settings[column_menu].links -%}
+                          <a href="{{ link.url }}" class="site-nav__dropdown-link">
+                            {{ link.title }}
+                          </a>
+                        {%- endfor -%}  
+                      </div>
                       
                     
                   </div>
