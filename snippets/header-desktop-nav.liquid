@@ -69,15 +69,15 @@
                 {%- if block.type == 'mega_menu' -%}
                   <style>
                     {%  if block.settings.bgimage != blank %}
-                      .megamenu{
+                      .menu-{{ mega_menu_names }} .megamenu{
                         background-image: url({{ block.settings.bgimage | img_url: 'master' }});                                              
                       }                    
                     {% endif %}  
-                    .megamenu{
+                    .menu-{{ mega_menu_names }} .megamenu{
                       background-coor: {{ block.settings.bgcolor }};
                       coor: {{ block.settings.color }};
                     }
-                    .megamenu a{
+                    .menu-{{ mega_menu_names }} .megamenu a{
                       coor: {{ block.settings.color }};
                     }
                   </style>
