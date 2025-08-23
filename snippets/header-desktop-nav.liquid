@@ -23,7 +23,13 @@
     -%}
 
     
-    {% assign matched_block = mega_blocks | where: 'settings.title', link.title | handle | first %}
+    {% assign matched_block = blank %}
+  {% for block in mega_blocks %}
+    {% if link.title | handle == block.settings.title %}
+      {% assign matched_block = block %}
+      {{ block.settings.title }}
+    {% endif %}
+  {% endfor %}
 
     {%- assign mega_menu_names = '' -%}
     {%- for block in section.blocks -%}
