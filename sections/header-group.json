@@ -89,11 +89,45 @@
             "column_5_menu": "",
             "column_5_width": 16.5
           }
+        },
+        "mega_menu_FLXkNE": {
+          "type": "mega_menu",
+          "settings": {
+            "bgcolor": "",
+            "color": "",
+            "title": "Men",
+            "column_1": false,
+            "column_1_heading": "Example heading",
+            "column_1_link": "",
+            "column_1_menu": "",
+            "column_1_width": 20,
+            "column_2": false,
+            "column_2_heading": "Example heading",
+            "column_2_link": "",
+            "column_2_menu": "",
+            "column_2_width": 20,
+            "column_3": false,
+            "column_3_heading": "Example heading",
+            "column_3_link": "",
+            "column_3_menu": "",
+            "column_3_width": 20,
+            "column_4": false,
+            "column_4_heading": "Example heading",
+            "column_4_link": "",
+            "column_4_menu": "",
+            "column_4_width": 20,
+            "column_5": false,
+            "column_5_heading": "Example heading",
+            "column_5_link": "",
+            "column_5_menu": "",
+            "column_5_width": 20
+          }
         }
       },
       "block_order": [
         "logo",
-        "mega_menu_7n8Lx6"
+        "mega_menu_7n8Lx6",
+        "mega_menu_FLXkNE"
       ],
       "settings": {
         "main_menu_link_list": "main-menu-new",
