@@ -29,13 +29,12 @@
       {%- assign mega_menu_names = mega_menu_names | append: block.settings.title | append: ',' -%}
       {% if link.title  == block.settings.title %}
         {% assign matched_block = true %} 
-      {% endif %}     {{ mega_menu_names }}
+      {% endif %}     
     {% endfor %}
 
     {%- assign mega_menu_names = mega_menu_names | downcase | split: ',' | compact -%}
-
-      {%- assign downcased_link_title = link.title | downcase -%}
-      {%- assign use_mega_menu = false -%}
+    {%- assign downcased_link_title = link.title | downcase -%}
+{{ mega_menu_names }}
       {%- if mega_menu_names contains downcased_link_title -%}
         {%- assign row_width = 0 -%}
         {%- for block in section.blocks -%}
@@ -45,7 +44,6 @@
             {%- continue -%}
           {%- endif -%}
           
-          {%- assign use_mega_menu = true -%}
           {%- capture megamenuimages -%}
             {%- if block.type == 'mega_menu' -%}
                   <style>
