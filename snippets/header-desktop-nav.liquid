@@ -67,6 +67,18 @@
               {%- assign row_width = 0 -%}
               {%- for block in section.blocks -%}
                 {%- if block.type == 'mega_menu' -%}
+                  <style>
+                    {%  if block.settings.bgimage != blank %}
+                      #site-nav-item--{{ forloop.index }} .megamenu{
+                        background-image: url({{ block.settings.bgimage | img_url: 'master' }});
+                        background-coor: {{ block.settings.bgcolor }};
+                        coor: {{ block.settings.color }};
+                      }
+                      #site-nav-item--{{ forloop.index }} .megamenu a{
+                        coor: {{ block.settings.color }};
+                      }
+                    {% endif %}  
+                  </style>
                   {% for i in (1..5) %}
                   {% capture show_column %}column_{{ i }}{% endcapture %}
                   {% capture column_image %}column_{{ i }}_image{% endcapture %}
