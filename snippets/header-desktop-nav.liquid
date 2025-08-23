@@ -155,9 +155,7 @@
           {{ link.title }}
         </a>
       {% endif %}
-        {%- if mega_menu_names contains downcased_link_title -%}
-          AA
-        {%- elsif is_megamenu -%}
+        {%- if is_megamenu -%}
           {%- assign previous_column_type = '' -%}
           {%- assign animation_column = 1 -%}
 
