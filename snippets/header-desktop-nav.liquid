@@ -27,8 +27,8 @@
       {%- if block.type == 'mega_menu' -%}
         {%- assign mega_menu_names = mega_menu_names | append: block.settings.title | append: ',' -%}
       {%- endif -%}
-
-      {%- assign mega_menu_names = mega_menu_names | downcase | split: ',' | compact -%}
+    {%- endfor -%}
+    {%- assign mega_menu_names = mega_menu_names | downcase | split: ',' | compact -%}
 
     {%- assign downcased_link_title = link.title | downcase -%}
     {%- assign custom_mega_menu = false -%}
@@ -36,8 +36,6 @@
       {%- assign is_megamenu = true -%}
       {%- assign custom_mega_menu = true -%}
     {%- endif -%}  
-    {%- endfor -%}
-    
 
     <li class="site-nav__item site-nav__expanded-item{% if has_dropdown %} site-nav--has-dropdown{% endif %}{% if is_megamenu %} site-nav--is-megamenu{% endif %}">
       {% if is_megamenu or has_dropdown %}
