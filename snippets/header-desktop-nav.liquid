@@ -63,6 +63,46 @@
         {% if custom_mega_menu %}
           <div class="site-nav__dropdown megamenu text-left">
             <div class="page-width">
+              <div class="grid">
+              {%- assign row_width = 0 -%}
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'mega_menu' -%}
+                  {% capture show_column %}column_{{ i }}{% endcapture %}
+                  {% capture column_image %}column_{{ i }}_image{% endcapture %}
+                  {% capture column_heading %}column_{{ i }}_heading{% endcapture %}
+                  {% capture column_link %}column_{{ i }}_link{% endcapture %}
+                  {% capture column_menu %}column_{{ i }}_menu{% endcapture %}
+                  {% capture column_width %}column_{{ i }}_width{% endcapture %}
+                {%- assign row_width = row_width | plus: block.settings[column_width] -%}
+                {%- if row_width > 100 -%}
+                  <div class="footer__clear small--hide"></div>
+                  {%- assign row_width = row_width | minus: 100 -%}
+                {%- endif -%}
+
+                {% for i in (1..5) %}
+                <div class="grid__item menucolumn__item--{{ forloop.index }}" data-type="{{ block.type }}">
+                  {%- style -%}
+                    @media only screen and (min-width: 769px) and (max-width: 959px) {
+                      .menucolumn__item--{{ forloop.index }} {
+                        width: 50%;
+                        padding-top: 40px;
+                      }
+                      .menucolumn__item--{{ forloop.index }}:nth-child(2n + 1) {
+                        clear: left;
+                      }
+                    }
+                    @media only screen and (min-width: 960px) {
+                      .menucolumn__item--{{ forloop.index }} {
+                        width: {{ block.settings[column_width] }}%;
+                      }
+
+                    }
+                  {%- endstyle -%}
+                  </div>
+                  {% endfor %}
+                  {%- endif -%}
+                {%- endfor -%}
+                </div>
             </div>
           </div>
         {%- elsif is_megamenu -%}
