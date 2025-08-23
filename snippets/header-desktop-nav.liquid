@@ -29,8 +29,8 @@
       {% assign matched_block = true %} 
     {% endif %}
   {% endfor %}
-  {{ matched_block }}
-  
+
+  {% if matched_block %}AA {% else %}BB {% endif %}
 
     {%- assign mega_menu_names = '' -%}
     {%- for block in section.blocks -%}
