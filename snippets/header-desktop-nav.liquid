@@ -49,15 +49,15 @@
             {%- if block.type == 'mega_menu' -%}
                 <style>
                   {%  if block.settings.bgimage != blank %}
-                    .menu-{{ mega_menu_names }}.megamenu{
+                    .block-{{ blockid }}.megamenu{
                       background-image: url({{ block.settings.bgimage | img_url: 'master' }});                                              
                     }                    
                   {% endif %}  
-                  .menu-{{ mega_menu_names }}.megamenu{
+                  .block-{{ blockid }}.megamenu{
                     background-coor: {{ block.settings.bgcolor }};
                     color: {{ block.settings.color }};
                   }
-                  .menu-{{ mega_menu_names }}.megamenu a{
+                  .block-{{ blockid }}.megamenu a{
                     color: {{ block.settings.color }};
                     background: transparent;
                   }
