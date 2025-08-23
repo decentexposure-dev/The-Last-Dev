@@ -38,7 +38,7 @@
     {%- endif -%}  
 
       {%- assign downcased_link_title = link.title | downcase -%}
-      {%- assign megaBlock = false -%}
+      {%- assign use_mega_menu = false -%}
       {%- if mega_menu_names contains downcased_link_title -%}
         {%- assign row_width = 0 -%}
         {%- for block in section.blocks -%}
@@ -47,7 +47,7 @@
           {%- if downcased_mega_menu_name != downcased_link_title -%}               
             {%- continue -%}
           {%- endif -%}
-          {%- assign megaBlock = true -%}
+          {%- assign use_mega_menu = true -%}
           {%- capture megamenuimages -%}
             {%- if block.type == 'mega_menu' -%}
                   <style>
@@ -155,16 +155,14 @@
           {{ link.title }}
         </a>
       {% endif %}
-        {%- if is_megamenu -%}
+        {%- if mega_menu_names contains downcased_link_title -%}
+          AA
+        {%- elsif is_megamenu -%}
           {%- assign previous_column_type = '' -%}
           {%- assign animation_column = 1 -%}
 
           <div class="site-nav__dropdown megamenu text-left">
             <div class="page-width">
-              {%- if megaBlock -%}
-                    {{ megamenuimages }}  
-              {% else %}
-
               <div class="grid{% if dropdown_alignment == 'center' %} grid--center{% endif %}">
                 <div class="grid__item medium-up--one-fifth appear-animation appear-delay-{{ animation_column }}">
                   {%- assign animation_column = animation_column | plus: 1 -%}
@@ -224,7 +222,6 @@
                   {%- endfor -%}
                 </div>
               </div>
-              {% endif %}
             </div>
           </div>
         {%- elsif has_dropdown -%}
