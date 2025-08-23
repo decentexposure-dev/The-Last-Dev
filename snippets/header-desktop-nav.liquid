@@ -61,7 +61,10 @@
         </a>
       {% endif %}
         {% if custom_mega_menu %}
-          --
+          <div class="site-nav__dropdown megamenu text-left">
+            <div class="page-width">
+            </div>
+          </div>
         {%- elsif is_megamenu -%}
           {%- assign previous_column_type = '' -%}
           {%- assign animation_column = 1 -%}
