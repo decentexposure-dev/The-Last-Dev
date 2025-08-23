@@ -26,9 +26,10 @@
     {% assign matched_block = false %}
   {% for block in mega_blocks %}
     {% if link.title  == block.settings.title %}
-      {% assign matched_block = true %} {{ matched_block }}
+      {% assign matched_block = true %} 
     {% endif %}
   {% endfor %}
+  {{ matched_block }}
   
 
     {%- assign mega_menu_names = '' -%}
