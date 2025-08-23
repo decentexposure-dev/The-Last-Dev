@@ -85,16 +85,16 @@
                   {%- assign animation_column = animation_column | plus: 1 -%}
                 {%- style -%}
                   @media only screen and (min-width: 769px) and (max-width: 959px) {
-                    .menucolumn__item--{{ forloop.index }} {
+                    .block-{{ blockid }} .menucolumn__item--{{ forloop.index }} {
                       width: 50%;
                       padding-top: 40px;
                     }
-                    .menucolumn__item--{{ forloop.index }}:nth-child(2n + 1) {
+                    .block-{{ blockid }} .menucolumn__item--{{ forloop.index }}:nth-child(2n + 1) {
                       clear: left;
                     }
                   }
                   @media only screen and (min-width: 960px) {
-                    .menucolumn__item--{{ forloop.index }} {
+                    .block-{{ blockid }} .menucolumn__item--{{ forloop.index }} {
                       width: {{ block.settings[column_width] }}%;
                     }
                   }
