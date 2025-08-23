@@ -37,36 +37,19 @@
       {%- assign custom_mega_menu = true -%}
     {%- endif -%}  
 
-    <li class="site-nav__item site-nav__expanded-item{% if has_dropdown %} site-nav--has-dropdown{% endif %}{% if is_megamenu %} site-nav--is-megamenu{% endif %}">
-      {% if is_megamenu or has_dropdown %}
-        <details
-          data-hover="{{ hover_menu }}"
-          id="site-nav-item--{{ forloop.index }}"
-          class="site-nav__details"
-        >
-          <summary
-            data-link="{{ link.url }}"
-            aria-expanded="false"
-            aria-controls="site-nav-item--{{ forloop.index }}"
-            class="site-nav__link site-nav__link--underline{% if has_dropdown %} site-nav__link--has-dropdown{% endif %}"
-          >
-            {{ link.title }} <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="m1.57 1.59 12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none"/></svg>
-          </summary>
-      {% else %}
-        <a
-          href="{{ link.url }}"
-          class="site-nav__link site-nav__link--underline{% if has_dropdown %} site-nav__link--has-dropdown{% endif %}"
-        >
-          {{ link.title }}
-        </a>
-      {% endif %}
-        {% if custom_mega_menu %}
-          <div class="site-nav__dropdown megamenu text-left menu-{{ mega_menu_names }}">
-            <div class="page-width">
-              <div class="grid">
-              {%- assign row_width = 0 -%}
-              {%- for block in section.blocks -%}
-                {%- if block.type == 'mega_menu' -%}
+      {%- assign downcased_link_title = link.title | downcase -%}
+      {%- assign use_mega_menu = false -%}
+      {%- if mega_menu_names contains downcased_link_title -%}
+        {%- assign row_width = 0 -%}
+        {%- for block in section.blocks -%}
+          {%- assign downcased_mega_menu_name = block.settings.title | downcase -%}
+
+          {%- if downcased_mega_menu_name != downcased_link_title -%}               
+            {%- continue -%}
+          {%- endif -%}
+          {%- assign use_mega_menu = true -%}
+          {%- capture megamenuimages -%}
+            {%- if block.type == 'mega_menu' -%}
                   <style>
                     {%  if block.settings.bgimage != blank %}
                       .menu-{{ mega_menu_names }}.megamenu{
@@ -145,16 +128,43 @@
                   {% endif %}
                     {% endfor %}
                   {%- endif -%}
-                {%- endfor -%}
-                </div>
-            </div>
-          </div>
-        {%- elsif is_megamenu -%}
+          {% endcapture %}
+        {%- endfor -%}  
+      {%- endif -%} 
+
+    <li class="site-nav__item site-nav__expanded-item{% if has_dropdown %} site-nav--has-dropdown{% endif %}{% if is_megamenu %} site-nav--is-megamenu{% endif %}">
+      {% if is_megamenu or has_dropdown %}
+        <details
+          data-hover="{{ hover_menu }}"
+          id="site-nav-item--{{ forloop.index }}"
+          class="site-nav__details"
+        >
+          <summary
+            data-link="{{ link.url }}"
+            aria-expanded="false"
+            aria-controls="site-nav-item--{{ forloop.index }}"
+            class="site-nav__link site-nav__link--underline{% if has_dropdown %} site-nav__link--has-dropdown{% endif %}"
+          >
+            {{ link.title }} <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="m1.57 1.59 12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none"/></svg>
+          </summary>
+      {% else %}
+        <a
+          href="{{ link.url }}"
+          class="site-nav__link site-nav__link--underline{% if has_dropdown %} site-nav__link--has-dropdown{% endif %}"
+        >
+          {{ link.title }}
+        </a>
+      {% endif %}
+        {%- if is_megamenu -%}
           {%- assign previous_column_type = '' -%}
           {%- assign animation_column = 1 -%}
 
           <div class="site-nav__dropdown megamenu text-left">
             <div class="page-width">
+              {%- if use_mega_menu -%}
+                    {{ megamenuimages }}  
+                  {% endif %}
+                  
               <div class="grid{% if dropdown_alignment == 'center' %} grid--center{% endif %}">
                 <div class="grid__item medium-up--one-fifth appear-animation appear-delay-{{ animation_column }}">
                   {%- assign animation_column = animation_column | plus: 1 -%}
