@@ -34,7 +34,7 @@
 
     {%- assign mega_menu_names = mega_menu_names | downcase | split: ',' | compact -%}
     {%- assign downcased_link_title = link.title | downcase -%}
-{{ mega_menu_names }}
+
       {%- if mega_menu_names contains downcased_link_title -%}
         {%- assign row_width = 0 -%}
         {%- for block in section.blocks -%}
