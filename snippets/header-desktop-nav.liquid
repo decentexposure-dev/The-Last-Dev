@@ -70,14 +70,16 @@
                   <style>
                     {%  if block.settings.bgimage != blank %}
                       #site-nav-item--{{ forloop.index }} .megamenu{
-                        background-image: url({{ block.settings.bgimage | img_url: 'master' }});
-                        background-coor: {{ block.settings.bgcolor }};
-                        coor: {{ block.settings.color }};
-                      }
-                      #site-nav-item--{{ forloop.index }} .megamenu a{
-                        coor: {{ block.settings.color }};
-                      }
+                        background-image: url({{ block.settings.bgimage | img_url: 'master' }});                                              
+                      }                    
                     {% endif %}  
+                    #site-nav-item--{{ forloop.index }} .megamenu{
+                      background-coor: {{ block.settings.bgcolor }};
+                      coor: {{ block.settings.color }};
+                    }
+                    #site-nav-item--{{ forloop.index }} .megamenu a{
+                      coor: {{ block.settings.color }};
+                    }
                   </style>
                   {% for i in (1..5) %}
                   {% capture show_column %}column_{{ i }}{% endcapture %}
