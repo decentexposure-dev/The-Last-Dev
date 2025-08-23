@@ -56,8 +56,9 @@
           "settings": {
             "title": "Women",
             "column_1": true,
-            "column_1_heading": "Example heading",
-            "column_1_link": "",
+            "column_1_image": "shopify://shop_images/Rectangle_75.png",
+            "column_1_heading": "Footwear",
+            "column_1_link": "shopify://collections/boat-shoes-womens",
             "column_1_menu": "",
             "column_1_width": 20,
             "column_2": false,
