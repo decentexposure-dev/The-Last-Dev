@@ -80,7 +80,7 @@
                 {%- endif -%}
 
                 {% for i in (1..5) %}
-                <div class="grid__item menucolumn__item--{{ forloop.index }}" data-type="{{ block.type }}">
+                  <div class="grid__item menucolumn__item--{{ forloop.index }}" data-type="{{ block.type }}">
                   {%- style -%}
                     @media only screen and (min-width: 769px) and (max-width: 959px) {
                       .menucolumn__item--{{ forloop.index }} {
