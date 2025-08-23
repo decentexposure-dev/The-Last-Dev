@@ -26,27 +26,25 @@
     {% assign matched_block = false %}
     {%- assign mega_menu_names = '' -%}
     {% for block in mega_blocks %}
-      {% if link.title  == block.settings.title %}
+      {%- assign mega_menu_names = mega_menu_names | append: block.settings.title | append: ',' -%}
+      {%- assign mega_menu_names = mega_menu_names | downcase | split: ',' | compact -%}
+      {%- assign downcased_link_title = link.title | downcase -%}
+      
+      {% if downcased_link_title == downcased_link_title %}
         {% assign matched_block = true %} 
       {% endif %}
-      {%- assign mega_menu_names = mega_menu_names | append: block.settings.title | append: ',' -%}
+      
     {% endfor %}
+    
 
-
-      {%- assign mega_menu_names = mega_menu_names | downcase | split: ',' | compact -%}
-
-      {%- assign downcased_link_title = link.title | downcase -%}
-      {%- assign use_mega_menu = false -%}
       {%- if mega_menu_names contains downcased_link_title -%}
         {%- assign row_width = 0 -%}
         {%- for block in section.blocks -%}
           {%- assign downcased_mega_menu_name = block.settings.title | downcase -%}
-
           {%- if downcased_mega_menu_name != downcased_link_title -%}               
             {%- continue -%}
           {%- endif -%}
           
-          {%- assign use_mega_menu = true -%}
           {%- capture megamenuimages -%}
             {%- if block.type == 'mega_menu' -%}
                   <style>
