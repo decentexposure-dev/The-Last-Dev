@@ -166,7 +166,7 @@
 
           {%- if section.settings.main_menu_alignment == 'center' -%}
             <div class="text-center">
-              {%- render 'header-desktop-nav', main_menu: main_menu, dropdown_alignment: dropdown_alignment, hover_menu: section.settings.hover_menu -%}
+              {%- render 'header-desktop-nav', main_menu: main_menu, dropdown_alignment: dropdown_alignment, hover_menu: section.settings.hover_menu, section: section -%}
             </div>
           {%- endif -%}
         </div>
