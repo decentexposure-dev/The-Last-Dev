@@ -92,6 +92,7 @@
         },
         "mega_menu_FLXkNE": {
           "type": "mega_menu",
+          "disabled": true,
           "settings": {
             "bgimage": "shopify://shop_images/Rectangle_80.png",
             "bgcolor": "",
