@@ -75,10 +75,11 @@
                     {% endif %}  
                     .menu-{{ mega_menu_names }}.megamenu{
                       background-coor: {{ block.settings.bgcolor }};
-                      coor: {{ block.settings.color }};
+                      color: {{ block.settings.color }};
                     }
                     .menu-{{ mega_menu_names }}.megamenu a{
-                      coor: {{ block.settings.color }};
+                      color: {{ block.settings.color }};
+                      background: transparent;
                     }
                   </style>
                   {% for i in (1..5) %}
@@ -95,7 +96,8 @@
                 {%- endif -%}
                 
                   {% if block.settings[show_column] %}
-                  <div class="grid__item menucolumn__item--{{ forloop.index }}" data-type="{{ block.type }}">
+                  <div class="grid__item menucolumn__item--{{ forloop.index }} appear-animation appear-delay-{{ animation_column }}" data-type="{{ block.type }}">
+                    {%- assign animation_column = animation_column | plus: 1 -%}
                   {%- style -%}
                     @media only screen and (min-width: 769px) and (max-width: 959px) {
                       .menucolumn__item--{{ forloop.index }} {
