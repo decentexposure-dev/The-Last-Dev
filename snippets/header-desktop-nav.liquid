@@ -22,6 +22,21 @@
       endif
     -%}
 
+    {%- assign mega_menu_names = '' -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'mega_menu' -%}
+        {%- assign mega_menu_names = mega_menu_names | append: block.settings.title | append: ',' -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- assign mega_menu_names = mega_menu_names | downcase | split: ',' | compact -%}
+
+    {%- assign downcased_link_title = link.title | downcase -%}
+    {%- assign custom_mega_menu = false -%}
+    {%- if mega_menu_names contains downcased_link_title -%}
+      {%- assign is_megamenu = true -%}
+      {%- assign custom_mega_menu = true -%}
+    {%- endif -%}  
+
     <li class="site-nav__item site-nav__expanded-item{% if has_dropdown %} site-nav--has-dropdown{% endif %}{% if is_megamenu %} site-nav--is-megamenu{% endif %}">
       {% if is_megamenu or has_dropdown %}
         <details
@@ -45,7 +60,9 @@
           {{ link.title }}
         </a>
       {% endif %}
-        {%- if is_megamenu -%}
+        {% if custom_mega_menu %}
+          --
+        {%- elsif is_megamenu -%}
           {%- assign previous_column_type = '' -%}
           {%- assign animation_column = 1 -%}
 
