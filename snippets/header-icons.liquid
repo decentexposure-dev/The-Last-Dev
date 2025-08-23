@@ -15,8 +15,13 @@
 
     {%- if settings.search_enable -%}
       <a href="{{ routes.search_url }}" class="site-nav__link site-nav__link--icon js-search-header{% if section.settings.main_menu_alignment == 'center' or section.settings.main_menu_alignment == 'center-split' %} medium-up--hide{% endif %}">
-        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><title>icon-search</title><path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58ZM54 54 41.94 42"/></svg>
-        <span class="icon__fallback-text">{{ 'general.search.title' | t }}</span>
+       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18.3327 7.9779C21.1921 10.8373 21.1921 15.4733 18.3327 18.3328C15.4733 21.1922 10.8372 21.1922 7.97782 18.3328C5.1184 15.4733 5.1184 10.8373 7.97782 7.9779C10.8372 5.11848 15.4733 5.11848 18.3327 7.9779" stroke="#1B0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22.1667 22.1667L18.3284 18.3283" stroke="#1B0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+{% comment %}<svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><title>icon-search</title><path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58ZM54 54 41.94 42"/></svg>
+      {% endcomment %}  <span class="icon__fallback-text">{{ 'general.search.title' | t }}</span>
       </a>
     {%- endif -%}
 
