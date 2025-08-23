@@ -30,7 +30,7 @@
       {%- assign mega_menu_names = mega_menu_names | downcase | split: ',' | compact -%}
       {%- assign downcased_link_title = link.title | downcase -%}
       
-      {% if downcased_link_title == downcased_link_title %}
+      {% if link.title  == block.settings.title %}
         {% assign matched_block = true %} 
       {% endif %}
       
