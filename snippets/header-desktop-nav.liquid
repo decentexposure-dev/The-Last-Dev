@@ -99,7 +99,7 @@
                     }
                   {%- endstyle -%}
                     
-                      <a href="{{ block.settings[show_column] }}">
+                      <a href="{{ block.settings[column_link] }}">
                         {% if block.settings[column_image] != blank %}
                         <div class="megamenuimage">
                         {%- render 'image-element',
@@ -111,7 +111,9 @@
                         -%}
                         </div>
                       {% endif %}
+                      <div class="h5">{{ block.settings[column_heading] }}</div>
                       </a>
+                      
                     
                   </div>
                   {% endif %}
