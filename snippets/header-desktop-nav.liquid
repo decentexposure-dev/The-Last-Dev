@@ -96,6 +96,7 @@
                 {%- endif -%}
                 
                   {% if block.settings[show_column] %}
+                    {%- assign animation_column = 1 -%}
                   <div class="grid__item menucolumn__item--{{ forloop.index }} appear-animation appear-delay-{{ animation_column }}" data-type="{{ block.type }}">
                     {%- assign animation_column = animation_column | plus: 1 -%}
                   {%- style -%}
