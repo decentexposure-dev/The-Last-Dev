@@ -61,17 +61,20 @@
         </a>
       {% endif %}
         {% if custom_mega_menu %}
-          <div class="site-nav__dropdown megamenu text-left" style="
-            {%  if block.settings.bgimage != blank %}background-image: url({{ block.settings.bgimage | img_url: 'master' }});{% endif %}background-coor: {{ block.settings.bgcolor }};">
+          <div class="site-nav__dropdown megamenu text-left">
             <div class="page-width">
               <div class="grid">
               {%- assign row_width = 0 -%}
               {%- for block in section.blocks -%}
                 {%- if block.type == 'mega_menu' -%}
                   <style>
-                    
+                    {%  if block.settings.bgimage != blank %}
+                      .megamenu{
+                        background-image: url({{ block.settings.bgimage | img_url: 'master' }});                                              
+                      }                    
+                    {% endif %}  
                     .megamenu{
-                      
+                      background-coor: {{ block.settings.bgcolor }};
                       coor: {{ block.settings.color }};
                     }
                     .megamenu a{
