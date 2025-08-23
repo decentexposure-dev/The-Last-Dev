@@ -93,8 +93,9 @@
         "mega_menu_FLXkNE": {
           "type": "mega_menu",
           "settings": {
+            "bgimage": "shopify://shop_images/Rectangle_80.png",
             "bgcolor": "",
-            "color": "",
+            "color": "#f3ecdb",
             "title": "Men",
             "column_1": true,
             "column_1_image": "shopify://shop_images/Rectangle_75.png",
