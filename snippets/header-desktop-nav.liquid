@@ -24,7 +24,7 @@
 
     
     {% assign matched_block = mega_blocks | where: 'settings.title', link.title | handle | first %}
-{%- if matched_block -%}aaa{% endif %}
+
     {%- assign mega_menu_names = '' -%}
     {%- for block in section.blocks -%}
       {%- if block.type == 'mega_menu' -%}
