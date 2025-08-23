@@ -33,8 +33,14 @@
     <a href="{{ routes.cart_url }}" class="site-nav__link site-nav__link--icon js-drawer-open-cart" aria-controls="CartDrawer" data-icon="{{ settings.cart_icon }}">
       <span class="cart-link">
         {%- if settings.cart_icon == 'cart' -%}
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.3334 8.33341V5.00008C13.3334 3.15925 11.8409 1.66675 10.0001 1.66675V1.66675C8.15925 1.66675 6.66675 3.15925 6.66675 5.00008V8.33341" stroke="#1B0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M15.8333 17.4999H4.16659C3.70659 17.4999 3.33325 17.1266 3.33325 16.6666V6.66659C3.33325 6.20659 3.70659 5.83325 4.16659 5.83325H15.8333C16.2933 5.83325 16.6666 6.20659 16.6666 6.66659V16.6666C16.6666 17.1266 16.2933 17.4999 15.8333 17.4999Z" stroke="#1B0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+{% comment %}
           <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-cart" viewBox="0 0 64 64"><path style="stroke-miterlimit:10" d="M14 17.44h46.79l-7.94 25.61H20.96l-9.65-35.1H3"/><circle cx="27" cy="53" r="2"/><circle cx="47" cy="53" r="2"/></svg>
-        {%- elsif settings.cart_icon == 'bag-minimal' -%}
+       {% endcomment %} {%- elsif settings.cart_icon == 'bag-minimal' -%}
           <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-bag-minimal" viewBox="0 0 64 64"><title>icon-bag-minimal</title><path stroke="null" fill-opacity="null" stroke-opacity="null" fill="null" d="M11.375 17.863h41.25v36.75h-41.25z"/><path stroke="null" d="M22.25 18c0-7.105 4.35-9 9.75-9s9.75 1.895 9.75 9"/></svg>
         {%- else -%}
           <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-bag" viewBox="0 0 64 64"><g fill="none" stroke="#000" stroke-width="2"><path d="M25 26c0-15.79 3.57-20 8-20s8 4.21 8 20"/><path d="M14.74 18h36.51l3.59 36.73h-43.7z"/></g></svg>
