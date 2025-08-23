@@ -25,16 +25,16 @@
     {% assign mega_blocks = section.blocks | where: 'type', 'mega_menu' %}
     {% assign matched_block = false %}
     {%- assign mega_menu_names = '' -%}
-  {% for block in mega_blocks %}
-    {%- assign mega_menu_names = mega_menu_names | append: block.settings.title | append: ',' -%}
-    {% if link.title  == block.settings.title %}
-      {% assign matched_block = true %} 
-    {% endif %}
-    
-  {% endfor %}
-
-
+    {% for block in mega_blocks %}
+      {%- assign mega_menu_names = mega_menu_names | append: block.settings.title | append: ',' -%}
+      {% if link.title  == block.settings.title %}
+        {% assign matched_block = true %} 
+      {% endif %}
       {%- assign mega_menu_names = mega_menu_names | downcase | split: ',' | compact -%}
+    {% endfor %}
+
+
+      
 
       {%- assign downcased_link_title = link.title | downcase -%}
       {%- assign use_mega_menu = false -%}
