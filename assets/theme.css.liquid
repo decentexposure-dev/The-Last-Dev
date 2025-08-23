@@ -13464,9 +13464,15 @@ h1 em, h2 em  {
   box-shadow: none;
 }
 .product-section-bottom .color-swatch::before {
-  border: solid 1px #F3ECDB1A;
-  border: 0px;
+  border-color: #1B0D0D;
 }
-.product-section-bottom .variant-input-wrap label.color-swatch:{
-  
+.product-section-bottom input[type="radio"]:focus + label.color-swatch{
+
+}
+.product-section-bottom .variant-input-wrap label.color-swatch{
+  border: 1px solid #FFFFF736;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
 }
