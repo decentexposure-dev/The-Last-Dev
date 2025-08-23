@@ -32,10 +32,10 @@
       {% endif %}     
     {% endfor %}
 
-    {%- assign mega_menu_names = mega_menu_names | downcase | split: ',' | compact -%}
+    {%- assign downcased_megamenu = mega_menu_names | downcase | split: ',' | compact -%}
     {%- assign downcased_link_title = link.title | downcase -%}
 
-      {%- if mega_menu_names contains downcased_link_title -%}
+      {%- if downcased_megamenu contains downcased_link_title -%}
         {%- assign row_width = 0 -%}
         {%- for block in section.blocks -%}
           {%- assign downcased_mega_menu_name = block.settings.title | downcase -%}
