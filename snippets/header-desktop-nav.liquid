@@ -40,7 +40,7 @@
           {%- if downcased_mega_menu_name != downcased_link_title -%}               
             {%- continue -%}
           {%- endif -%}
-          
+          {{ block.settings.column_1_heading }}
           {%- assign use_mega_menu = true -%}
           {%- capture megamenuimages -%}
             {%- if block.type == 'mega_menu' -%}
