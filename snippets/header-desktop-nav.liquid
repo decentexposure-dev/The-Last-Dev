@@ -36,9 +36,6 @@
       {%- assign is_megamenu = true -%}
       {%- assign custom_mega_menu = true -%}
     {%- endif -%}  
-    {%- if downcased_mega_menu_name != downcased_link_title -%}               
-            {%- continue -%}
-          {%- endif -%}
 
     <li class="site-nav__item site-nav__expanded-item{% if has_dropdown %} site-nav--has-dropdown{% endif %}{% if is_megamenu %} site-nav--is-megamenu{% endif %}">
       {% if is_megamenu or has_dropdown %}
