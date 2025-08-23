@@ -113,6 +113,7 @@
                       {% endif %}
                       <div class="h5 menucolumn-title">{{ block.settings[column_heading] }}</div>
                       </a>
+                      {% if block.settings[column_menu] != blank %}
                       <div class="">
                         {%- for link in block.settings[column_menu].links -%}
                           <a href="{{ link.url }}" class="site-nav__dropdown-link">
@@ -120,6 +121,7 @@
                           </a>
                         {%- endfor -%}  
                       </div>
+                      {% endif %}
                       
                     
                   </div>
