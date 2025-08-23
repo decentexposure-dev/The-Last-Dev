@@ -32,7 +32,7 @@
       {% endif %}     
     {% endfor %}
 
-    {%- assign downcased_megamenu = mega_menu_names | downcase | split: ',' | compact -%}
+    {%- assign mega_menu_names = mega_menu_names | downcase | split: ',' | compact -%}
     {%- assign downcased_link_title = link.title | downcase -%}
 
       {%- if mega_menu_names contains downcased_link_title -%}
@@ -48,15 +48,15 @@
             {%- if block.type == 'mega_menu' -%}
                   <style>
                     {%  if block.settings.bgimage != blank %}
-                      .menu-{{ downcased_megamenu }}.megamenu{
+                      .menu-{{ mega_menu_names }}.megamenu{
                         background-image: url({{ block.settings.bgimage | img_url: 'master' }});                                              
                       }                    
                     {% endif %}  
-                    .menu-{{ downcased_megamenu }}.megamenu{
+                    .menu-{{ mega_menu_names }}.megamenu{
                       background-coor: {{ block.settings.bgcolor }};
                       color: {{ block.settings.color }};
                     }
-                    .menu-{{ downcased_megamenu }}.megamenu a{
+                    .menu-{{ mega_menu_names }}.megamenu a{
                       color: {{ block.settings.color }};
                       background: transparent;
                     }
