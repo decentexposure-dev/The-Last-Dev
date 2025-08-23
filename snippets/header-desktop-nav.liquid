@@ -153,7 +153,9 @@
           {{ link.title }}
         </a>
       {% endif %}
-        {%- if is_megamenu -%}
+      {% if matched_block %} 
+        AAA
+    {%- elsif is_megamenu -%}
           {%- assign previous_column_type = '' -%}
           {%- assign animation_column = 1 -%}
 
