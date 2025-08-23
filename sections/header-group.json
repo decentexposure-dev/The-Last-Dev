@@ -50,10 +50,19 @@
             "desktop_logo_width": 120,
             "mobile_logo_width": 120
           }
+        },
+        "mega_menu_7n8Lx6": {
+          "type": "mega_menu",
+          "settings": {
+            "title": "Women",
+            "push_1_heading": "Example heading",
+            "push_1_url": ""
+          }
         }
       },
       "block_order": [
-        "logo"
+        "logo",
+        "mega_menu_7n8Lx6"
       ],
       "settings": {
         "main_menu_link_list": "main-menu-new",
