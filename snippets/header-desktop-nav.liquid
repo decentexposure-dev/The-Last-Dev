@@ -61,7 +61,7 @@
         </a>
       {% endif %}
         {% if custom_mega_menu %}
-          <div class="site-nav__dropdown megamenu text-left">
+          <div class="site-nav__dropdown megamenu text-left block-{{ block.id }}">
             <div class="page-width">
               <div class="grid">
               {%- assign row_width = 0 -%}
@@ -69,15 +69,15 @@
                 {%- if block.type == 'mega_menu' -%}
                   <style>
                     {%  if block.settings.bgimage != blank %}
-                      #site-nav-item--{{ forloop.index }} .megamenu{
+                      .block-{{ block.id }} .megamenu{
                         background-image: url({{ block.settings.bgimage | img_url: 'master' }});                                              
                       }                    
                     {% endif %}  
-                    #site-nav-item--{{ forloop.index }} .megamenu{
+                    .block-{{ block.id }} .megamenu{
                       background-coor: {{ block.settings.bgcolor }};
                       coor: {{ block.settings.color }};
                     }
-                    #site-nav-item--{{ forloop.index }} .megamenu a{
+                    .block-{{ block.id }} .megamenu a{
                       coor: {{ block.settings.color }};
                     }
                   </style>
