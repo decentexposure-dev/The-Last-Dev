@@ -96,7 +96,7 @@
             "bgcolor": "",
             "color": "",
             "title": "Men",
-            "column_1": false,
+            "column_1": true,
             "column_1_heading": "Example heading",
             "column_1_link": "",
             "column_1_menu": "",
