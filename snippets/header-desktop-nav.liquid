@@ -38,7 +38,7 @@
     {%- endif -%}  
 
       {%- assign downcased_link_title = link.title | downcase -%}
-      {%- assign use_mega_menu = false -%}
+      {%- assign megaBlock = false -%}
       {%- if mega_menu_names contains downcased_link_title -%}
         {%- assign row_width = 0 -%}
         {%- for block in section.blocks -%}
@@ -47,7 +47,7 @@
           {%- if downcased_mega_menu_name != downcased_link_title -%}               
             {%- continue -%}
           {%- endif -%}
-          {%- assign use_mega_menu = true -%}
+          {%- assign megaBlock = true -%}
           {%- capture megamenuimages -%}
             {%- if block.type == 'mega_menu' -%}
                   <style>
@@ -161,10 +161,10 @@
 
           <div class="site-nav__dropdown megamenu text-left">
             <div class="page-width">
-              {%- if use_mega_menu -%}
+              {%- if megaBlock -%}
                     {{ megamenuimages }}  
-                  {% endif %}
-                  
+              {% else %}
+
               <div class="grid{% if dropdown_alignment == 'center' %} grid--center{% endif %}">
                 <div class="grid__item medium-up--one-fifth appear-animation appear-delay-{{ animation_column }}">
                   {%- assign animation_column = animation_column | plus: 1 -%}
@@ -224,6 +224,7 @@
                   {%- endfor -%}
                 </div>
               </div>
+              {% endif %}
             </div>
           </div>
         {%- elsif has_dropdown -%}
