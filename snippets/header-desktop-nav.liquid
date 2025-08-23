@@ -48,15 +48,19 @@
           {%- capture megamenu_blocks -%}
             {%- if block.type == 'mega_menu' -%}
                 <style>
-                  {%  if block.settings.bgimage != blank %}
-                    .block-{{ blockid }}.megamenu{
-                      background-image: url({{ block.settings.bgimage | img_url: 'master' }});                                              
-                    }                    
-                  {% endif %}  
                   .block-{{ blockid }}.megamenu{
                     background-coor: {{ block.settings.bgcolor }};
                     color: {{ block.settings.color }};
                   }
+                  {%  if block.settings.bgimage != blank %}
+                    .block-{{ blockid }}.megamenu{
+                      background-image: url({{ block.settings.bgimage | img_url: 'master' }});   
+                      background-repeat: no-repeat;
+                      background-size: cover;
+                      background-position: center;                                           
+                    }                    
+                  {% endif %}  
+                  
                   .block-{{ blockid }}.megamenu a{
                     color: {{ block.settings.color }};
                     background: transparent;
