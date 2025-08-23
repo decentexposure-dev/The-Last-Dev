@@ -149,6 +149,8 @@
           {{ link.title }}
         </a>
       {% endif %}
+      {% if use_mega_menu %}
+      {% else %}
         {%- if is_megamenu -%}
           {%- assign previous_column_type = '' -%}
           {%- assign animation_column = 1 -%}
@@ -246,6 +248,7 @@
             {%- endfor -%}
           </ul>
         {%- endif -%}
+      {% endif %}
       {% if is_megamenu or has_dropdown %}
         </details>
       {% endif %}
