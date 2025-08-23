@@ -67,6 +67,7 @@
               {%- assign row_width = 0 -%}
               {%- for block in section.blocks -%}
                 {%- if block.type == 'mega_menu' -%}
+                  {% for i in (1..5) %}
                   {% capture show_column %}column_{{ i }}{% endcapture %}
                   {% capture column_image %}column_{{ i }}_image{% endcapture %}
                   {% capture column_heading %}column_{{ i }}_heading{% endcapture %}
@@ -78,8 +79,8 @@
                   <div class="footer__clear small--hide"></div>
                   {%- assign row_width = row_width | minus: 100 -%}
                 {%- endif -%}
-
-                {% for i in (1..5) %}
+                
+                  {% if block.settings[show_column] %}
                   <div class="grid__item menucolumn__item--{{ forloop.index }}" data-type="{{ block.type }}">
                   {%- style -%}
                     @media only screen and (min-width: 769px) and (max-width: 959px) {
@@ -99,7 +100,8 @@
                     }
                   {%- endstyle -%}
                   </div>
-                  {% endfor %}
+                  {% endif %}
+                    {% endfor %}
                   {%- endif -%}
                 {%- endfor -%}
                 </div>
