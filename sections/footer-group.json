@@ -53,6 +53,7 @@
         "promotion-2",
         "promotion-3"
       ],
+      "disabled": true,
       "settings": {
         "hide_homepage": true
       }
