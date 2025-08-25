@@ -47,6 +47,10 @@
           {% endunless %}
 
         {% endfor %}
+
+      {% else %}  
+        {% capture url %}{{ routes.collections_url }}/{{ collection.handle }}{% endcapture %}
+        {{ collection.title | link_to: url }}
       {% endif %}
 
     {% elsif template.name == 'blog' %}
