@@ -48,7 +48,22 @@ Arguments
 
 <div class="grid__item grid-product {{ gridView }} {% if quick_shop_enable %} grid-product__has-quick-shop{% endif %}" data-aos="row-of-{{ per_row }}" data-product-handle="{{ product.handle }}" data-product-id="{{ product.id }}">
   <div class="grid-product__content">
-    <!-- -->
+    {%- if has_custom_label -%}
+      <div class="grid-product__tag grid-product__tag--custom">
+        {{ custom_label }}
+      </div>
+    {%- else -%}
+      {%- unless product.available -%}
+        <div class="grid-product__tag grid-product__tag--sold-out">
+          {{ 'products.product.sold_out' | t }}
+        </div>
+      {%- endunless -%}
+      {% comment %} {%- if on_sale and product.available -%}
+        <div class="grid-product__tag grid-product__tag--sale">
+          {{ 'products.general.sale' | t }}
+        </div>
+      {%- endif -%}{% endcomment %}
+    {%- endif -%}
 
     {%- liquid
       assign imageRatio = settings.product_grid_image_size
@@ -67,24 +82,12 @@ Arguments
 
     <div class="grid__item-image-wrapper">
       <div class="grid-product__image-mask">
-
-      {%- if has_custom_label -%}
-        <div class="grid-product__tag grid-product__tag--custom">
-          {{ custom_label }}
-        </div>
-      {%- else -%}
-        {%- unless product.available -%}
-          <div class="grid-product__tag grid-product__tag--sold-out">
-            {{ 'products.product.sold_out' | t }}
-          </div>
-        {%- endunless -%}
         {%- if on_sale and product.available -%}
           <div class="grid-product__tag grid-product__tag--sale">
             {{ 'products.general.sale' | t }}
           </div>
         {%- endif -%}
-      {%- endif -%}
-    
+
         {%- if fixed_aspect_ratio -%}
           <div
             class="grid__image-ratio grid__image-ratio--{% if image_style == 'circle' %}square{% else %}{{ settings.product_grid_image_size }}{% endif %}">
