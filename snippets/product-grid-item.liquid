@@ -194,16 +194,17 @@ Arguments
           <div class="grid-product__title grid-product__title--{{ settings.type_product_style }}">{{ product.title }}</div>
           
           <div class="grid-product__price">
-            {%- if on_sale -%}
-              <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
-              <span class="grid-product__price--original">RRP {{ product.compare_at_price | money }}</span>
-              <span class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
-            {%- endif -%}
+            
             {%- if product.price_varies -%}
               {%- assign price = product.price_min | money -%}
               {{ 'products.general.from_text_html' | t: price: price }}
             {%- else -%}
               {{ product.price | money }}
+            {%- endif -%}
+            {%- if on_sale -%}
+              <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+              <span class="grid-product__price--original">RRP {{ product.compare_at_price | money }}</span>
+              <span class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
             {%- endif -%}
             {%- if on_sale -%}
               {%- if settings.product_save_amount -%}
