@@ -71,6 +71,8 @@
     "social_instagram_link": "https://instagram.com/shopify",
     "social_tiktok_link": "https://www.tiktok.com/@shopify",
     "social_youtube_link": "https://www.youtube.com/user/shopify",
+    "show_breadcrumbs": true,
+    "show_breadcrumbs_collection_link": true,
     "type_custom_font_family": "dm_serif_display_i4",
     "checkout_accent_color": "#111111",
     "checkout_body_background_color": "#ffffff",
