@@ -139,7 +139,7 @@
         "main_menu_alignment": "left",
         "header_style": "sticky",
         "sticky_index": true,
-        "sticky_collection": false,
+        "sticky_collection": true,
         "toolbar_menu": "",
         "toolbar_social": false,
         "show_locale_selector": false,
