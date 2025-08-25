@@ -28,7 +28,7 @@
           </parallax-image>
         {%- endif -%}
 
-        <div class="collection-hero__content">
+       {% comment %} <div class="collection-hero__content">
           <div class="page-width">
             <header class="section-header section-header--hero">
               <div class="section-header__shadow">
@@ -39,7 +39,16 @@
               </div>
             </header>
           </div>
-        </div>
+        </div> {% endcomment %}
+      </div>
+      <div class="page-width page-content page-content--top">
+        <header class="section-header section-header--flush">
+          
+          <h1 class="section-header__title">
+            {{ collection.title }}
+          </h1>
+          {%- render 'breadcrumbs' -%}
+        </header>
       </div>
     </div>
   {%- else -%}
