@@ -101,7 +101,7 @@
         "filter_style": "sidebar",
         "enable_color_swatches": true,
         "enable_swatch_labels": true,
-        "enable_sort": true
+        "enable_sort": false
       }
     }
   },
