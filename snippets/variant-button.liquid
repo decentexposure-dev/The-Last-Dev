@@ -20,7 +20,7 @@
     {% if option.name contains 'Size' or option.name contains 'Color' or option.name contains 'Colour' %}Select a{% endif %} {{ option.name }}
     {%- if connect_to_sizechart and is_size -%}
       <span class="variant__label-info">
-        &mdash;
+        {% comment %} &mdash; {% endcomment %}
         {%- render
           'tool-tip-trigger',
           title: size_chart_title,
