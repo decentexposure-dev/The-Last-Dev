@@ -60,15 +60,23 @@
         "description": {
           "type": "description",
           "settings": {
-            "is_tab": false
+            "is_tab": true
           }
         },
         "tab": {
           "type": "tab",
           "settings": {
-            "title": "Shipping information",
-            "content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>",
-            "page": ""
+            "title": "Free Shipping",
+            "content": "",
+            "page": "shipping-info"
+          }
+        },
+        "tab_mDK8D4": {
+          "type": "tab",
+          "settings": {
+            "title": "Free Returns",
+            "content": "",
+            "page": "returns-refunds"
           }
         }
       },
@@ -81,7 +89,8 @@
         "inventory_status",
         "buy_buttons",
         "description",
-        "tab"
+        "tab",
+        "tab_mDK8D4"
       ],
       "settings": {
         "sku_enable": false,
