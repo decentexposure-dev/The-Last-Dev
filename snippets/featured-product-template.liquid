@@ -159,12 +159,14 @@
         
         <div class="product-section-image">
           {% if section.settings.image != blank  %}
+            <div class="productsingleimage-wrap">
             {%- render 'image-element',
               img: section.settings.image,
               img_width: 2400,
               loading: loading,
               classes: 'productsingleimage',
             -%}
+            </div>
           {%  else %}  
             {%- render 'product-images',
               section_id: section_id,
