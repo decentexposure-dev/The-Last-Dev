@@ -99,7 +99,7 @@
       ],
       "settings": {
         "enable_sidebar": true,
-        "collapsed": false,
+        "collapsed": true,
         "filter_style": "sidebar",
         "enable_color_swatches": true,
         "enable_swatch_labels": true,
