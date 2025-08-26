@@ -32,7 +32,7 @@
           aria-controls="{{ location }}-{{ filter_index }}{% if filter_id %}-{{ filter_id }}{% endif %}"
           data-collapsible-id="{{ filter_id }}">
           {{ filter.label | escape }}
-          {%- render 'collapsible-icons' -%}
+          {%- render 'collapsible-icons', filtertab: true -%}
       </button>
       <div
       id="{{ location }}-{{ filter_index }}-{{ filter_id }}"
