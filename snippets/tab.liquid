@@ -9,6 +9,30 @@
     <button type="button"
       class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders collapsible--auto-height{% if force_open %} is-open{% endif %}" aria-controls="Product-content-{{ id }}"
       {% if force_open %}aria-expanded="true"{% endif %}>
+      {% if title contains 'Shipping' %}
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 9.33337H25.764C26.3093 9.33337 26.8 9.66537 27.0013 10.172L29.1427 15.524C29.268 15.8387 29.3333 16.1747 29.3333 16.5134V24.444C29.3333 25.18 28.736 25.7774 28 25.7774H25.5587" stroke="#1B0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M21.3336 25.8934H10.8936" stroke="#1B0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M29.3333 18.6667H24V13.3334H28.2667" stroke="#1B0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16.7417 6.66663H18.667C19.403 6.66663 20.0003 7.26396 20.0003 7.99996V20H2.66699" stroke="#1B0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M24.9387 24.3946C25.764 25.2199 25.764 26.5573 24.9387 27.3813C24.1133 28.2066 22.776 28.2066 21.952 27.3813C21.1267 26.5559 21.1267 25.2186 21.952 24.3946C22.7773 23.5706 24.1147 23.5706 24.9387 24.3946" stroke="#1B0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10.2722 24.3946C11.0975 25.2199 11.0975 26.5573 10.2722 27.3813C9.44683 28.2066 8.10949 28.2066 7.28549 27.3813C6.46149 26.5559 6.46016 25.2186 7.28549 24.3946C8.11083 23.5706 9.44683 23.5706 10.2722 24.3946" stroke="#1B0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.66699 25.888H4.00033C3.26433 25.888 2.66699 25.2906 2.66699 24.5546V7.99996C2.66699 7.26396 3.26433 6.66663 4.00033 6.66663H5.65099" stroke="#1B0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11.1957 12.424C8.13306 12.424 5.65039 9.94138 5.65039 6.87871C5.65039 3.87871 8.20106 1.33071 11.1997 1.33338C14.2611 1.33604 16.7397 3.81738 16.7397 6.87871C16.7397 9.94004 14.2584 12.424 11.1957 12.424" stroke="#1B0D0D" stroke-width="1.5"/>
+<path d="M13.6598 5.64661L10.5785 8.72794L8.73047 6.87861" stroke="#1B0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+{% elsif title contains 'Returns' %}
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.333 28.0051H6.99539C5.33785 28.0051 3.99414 26.6614 3.99414 25.0039V10.8513C3.99414 10.446 4.07648 10.0449 4.23557 9.67215L5.88293 5.81721C6.35566 4.71255 7.44118 3.99586 8.64274 3.99512H23.3542C24.5559 3.99551 25.6416 4.71231 26.114 5.81721L27.7614 9.67215C27.9214 10.0447 28.0041 10.4459 28.0041 10.8513V16.0001" stroke="#1B0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16 3.99512V10.6646" stroke="#1B0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9.33008 22.6695H11.9979" stroke="#1B0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M28.0041 17.334V13.3323C28.0041 11.859 26.8097 10.6646 25.3364 10.6646H6.66192C5.18855 10.6646 3.99414 11.859 3.99414 13.3323V22.6695" stroke="#1B0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22.6687 28.005H24.6695C26.5112 28.005 28.0042 26.512 28.0042 24.6703V24.6703C28.0042 22.8286 26.5112 21.3356 24.6695 21.3356H18.667" stroke="#1B0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M21.3348 24.0034L18.667 21.3356L21.3348 18.6678" stroke="#1B0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+{%  endif %}
+
       {{ title }}
       {%- render 'collapsible-icons' -%}
     </button>
