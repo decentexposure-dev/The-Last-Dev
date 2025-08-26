@@ -19,6 +19,7 @@
         {% endif %}
       {% endif %}
       <span class="breadcrumb__divider" aria-hidden="true">/</span>
+      <span>{{ product.title }}</span>
 
     {% elsif template.name == 'collection' and collection.handle %}
       {% if settings.show_breadcrumbs_collection_link %}
