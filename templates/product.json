@@ -160,7 +160,7 @@
           "type": "testimonial",
           "settings": {
             "icon": "5-stars",
-            "title": "Too narrow, but look great.",
+            "title": "c great.",
             "testimonial": "<p>Tney look great! The colour is easy to wear, but i'm gutted. I wanted to love them. They are too narrow and i could feel the moulded sole pressing</p>",
             "author": "",
             "author_info": ""
@@ -188,23 +188,21 @@
         },
         "testimonial-4": {
           "type": "testimonial",
-          "disabled": true,
           "settings": {
             "icon": "5-stars",
-            "title": "",
-            "testimonial": "<p>Arrived fast and beautifully boxed. They even let me model on their site :)</p>",
-            "author": "Sharon S.",
+            "title": "Too narrow, but look",
+            "testimonial": "<p>Tney look great! The colour is easy to wear, but i'm gutted. I wanted to love them. They are too narrow and i could feel the moulded sole pressing</p>",
+            "author": "",
             "author_info": ""
           }
         },
         "testimonial-5": {
           "type": "testimonial",
-          "disabled": true,
           "settings": {
             "icon": "5-stars",
-            "title": "",
-            "testimonial": "<p>Couldn't be happier with the service I received from this company.</p>",
-            "author": "Matt C.",
+            "title": "Love them",
+            "testimonial": "<p>Absolutely love these. Perfect combination of function and retro style, with a little arch support. More colors please!</p>",
+            "author": "",
             "author_info": ""
           }
         }
