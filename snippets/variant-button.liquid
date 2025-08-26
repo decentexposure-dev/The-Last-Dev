@@ -15,7 +15,7 @@
 -%}
 
 <div class="variant-wrapper js" data-type="button">
-  <label class="variant__label {%- if connect_to_sizechart and is_size -%} sizechartt{%  endif %} {% if option.name == 'Default' or option.name == 'Title' %} hidden-label{% endif %}{% unless variant_labels %} hidden-label{% endunless %}"
+  <label class="variant__label {% if connect_to_sizechart and is_size %} sizechartt{% endif %} {% if option.name == 'Default' or option.name == 'Title' %} hidden-label{% endif %}{% unless variant_labels %} hidden-label{% endunless %}"
     for="ProductSelect-{{ section_id }}-{{ product.id }}-option-{{ forloop.index0 }}">
     {% if option.name contains 'Size' or option.name contains 'Color' or option.name contains 'Colour' %}Select a{% endif %} {{ option.name }}
     {%- if connect_to_sizechart and is_size -%}
