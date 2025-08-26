@@ -162,7 +162,7 @@
             "icon": "5-stars",
             "testimonial": "<p>Couldn't be happier with the service I received from this company.</p>",
             "author": "Leslie M.",
-            "author_info": "Toronto, ON"
+            "author_info": ""
           }
         },
         "testimonial-2": {
@@ -171,7 +171,7 @@
             "icon": "5-stars",
             "testimonial": "<p>Really went out of their way to make me feel special as a customer, highly recommend!</p>",
             "author": "Rachel F.",
-            "author_info": "Los Angeles, CA"
+            "author_info": ""
           }
         },
         "testimonial-3": {
@@ -180,7 +180,7 @@
             "icon": "5-stars",
             "testimonial": "<p>Fantastic fabrics, great fit and no issues going through the laundry either!</p>",
             "author": "Sam R.",
-            "author_info": "Brooklyn, NY"
+            "author_info": ""
           }
         },
         "testimonial-4": {
@@ -189,7 +189,7 @@
             "icon": "5-stars",
             "testimonial": "<p>Arrived fast and beautifully boxed. They even let me model on their site :)</p>",
             "author": "Sharon S.",
-            "author_info": "New Orleans, LA"
+            "author_info": ""
           }
         },
         "testimonial-5": {
@@ -198,7 +198,7 @@
             "icon": "5-stars",
             "testimonial": "<p>Couldn't be happier with the service I received from this company.</p>",
             "author": "Matt C.",
-            "author_info": "Montreal, QC"
+            "author_info": ""
           }
         }
       },
