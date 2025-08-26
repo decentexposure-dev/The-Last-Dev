@@ -316,7 +316,7 @@
       "name": "Product Slider",
       "settings": {
         "title": "Recommended for <em>you</em>",
-        "home_featured_products": "authentic-original",
+        "home_featured_products": "merrell",
         "per_row": 4,
         "rows": 3,
         "view_all": false,
@@ -427,7 +427,7 @@
       "name": "Product Slider",
       "settings": {
         "title": "<em>Women’s </em>Footwear",
-        "home_featured_products": "authentic-originals-womens",
+        "home_featured_products": "womens-footwear",
         "per_row": 4,
         "rows": 2,
         "view_all": false,
