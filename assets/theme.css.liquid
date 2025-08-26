@@ -13701,6 +13701,27 @@ h1 em, h2 em  {
   font-size: 20px;
   font-weight: bold;
 }
+.label, label:not(.variant__button-label):not(.text-label) {
+  font-size: 14px;
+  text-transform: none;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.variant-input-wrap label {
+  box-shadow: 0 0 0 1px #1B0D0D33;
+  font-size: 14px;
+  font-weight: bold;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  line-height: 46px;
+  text-align: center;
+}
+.variant-input-wrap input[type="radio"]:checked + label {
+  box-shadow: 0 0 0 1px #1B0D0D;
+  background: #1B0D0D;
+  color: #F3ECDB;
+}
 @media only screen and (min-width: 769px) {
   .product-single__title {
     font-size: 32px;
