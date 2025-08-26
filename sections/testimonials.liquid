@@ -47,6 +47,10 @@
                 <span class="testimonial-stars">★</span>
               {%- endif -%}
 
+              {%- if block.settings.title != blank -%}
+                <div class="testimonial-heading">{{ block.settings.title }}</div>
+              {%- endif -%}
+
               {%- if block.settings.testimonial != blank -%}
                 <div class="rte-setting text-spacing">{{ block.settings.testimonial }}</div>
               {%- endif -%}
@@ -183,6 +187,11 @@
               "label": "t:sections.testimonials.blocks.testimonial.settings.icon.options.1-star.label"
             }
           ]
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
         },
         {
           "type": "richtext",
