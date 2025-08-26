@@ -158,6 +158,14 @@
         </div>
         
         <div class="product-section-image">
+          {% if section.setting.image != blank  %}
+            {%- render 'image-element',
+              img: section.settings.image,
+              img_width: 2400,
+              loading: loading,
+              classes: 'productsingleimage',
+            -%}
+          {%  else %}  
             {%- render 'product-images',
               section_id: section_id,
               product: product,
@@ -178,6 +186,7 @@
               mobile_layout: mobile_layout,
               featured_product_arrow: true
             -%}
+            {% endif %}  
         </div>
         
         <div class="product-section-bottom" data-product-blocks>
