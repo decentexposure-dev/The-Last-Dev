@@ -7663,6 +7663,7 @@ theme.recentlyViewed = {
           childNavScroller: this.cache.thumbScroller,
           childVertical: this.cache.thumbSlider.dataset.position === 'beside',
           pageDots: true, // mobile only with CSS
+          prevNextButtons: true,
           wrapAround: true,
           callbacks: {
             onInit: this.onSliderInit.bind(this),
