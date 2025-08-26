@@ -10,7 +10,7 @@
       class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders collapsible--auto-height{% if force_open %} is-open{% endif %}" aria-controls="Product-content-{{ id }}"
       {% if force_open %}aria-expanded="true"{% endif %}>
       {% if title contains 'Shipping' %}
-        <span>
+        <span class="collapsible-title-icon">
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M20 9.33337H25.764C26.3093 9.33337 26.8 9.66537 27.0013 10.172L29.1427 15.524C29.268 15.8387 29.3333 16.1747 29.3333 16.5134V24.444C29.3333 25.18 28.736 25.7774 28 25.7774H25.5587" stroke="#1B0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M21.3336 25.8934H10.8936" stroke="#1B0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -25,7 +25,7 @@
 {{ title }}
 </span>
 {% elsif title contains 'Returns' %}
-  <span>
+  <span class="collapsible-title-icon">
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M17.333 28.0051H6.99539C5.33785 28.0051 3.99414 26.6614 3.99414 25.0039V10.8513C3.99414 10.446 4.07648 10.0449 4.23557 9.67215L5.88293 5.81721C6.35566 4.71255 7.44118 3.99586 8.64274 3.99512H23.3542C24.5559 3.99551 25.6416 4.71231 26.114 5.81721L27.7614 9.67215C27.9214 10.0447 28.0041 10.4459 28.0041 10.8513V16.0001" stroke="#1B0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M16 3.99512V10.6646" stroke="#1B0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
