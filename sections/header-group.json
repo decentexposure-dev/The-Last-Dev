@@ -54,7 +54,7 @@
         "mega_menu_7n8Lx6": {
           "type": "mega_menu",
           "settings": {
-            "bgcolor": "",
+            "bgcolor": "#faf7f2",
             "color": "#f3ecdb",
             "title": "Women",
             "column_1": true,
@@ -92,7 +92,7 @@
         "mega_menu_FLXkNE": {
           "type": "mega_menu",
           "settings": {
-            "bgcolor": "",
+            "bgcolor": "#faf7f2",
             "color": "#f3ecdb",
             "title": "Men",
             "column_1": true,
