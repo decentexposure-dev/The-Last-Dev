@@ -182,6 +182,20 @@
   </div>
 </div>
 
+<script>
+  document.querySelectorAll('.site-nav--is-megamenu > details').forEach(detail => {
+  detail.addEventListener('mouseenter', () => {
+    detail.setAttribute('open', true);
+    detail.querySelector('summary').setAttribute('aria-expanded', 'true');
+  });
+  detail.addEventListener('mouseleave', () => {
+    detail.removeAttribute('open');
+    detail.querySelector('summary').setAttribute('aria-expanded', 'false');
+  });
+});
+
+</script>
+
 {% schema %}
 {
   "name": "t:sections.header.name",
