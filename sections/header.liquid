@@ -192,6 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Open on hover
     item.addEventListener('mouseenter', () => {
       item.setAttribute('open', true);
+      item.removeAttribute('open');
       if (summary) summary.setAttribute('aria-expanded', 'true');
     });
 
