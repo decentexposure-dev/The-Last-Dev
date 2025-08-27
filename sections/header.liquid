@@ -182,6 +182,28 @@
   </div>
 </div>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const menuItems = document.querySelectorAll('.site-nav__item > details');
+
+  menuItems.forEach(item => {
+    const summary = item.querySelector('summary');
+
+    // Open on hover
+    item.addEventListener('mouseenter', () => {
+      item.setAttribute('open', true);
+      if (summary) summary.setAttribute('aria-expanded', 'true');
+    });
+
+    // Keep open while hovering the submenu
+    item.addEventListener('mouseleave', () => {
+      item.removeAttribute('open');
+      if (summary) summary.setAttribute('aria-expanded', 'false');
+    });
+  });
+});
+</script>
+
 
 {% schema %}
 {
