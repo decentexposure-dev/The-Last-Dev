@@ -182,19 +182,6 @@
   </div>
 </div>
 
-<script>
-  document.querySelectorAll('.site-nav__item > details').forEach(detail => {
-  detail.addEventListener('mouseenter', () => {
-    detail.setAttribute('open', true);
-    detail.querySelector('summary').setAttribute('aria-expanded', 'true');
-  });
-  detail.addEventListener('mouseleave', () => {
-    detail.removeAttribute('open');
-    detail.querySelector('summary').setAttribute('aria-expanded', 'false');
-  });
-});
-
-</script>
 
 {% schema %}
 {
