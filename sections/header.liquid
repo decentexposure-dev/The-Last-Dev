@@ -184,11 +184,11 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const menuItems = document.querySelectorAll('.site-nav__item > details');
+  const menuItems = document.querySelectorAll('.header__menu-item > details');
 
   menuItems.forEach(item => {
     const summary = item.querySelector('summary');
-    const megaMenu = item.querySelector('.megamenu, .header__submenu');
+    const megaMenu = item.querySelector('.mega-menu, .header__submenu');
 
     if (!megaMenu) return;
 
