@@ -182,8 +182,6 @@
   </div>
 </div>
 
-
-
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const menuItems = document.querySelectorAll('.site-nav__item > details');
@@ -193,31 +191,34 @@ document.addEventListener("DOMContentLoaded", () => {
     const megaMenu = item.querySelector('.megamenu');
 
     if (!megaMenu) return;
-
-    // Keep open while hovering nav or menu
+    
+    // Open on hover
     item.addEventListener('mouseenter', () => {
       item.setAttribute('open', true);
-      summary?.setAttribute('aria-expanded', 'true');
+      if (summary) summary.setAttribute('aria-expanded', 'true');
     });
 
+    // Keep open while hovering the submenu
     item.addEventListener('mouseleave', () => {
       item.removeAttribute('open');
-      summary?.setAttribute('aria-expanded', 'false');
+      if (summary) summary.setAttribute('aria-expanded', 'false');
     });
 
     // Also keep open when hovering the mega menu
     megaMenu.addEventListener('mouseenter', () => {
       item.setAttribute('open', true);
-      summary?.setAttribute('aria-expanded', 'true');
+      if (summary) summary.setAttribute('aria-expanded', 'true');
     });
 
     megaMenu.addEventListener('mouseleave', () => {
       item.removeAttribute('open');
-      summary?.setAttribute('aria-expanded', 'false');
+      if (summary) summary.setAttribute('aria-expanded', 'false');
     });
+
   });
 });
 </script>
+
 
 
 
