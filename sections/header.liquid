@@ -198,6 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Keep open while hovering the submenu
     item.addEventListener('mouseleave', () => {
       item.removeAttribute('open');
+      item.setAttribute('open', true);
       if (summary) summary.setAttribute('aria-expanded', 'false');
     });
   });
