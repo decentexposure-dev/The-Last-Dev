@@ -192,14 +192,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Open on hover
     item.addEventListener('mouseenter', () => {
       item.setAttribute('open', true);
-      item.removeAttribute('open');
       if (summary) summary.setAttribute('aria-expanded', 'true');
     });
 
     // Keep open while hovering the submenu
     item.addEventListener('mouseleave', () => {
       item.removeAttribute('open');
-      item.setAttribute('open', true);
       if (summary) summary.setAttribute('aria-expanded', 'false');
     });
   });
