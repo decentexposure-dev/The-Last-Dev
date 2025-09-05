@@ -207,8 +207,8 @@
         "image_r7KMN7": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Object_1.png",
-            "title": "Men's Apparel",
+            "image": "shopify://shop_images/cat-jacket.png",
+            "title": "Women's Apparel",
             "link": "",
             "bgcolor": "#f3ecdb",
             "color": "#1b0d0d"
@@ -217,8 +217,8 @@
         "image_4EpEpm": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/image_2.png",
-            "title": "Men's Footwear",
+            "image": "shopify://shop_images/cat-shoe-w.png",
+            "title": "Women's Footwear",
             "link": "",
             "bgcolor": "#f3ecdb",
             "color": "#1b0d0d"
