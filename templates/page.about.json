@@ -64,7 +64,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p>We’re the outlet destination brought to you by The Nevada Company, created to offer  incredible deals on premium outdoor, lifestyle, and fashion brands. From Merrell and Sweaty Betty to Chaco and more, The Last gives you access to the products you love at prices you’ll love even more.</p><p>The name <em>The Last</em> has a double meaning. In shoemaking, a “last” is the mold used to craft each pair. For us, it also symbolises <em>last chance</em> — the opportunity to pick up high-quality gear before it’s gone.</p><h3>Why we’re here</h3><p>Over time, The Nevada Company has grown its portfolio of world-class brands and, naturally, we’ve also built up stock from past seasons. Instead of letting those products sit in a warehouse, we created The Last: a dedicated space where clearance items can be sold without compromising the integrity of our full-price brand stores.</p><p>This lets us offer you consistent savings of 30–70% off, while protecting the premium positioning of the brands we represent. Think of it as a win-win: you get authentic products at exceptional value, and our brands maintain their focus on new arrivals and seasonal collections.</p>"
+            "text": "{{ page.content }}"
           }
         }
       },
