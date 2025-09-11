@@ -128,7 +128,7 @@
                   </div>
                 {%- endif -%}
               </div>
-              {%- if has_dropdown -%}
+              
               <div id="Linklist-{{ child_list_handle }}"
                 class="mobile-nav__sublist collapsible-content collapsible-content--all{% if link.active or link.child_active %} is-open{% endif %}"
                 {% if link.active or link.child_active %}style="height: auto;"{% endif %}>
@@ -140,7 +140,7 @@
                   </ul>
                 </div>
               </div>
-            {% endif %}
+            
         </li>
       {% else %}  
           <li class="mobile-nav__item appear-animation appear-delay-{{ animation_row }}">
