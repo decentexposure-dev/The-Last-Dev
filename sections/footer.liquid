@@ -110,10 +110,11 @@
         </svg>
 
 
-        &copy; {{ 'now' | date: '%Y' }} {{ shop.name }}.
+        &copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. 
         {%- if section.settings.copyright_text != blank -%}
-          {{ section.settings.copyright_text }}
+          {{ section.settings.copyright_text }} 
         {%- endif -%}
+        <a href="https://www.decentexposure.co.nz" target="_blank" rel="nofollow">Site Credit</a>
       </p>
     {%- endif -%}
     <p class="footer__small-text  footer-left-right">
