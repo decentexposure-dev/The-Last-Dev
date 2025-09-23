@@ -1178,50 +1178,95 @@ Sizes listed on this website are all sized in US sizes. Conversions as per chart
 
 </style>
 
+<style>
+/* minimal tab CSS (add to your stylesheet if you already have styles) */
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+.tab-button { cursor: pointer; user-select: none; }
+.tab-button.active { font-weight: 600; }
+</style>
+
 <script>
-document.addEventListener("DOMContentLoaded", initializeTabs);
+(function(){
+  // Initialization: ensure each tab-container has at least one active button
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.tab-container').forEach(container => {
+      if (!container.querySelector('.tab-button.active')) {
+        const first = container.querySelector('.tab-button');
+        if (first) first.classList.add('active');
+      }
+    });
 
-function initializeTabs() {
-  const tabButtons = document.querySelectorAll(".tab-button");
-
-  tabButtons.forEach(tabButton => {
-    tabButton.addEventListener("click", handleTabClick);
+    // Ensure each content parent has only one direct active .tab-content
+    const contentParents = new Set();
+    document.querySelectorAll('.tab-content').forEach(tc => contentParents.add(tc.parentElement));
+    contentParents.forEach(container => {
+      try {
+        const directActives = container.querySelectorAll(':scope > .tab-content.active');
+        if (directActives.length === 0) {
+          const first = container.querySelector(':scope > .tab-content');
+          if (first) first.classList.add('active');
+        } else if (directActives.length > 1) {
+          directActives.forEach((el, idx) => { if (idx > 0) el.classList.remove('active'); });
+        }
+      } catch (err) {
+        // fallback if :scope not supported
+        const directChildren = Array.from(container.children).filter(c => c.classList && c.classList.contains('tab-content'));
+        const directActivesFallback = directChildren.filter(c => c.classList.contains('active'));
+        if (directActivesFallback.length === 0 && directChildren[0]) directChildren[0].classList.add('active');
+        if (directActivesFallback.length > 1) directActivesFallback.slice(1).forEach(c => c.classList.remove('active'));
+      }
+    });
   });
-}
 
-function updateActiveState(tabContainer, activeTab, targetContent) {
-  // Deactivate currently active tab
-  const currentActiveTab = tabContainer.querySelector(".tab-button.active");
-  if (currentActiveTab) currentActiveTab.classList.remove("active");
+  // Delegated click handler (works for dynamic content too)
+  document.addEventListener('click', function(e){
+    const clicked = e.target.closest('.tab-button');
+    if (!clicked) return;
 
-  // Activate clicked tab
-  activeTab.classList.add("active");
+    const targetId = clicked.getAttribute('data-tab');
+    if (!targetId) return;
 
-  // Find all sibling contents within the same container
-  const contentContainer = targetContent.parentElement;
-  const currentActiveContent = contentContainer.querySelector(".tab-content.active");
-  if (currentActiveContent) currentActiveContent.classList.remove("active");
+    const targetContent = document.getElementById(targetId);
+    if (!targetContent) {
+      console.warn('Tab target not found for id:', targetId, clicked);
+      return;
+    }
 
-  // Show the target content
-  targetContent.classList.add("active");
-}
+    // Deactivate sibling buttons in the same .tab-container
+    const buttonsContainer = clicked.closest('.tab-container');
+    if (buttonsContainer) {
+      buttonsContainer.querySelectorAll('.tab-button.active').forEach(btn => btn.classList.remove('active'));
+    }
+    clicked.classList.add('active');
 
-function handleTabClick(event) {
-  const clickedTab = event.currentTarget;
-  const tabContainer = clickedTab.closest(".tab-container"); // ✅ find nearest tab-container
-  const targetContentId = clickedTab.getAttribute("data-tab");
+    // Find the content container (parent of the target content)
+    const contentContainer = targetContent.parentElement;
+    if (!contentContainer) {
+      console.warn('Content container not found for', targetContent);
+      return;
+    }
 
-  if (!targetContentId) return;
+    // Remove active from **direct** .tab-content children only (safer)
+    try {
+      contentContainer.querySelectorAll(':scope > .tab-content.active').forEach(c => c.classList.remove('active'));
+    } catch (err) {
+      // fallback for browsers without :scope support
+      Array.from(contentContainer.children).forEach(child => {
+        if (child.classList && child.classList.contains('tab-content') && child.classList.contains('active')) {
+          child.classList.remove('active');
+        }
+      });
+    }
 
-  const targetContent = document.getElementById(targetContentId);
-  if (!targetContent) {
-    console.warn("Target content not found:", targetContentId);
-    return;
-  }
+    // Activate the selected content
+    targetContent.classList.add('active');
 
-  // Update active state (works for parent + nested tabs)
-  updateActiveState(tabContainer, clickedTab, targetContent);
-}
+    // Prevent default (if you use <a> or <button> inside)
+    e.preventDefault();
+  });
+})();
 </script>
 
 {% endif %}
