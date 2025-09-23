@@ -3787,7 +3787,7 @@ theme.recentlyViewed = {
   
     _open(context, insertedHtml) {
       this.toolTipContent.innerHTML = insertedHtml;
-  
+      initializeTabs();
       // Ensure we set a title for product availability
       if (context != 'store-availability') {
         this.toolTipTitle.remove();
