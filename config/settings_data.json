@@ -72,6 +72,7 @@
     "social_instagram_link": "https://instagram.com/shopify",
     "social_tiktok_link": "https://www.tiktok.com/@shopify",
     "social_youtube_link": "https://www.youtube.com/user/shopify",
+    "favicon": "shopify://shop_images/last-favi.png",
     "show_breadcrumbs": true,
     "show_breadcrumbs_collection_link": false,
     "text_direction": "ltr",
