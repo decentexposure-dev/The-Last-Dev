@@ -173,7 +173,7 @@
 <!--End_Gem_Page_Footer_Script-->
 
 {% if template == 'product' %}
- 
+ {% comment %}
 <style>
   #mens--womens-tab-container {
     display: flex;
@@ -231,7 +231,7 @@
     display: block;
   }
 </style>
-{% comment %}
+
   <!-- OUTER TABS -->
   <div id="mens--womens-tab-container" class="tab-container">
     <div class="tab-buttons">
@@ -1138,7 +1138,7 @@
       </div>
     </div>
   </div>
- {% endcomment %}
+ 
   <script>
   (function(){
     document.addEventListener('click', function(e){
@@ -1175,7 +1175,7 @@
     });
   })();
   </script>
-
+{% endcomment %}
 
 {% endif %}
 
