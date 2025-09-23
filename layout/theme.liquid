@@ -1189,58 +1189,38 @@ function initializeTabs() {
   });
 }
 
-function updateActiveState(tabContainer, activeTab, contentContainer, targetContent) {
+function updateActiveState(tabContainer, activeTab, targetContent) {
   // Deactivate currently active tab
   const currentActiveTab = tabContainer.querySelector(".tab-button.active");
   if (currentActiveTab) currentActiveTab.classList.remove("active");
-  
-//   alert(currentActiveTab.id);
 
   // Activate clicked tab
   activeTab.classList.add("active");
-  
-//   alert(activeTab.id);
-  
-//   alert(contentContainer.id);
 
-  // Deactivate currently active content
-  const currentActiveContent = contentContainer.querySelector(":scope > .tab-content.active");
+  // Find all sibling contents within the same container
+  const contentContainer = targetContent.parentElement;
+  const currentActiveContent = contentContainer.querySelector(".tab-content.active");
   if (currentActiveContent) currentActiveContent.classList.remove("active");
-  
-//   alert(currentActiveContent.id);
 
-  // Activate target content
-  if (targetContent) {
-    targetContent.classList.add("active");
-    
-    // alert(targetContent.id);
-    
-  } else {
-    console.warn("Target content not found for id:", targetContentId);
-  }
+  // Show the target content
+  targetContent.classList.add("active");
 }
 
 function handleTabClick(event) {
   const clickedTab = event.currentTarget;
-  const tabContainer = clickedTab.parentElement;
+  const tabContainer = clickedTab.closest(".tab-container"); // ✅ find nearest tab-container
   const targetContentId = clickedTab.getAttribute("data-tab");
-  
-  if (!targetContentId) return; // Safeguard against missing data-tab attributes
+
+  if (!targetContentId) return;
 
   const targetContent = document.getElementById(targetContentId);
   if (!targetContent) {
-    console.warn("Target content not found for tab:", clickedTab);
+    console.warn("Target content not found:", targetContentId);
     return;
   }
-  
-  const contentContainer = targetContent.parentElement;
 
-  if (!contentContainer) {
-    console.warn("Content container not found for tab:", clickedTab);
-    return;
-  }
-  // Update active state for tabs and content
-  updateActiveState(tabContainer, clickedTab, contentContainer, targetContent);
+  // Update active state (works for parent + nested tabs)
+  updateActiveState(tabContainer, clickedTab, targetContent);
 }
 </script>
 
