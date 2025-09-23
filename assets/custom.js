@@ -30,7 +30,7 @@ function handleTabClick(event) {
     const parent = clickedTab.closest('.tool-tip__content');
     if (!targetContentId) return; // Safeguard against missing data-tab attributes
     
-    const targetContent = parent.getElementById(targetContentId);
+    const targetContent = parent.querySelector(`#${targetContentId}`);
     if (!targetContent) {
         console.warn("Target content not found for tab:", clickedTab);
         return;
