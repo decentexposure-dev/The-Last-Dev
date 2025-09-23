@@ -110,14 +110,10 @@ transform: scale(1.03);*/
     cursor: pointer;
     background: #f9f9f9;
     user-select: none;
-    border-radius: 5px 5px 0 0;
-   font-weight: bold;
   }
   .tab-button.active {
     background: #333;
     color: #fff;
-    border-bottom: none;
-    text-decoration: underline;
   }
 
   /* Content */
@@ -130,3 +126,45 @@ transform: scale(1.03);*/
   .tab-content.active {
     display: block;
   }
+
+  /*Tables CSS*/
+.table {
+    table-layout: auto !important;
+}
+
+.doubled-col {
+ width: 100%;
+ border-collapse: collapse;
+ table-layout: auto;
+}
+
+.doubled-col th, .doubled-col td {
+ padding: 8px;
+ text-align: center;
+ white-space: nowrap;
+}
+
+.doubled-col th {
+ background-color: #F7F5F3;
+}
+
+.doubled-col td {
+ border: 1px solid #ddd;
+}
+
+.doubled-col tbody tr:nth-child(even) {
+ background-color: #f9f9f9;
+}
+
+/* Container for the table */
+.table-container {
+ overflow-x: auto;
+}
+
+/* Make the first column sticky */
+.doubled-col th:first-child, .doubled-col td:first-child {
+ position: sticky;
+ left: 0;
+ z-index: 2;
+ background-color:#F7F5F3;
+}
