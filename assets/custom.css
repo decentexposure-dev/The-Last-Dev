@@ -99,31 +99,31 @@ transform: scale(1.03);*/
     border-radius: 5px;
   }
   /* Base tab styles */
-  .tab-buttons {
+  #mens--womens-tab-container .tab-buttons {
     display: flex;
     gap: 5px;
     margin-bottom: 0px;
   }
-  .tab-button {
+  #mens--womens-tab-container .tab-button {
     padding: 10px 20px;
     border: 1px solid #ccc;
     cursor: pointer;
     background: #f9f9f9;
     user-select: none;
   }
-  .tab-button.active {
+  #mens--womens-tab-container .tab-button.active {
     background: #333;
     color: #fff;
   }
 
   /* Content */
-  .tab-content {
+  #mens--womens-tab-container.tab-content {
     display: none;
     padding: 10px;
     border: 1px solid #ccc;
     margin: 10px 0px;
   }
-  .tab-content.active {
+  #mens--womens-tab-container.tab-content.active {
     display: block;
   }
 
