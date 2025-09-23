@@ -45,6 +45,10 @@
       </span>
     </button>
 
+    {% if featured_product_button %}
+      <a class="btn" href="{{ product.url }}">View product</a>
+    {% endif %}   
+
     {%- if enable_dynamic_buttons -%}
       {{ form | payment_button }}
     {%- endif -%}
