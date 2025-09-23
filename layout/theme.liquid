@@ -173,11 +173,7 @@
 <!--End_Gem_Page_Footer_Script-->
 
 {% if template == 'product' %}
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Nested Tabs Example</title>
+
   <style>
     /* Base tab styles */
     .tab-buttons {
@@ -190,6 +186,7 @@
       border: 1px solid #ccc;
       cursor: pointer;
       background: #f9f9f9;
+      user-select: none;
     }
     .tab-button.active {
       background: #333;
@@ -207,15 +204,14 @@
       display: block;
     }
   </style>
-</head>
-<body>
+
 
   <!-- OUTER TABS -->
   <div class="tab-container">
     <div class="tab-buttons">
-      <button class="tab-button active" data-tab="mens">Mens</button>
-      <button class="tab-button" data-tab="womens">Womens</button>
-      <button class="tab-button" data-tab="kids">Kids</button>
+      <div class="tab-button active" data-tab="mens">Mens</div>
+      <div class="tab-button" data-tab="womens">Womens</div>
+      <div class="tab-button" data-tab="kids">Kids</div>
     </div>
 
     <div class="tab-contents">
@@ -226,8 +222,8 @@
         <!-- INNER TABS for Mens -->
         <div class="tab-container">
           <div class="tab-buttons">
-            <button class="tab-button active" data-tab="mens-shoes">Shoes</button>
-            <button class="tab-button" data-tab="mens-clothing">Clothing</button>
+            <div class="tab-button active" data-tab="mens-shoes">Shoes</div>
+            <div class="tab-button" data-tab="mens-clothing">Clothing</div>
           </div>
           <div class="tab-contents">
             <div class="tab-content active" id="mens-shoes">
@@ -247,8 +243,8 @@
         <!-- INNER TABS for Womens -->
         <div class="tab-container">
           <div class="tab-buttons">
-            <button class="tab-button active" data-tab="womens-shoes">Shoes</button>
-            <button class="tab-button" data-tab="womens-clothing">Clothing</button>
+            <div class="tab-button active" data-tab="womens-shoes">Shoes</div>
+            <div class="tab-button" data-tab="womens-clothing">Clothing</div>
           </div>
           <div class="tab-contents">
             <div class="tab-content active" id="womens-shoes">
@@ -306,8 +302,6 @@
   })();
   </script>
 
-</body>
-</html>
 
 {% endif %}
 </body>
