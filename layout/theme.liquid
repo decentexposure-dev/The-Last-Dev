@@ -475,44 +475,58 @@ Sizes listed on this website are all sized in US sizes. Conversions as per chart
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  initializeAllTabs();
+  initTabs("#mens-womens-tab-container"); // Top-level tabs
+  initNestedTabs(".nested-tab-container"); // All nested tabs
 });
 
-function initializeAllTabs() {
-  // Initialize all tab containers
-  const tabContainers = document.querySelectorAll(".tab-container");
+function initTabs(containerSelector) {
+  const container = document.querySelector(containerSelector);
+  if (!container) return;
   
-  tabContainers.forEach(container => {
-    const tabButtons = container.querySelectorAll(".tab-button");
-    tabButtons.forEach(tabButton => {
-      tabButton.addEventListener("click", () => handleTabClick(tabButton, container));
+  const tabs = container.querySelectorAll(".tab-button");
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      const targetId = tab.getAttribute("data-tab");
+      if (!targetId) return;
+      
+      // Remove active from other tabs
+      tabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+      
+      // Remove active from top-level contents
+      document.querySelectorAll("#general-content-container > .tab-content").forEach(tc => tc.classList.remove("active"));
+      
+      // Activate the correct content
+      const targetContent = document.getElementById(targetId);
+      if (targetContent) targetContent.classList.add("active");
     });
   });
 }
 
-function handleTabClick(tabButton, tabContainer) {
-  const targetId = tabButton.getAttribute("data-tab");
-  if (!targetId) return;
-
-  const targetContent = document.getElementById(targetId);
-  if (!targetContent) return;
-
-  // Find the closest content container for this tab
-  // For top-level tabs, it's #general-content-container
-  // For nested tabs, it's the parent tab-content
-  const contentContainer = targetContent.closest(".tab-content") 
-                            ? targetContent.closest(".tab-content") 
-                            : document.getElementById("general-content-container");
-
-  if (!contentContainer) return;
-
-  // Remove active state from all tabs in this container
-  tabContainer.querySelectorAll(".tab-button").forEach(btn => btn.classList.remove("active"));
-  tabButton.classList.add("active");
-
-  // Remove active state from all tab-contents in this container
-  contentContainer.querySelectorAll(":scope > .tab-content").forEach(tc => tc.classList.remove("active"));
-  targetContent.classList.add("active");
+function initNestedTabs(containerSelector) {
+  const nestedContainers = document.querySelectorAll(containerSelector);
+  nestedContainers.forEach(container => {
+    const tabs = container.querySelectorAll(".tab-button");
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        const targetId = tab.getAttribute("data-tab");
+        if (!targetId) return;
+        
+        // Remove active from sibling tabs
+        tabs.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+        
+        // Remove active from nested contents inside the same parent tab
+        const parentContent = container.closest(".tab-content");
+        if (!parentContent) return;
+        parentContent.querySelectorAll(":scope > .tab-content").forEach(tc => tc.classList.remove("active"));
+        
+        // Activate target nested content
+        const targetContent = document.getElementById(targetId);
+        if (targetContent) targetContent.classList.add("active");
+      });
+    });
+  });
 }
 </script>
 
