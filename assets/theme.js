@@ -3786,8 +3786,11 @@ theme.recentlyViewed = {
     }
   
     _open(context, insertedHtml) {
+      console.log('this.el',this.el);
       this.toolTipContent.innerHTML = insertedHtml;
-      initializeTabs();
+      if (typeof initializeTabs === "function" and ) {
+        initializeTabs();
+      }
       // Ensure we set a title for product availability
       if (context != 'store-availability') {
         this.toolTipTitle.remove();
