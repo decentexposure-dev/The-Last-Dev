@@ -158,7 +158,7 @@
         assign isCollectionDefault = true
       endif
       if gpShopMeta['indexV6-default'] == 'true' and request.page_type == 'index'
-        assign isIndexDefault = true
+        assign isIndexDefault = false
       endif
       if isProductDefault or isCollectionDefault or isIndexDefault or isPreviewV6
         assign isV6GpTemplate = true
