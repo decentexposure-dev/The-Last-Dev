@@ -902,3 +902,40 @@
     </div>
   </div>
  
+
+  <script>
+  (function(){
+    document.addEventListener('click', function(e){
+      const clicked = e.target.closest('.tab-button');
+      if (!clicked) return;
+
+      const targetId = clicked.getAttribute('data-tab');
+      if (!targetId) return;
+
+      const targetContent = document.getElementById(targetId);
+      if (!targetContent) {
+        console.warn('Tab target not found:', targetId);
+        return;
+      }
+
+      // Deactivate sibling buttons
+      const buttonsContainer = clicked.closest('.tab-buttons');
+      if (buttonsContainer) {
+        buttonsContainer.querySelectorAll('.tab-button.active')
+          .forEach(btn => btn.classList.remove('active'));
+      }
+      clicked.classList.add('active');
+
+      // Deactivate sibling contents (direct children only)
+      const contentContainer = targetContent.parentElement;
+      Array.from(contentContainer.children).forEach(child => {
+        if (child.classList && child.classList.contains('tab-content')) {
+          child.classList.remove('active');
+        }
+      });
+
+      // Activate target content
+      targetContent.classList.add('active');
+    });
+  })();
+  </script>
