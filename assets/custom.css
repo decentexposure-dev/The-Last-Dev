@@ -110,10 +110,14 @@ transform: scale(1.03);*/
     cursor: pointer;
     background: #f9f9f9;
     user-select: none;
+    border-radius: 5px 5px 0 0;
+   font-weight: bold;
   }
   .tab-button.active {
     background: #333;
     color: #fff;
+    border-bottom: none;
+    text-decoration: underline;
   }
 
   /* Content */
