@@ -96,11 +96,11 @@
         "custom_kkariG": {
           "type": "custom",
           "settings": {
-            "show_footer_title": true,
+            "show_footer_title": false,
             "title": "Stay Connected",
             "text": "",
             "show_payment": false,
-            "show_social": true,
+            "show_social": false,
             "container_width": 18
           }
         },
@@ -130,7 +130,7 @@
         "show_currency_flags": false,
         "show_payment_icons": false,
         "show_copyright": true,
-        "copyright_text": "&nbsp;All rights reserved"
+        "copyright_text": " All rights reserved"
       }
     }
   },
