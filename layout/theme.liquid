@@ -177,7 +177,7 @@
   <h2>Merrell Size Guide</h2>
 
 <!-- Top-Level Tabs -->
-<div id="mens-womens-tab-container" class="tab-container">
+<div id="top-tabs" class="tab-container">
   <div class="tab-button active" data-tab="mens-tab">Mens</div>
   <div class="tab-button" data-tab="womens-tab">Womens</div>
   <div class="tab-button" data-tab="kids-tab">Kids</div>
@@ -188,180 +188,114 @@
 </div>
 
 <!-- Top-Level Content -->
-<div id="general-content-container">
-  <!-- Mens Tab -->
-  <div id="mens-tab" class="tab-content active">
-    <!-- Nested Tabs for Mens -->
-    <div class="tab-container nested-tab-container">
+<div id="top-tab-contents">
+  <!-- Mens -->
+  <div id="mens-tab" class="top-tab-content active">
+    <!-- Nested Tabs -->
+    <div class="nested-tab-container">
       <div class="tab-button active" data-tab="mens-shoes-tab">Boots/Shoes</div>
       <div class="tab-button" data-tab="mens-sandals-tab">Sandals</div>
       <div class="tab-button" data-tab="mens-clothing-tab">Clothing</div>
-      <div class="tab-button" data-tab="mens-bottoms-tab">Pants/Bottoms</div>
-      <div class="tab-button" data-tab="mens-socks-tab">Socks</div>
     </div>
 
-    <hr style="height: 3px; background-color: #F4762D; margin: 20px 0;">
-
-    <div id="mens-shoes-tab" class="tab-content active">
-      <h2>Mens Boots & Shoes</h2>
+    <div id="mens-shoes-tab" class="nested-tab-content active">
+      <h3>Mens Boots & Shoes</h3>
       <div class="table-container">a</div>
     </div>
 
-    <div id="mens-sandals-tab" class="tab-content">
-      <h2>Mens Sandals</h2>
+    <div id="mens-sandals-tab" class="nested-tab-content">
+      <h3>Mens Sandals</h3>
       <div class="table-container">b</div>
     </div>
 
-    <div id="mens-clothing-tab" class="tab-content">
-      <h2>Mens Clothing</h2>
+    <div id="mens-clothing-tab" class="nested-tab-content">
+      <h3>Mens Clothing</h3>
       <div class="table-container">c</div>
     </div>
+  </div>
 
-    <div id="mens-bottoms-tab" class="tab-content">
-      <h2>Mens Pants/Bottoms</h2>
+  <!-- Womens -->
+  <div id="womens-tab" class="top-tab-content">
+    <div class="nested-tab-container">
+      <div class="tab-button active" data-tab="womens-shoes-tab">Boots/Shoes</div>
+      <div class="tab-button" data-tab="womens-sandals-tab">Sandals</div>
+    </div>
+
+    <div id="womens-shoes-tab" class="nested-tab-content active">
+      <h3>Womens Boots & Shoes</h3>
       <div class="table-container">d</div>
     </div>
 
-    <div id="mens-socks-tab" class="tab-content">
-      <h2>Mens Socks</h2>
+    <div id="womens-sandals-tab" class="nested-tab-content">
+      <h3>Womens Sandals</h3>
       <div class="table-container">e</div>
     </div>
   </div>
 
-  <!-- Womens Tab -->
-  <div id="womens-tab" class="tab-content">
-    <div class="tab-container nested-tab-container">
-      <div class="tab-button active" data-tab="womens-shoes-tab">Boots/Shoes</div>
-      <div class="tab-button" data-tab="womens-sandals-tab">Sandals</div>
-      <div class="tab-button" data-tab="womens-clothing-tab">Clothing</div>
-      <div class="tab-button" data-tab="womens-bottoms-tab">Pants/Bottoms/Skirts</div>
-      <div class="tab-button" data-tab="womens-socks-tab">Socks</div>
-    </div>
-
-    <hr style="height: 3px; background-color: #F4762D; margin: 20px 0;">
-
-    <div id="womens-shoes-tab" class="tab-content active">
-      <h2>Womens Boots & Shoes</h2>
-      <div class="table-container">f</div>
-    </div>
-
-    <div id="womens-sandals-tab" class="tab-content">
-      <h2>Womens Sandals</h2>
-      <div class="table-container">g</div>
-    </div>
-
-    <div id="womens-clothing-tab" class="tab-content">
-      <h2>Womens Clothing</h2>
-      <div class="table-container">h</div>
-    </div>
-
-    <div id="womens-bottoms-tab" class="tab-content">
-      <h2>Womens Pants/Bottoms/Skirts</h2>
-      <div class="table-container">i</div>
-    </div>
-
-    <div id="womens-socks-tab" class="tab-content">
-      <h2>Womens Socks</h2>
-      <div class="table-container">j</div>
-    </div>
-  </div>
-
-  <!-- Kids Tab -->
-  <div id="kids-tab" class="tab-content">
-    <div class="tab-container nested-tab-container">
+  <!-- Kids -->
+  <div id="kids-tab" class="top-tab-content">
+    <div class="nested-tab-container">
       <div class="tab-button active" data-tab="kids-shoes-tab">Boots/Shoes</div>
     </div>
 
-    <hr style="height: 3px; background-color: #F4762D; margin: 20px 0;">
-
-    <div id="kids-shoes-tab" class="tab-content active">
-      <h2>Kids Boots & Shoes</h2>
-
-      <h3 style="margin-top: 15px">Big Kids (4 - 12 Years)</h3>
-      <div class="table-container">k</div>
-
-      <h3 style="margin-top: 15px">Little Kids (12 Months - 4 Years)</h3>
-      <div class="table-container">l</div>
+    <div id="kids-shoes-tab" class="nested-tab-content active">
+      <h3>Kids Boots & Shoes</h3>
+      <div class="table-container">f</div>
     </div>
   </div>
 </div>
 
 <style>
-/* Tabs CSS */
-.tab-container { display: flex; margin-top: 20px; flex-wrap: wrap; gap: 5px; }
-.tab-button { padding: 10px 20px; cursor: pointer; border-radius: 5px 5px 0 0; font-weight: bold; background-color: #f7f7f7; }
-.tab-button.active { background-color: #fff; border-bottom: 3px solid #F4762D; }
-.tab-content { display: none; margin-top: 10px; }
-.tab-content.active { display: block; }
-
-/* Nested tabs spacing */
-.nested-tab-container .tab-button { padding: 8px 12px; }
-
-/* Table container */
-.table-container { overflow-x: auto; margin-top: 15px; }
-
-/* Responsive */
-@media(max-width:768px) { .tab-button { padding: 6px 10px; font-size: 14px; } }
+.tab-container { display: flex; gap: 5px; margin-top: 10px; flex-wrap: wrap; }
+.tab-button { padding: 8px 15px; cursor: pointer; background: #f0f0f0; border-radius: 5px; font-weight: bold; }
+.tab-button.active { background: #fff; border-bottom: 3px solid #F4762D; }
+.top-tab-content, .nested-tab-content { display: none; margin-top: 10px; }
+.top-tab-content.active, .nested-tab-content.active { display: block; }
+.table-container { margin-top: 10px; overflow-x: auto; }
 </style>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  initTopLevelTabs();
-  initNestedTabs();
-});
-
-// Top-Level Tabs
-function initTopLevelTabs() {
-  const container = document.getElementById("mens-womens-tab-container");
-  const tabs = container.querySelectorAll(".tab-button");
-
-  tabs.forEach(tab => {
+  // Top-Level Tabs
+  const topTabs = document.querySelectorAll("#top-tabs .tab-button");
+  topTabs.forEach(tab => {
     tab.addEventListener("click", () => {
       const targetId = tab.dataset.tab;
       if (!targetId) return;
 
-      // Deactivate all tabs
-      tabs.forEach(t => t.classList.remove("active"));
+      // Activate tab
+      topTabs.forEach(t => t.classList.remove("active"));
       tab.classList.add("active");
 
-      // Deactivate all top-level contents
-      document.querySelectorAll("#general-content-container > .tab-content").forEach(tc => tc.classList.remove("active"));
-
-      // Activate target content
+      // Show content
+      document.querySelectorAll(".top-tab-content").forEach(tc => tc.classList.remove("active"));
       const targetContent = document.getElementById(targetId);
       if (targetContent) targetContent.classList.add("active");
     });
   });
-}
 
-// Nested Tabs
-function initNestedTabs() {
+  // Nested Tabs
   const nestedContainers = document.querySelectorAll(".nested-tab-container");
-
   nestedContainers.forEach(container => {
     const tabs = container.querySelectorAll(".tab-button");
-
     tabs.forEach(tab => {
       tab.addEventListener("click", () => {
         const targetId = tab.dataset.tab;
         if (!targetId) return;
 
-        // Deactivate sibling tabs
+        // Activate nested tab
         tabs.forEach(t => t.classList.remove("active"));
         tab.classList.add("active");
 
-        // Deactivate nested content in the same parent
-        const parentContent = container.closest(".tab-content");
-        if (!parentContent) return;
-        parentContent.querySelectorAll(":scope > .tab-content").forEach(tc => tc.classList.remove("active"));
-
-        // Activate target nested content
+        // Show nested content inside same parent
+        const parentContent = container.parentElement;
+        parentContent.querySelectorAll(".nested-tab-content").forEach(tc => tc.classList.remove("active"));
         const targetContent = document.getElementById(targetId);
         if (targetContent) targetContent.classList.add("active");
       });
     });
   });
-}
+});
 </script>
 
 
