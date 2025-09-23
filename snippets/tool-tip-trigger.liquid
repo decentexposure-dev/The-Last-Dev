@@ -5,7 +5,11 @@
       class="tool-tip-trigger__content"
       data-tool-tip-content=""
     >
+      {% if custom_size %}
+        {% render 'sizechart' %}
+      {% else %}  
       {{ content }}
+      {% endif %}
     </span>
   </tool-tip-trigger>
 {% endif %}
