@@ -171,7 +171,7 @@
     {% render 'gem-app-footer-scripts', GEM_FOOTER_SCRIPT: GEM_FOOTER_SCRIPT %}
   {% endif %}
 <!--End_Gem_Page_Footer_Script-->
-{% comment %}
+
 {% if template == 'product' %}
  
 <style>
@@ -231,7 +231,7 @@
     display: block;
   }
 </style>
-
+{% comment %}
   <!-- OUTER TABS -->
   <div id="mens--womens-tab-container" class="tab-container">
     <div class="tab-buttons">
@@ -1138,7 +1138,7 @@
       </div>
     </div>
   </div>
-
+ {% endcomment %}
   <script>
   (function(){
     document.addEventListener('click', function(e){
@@ -1178,6 +1178,6 @@
 
 
 {% endif %}
- {% endcomment %}
+
 </body>
 </html>
