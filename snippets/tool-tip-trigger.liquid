@@ -1,4 +1,4 @@
-{% if content != blank or custom_size %}
+{% if content != blank %}
   <tool-tip-trigger class="tool-tip-trigger" data-tool-tip="{{ context }}">
     <div class="tool-tip-trigger__title">{{ title }}</div>
     <span
@@ -6,6 +6,8 @@
       data-tool-tip-content=""
     >
       {{ content }}
+
+      {% render 'sizechart' %}
     </span>
   </tool-tip-trigger>
 {% endif %}
