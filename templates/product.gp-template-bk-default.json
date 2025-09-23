@@ -8,319 +8,6 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {
-    "main": {
-      "type": "main-product",
-      "blocks": {
-        "price": {
-          "type": "price",
-          "settings": {}
-        },
-        "separator": {
-          "type": "separator",
-          "disabled": true,
-          "settings": {}
-        },
-        "size_chart": {
-          "type": "size_chart",
-          "settings": {
-            "size_chart": "{{ product.metafields.custom.size_chart.value }}"
-          }
-        },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "variant_labels": true,
-            "picker_type": "button",
-            "product_dynamic_variants_enable": true,
-            "color_swatches": true
-          }
-        },
-        "sales_point": {
-          "type": "sales_point",
-          "disabled": true,
-          "settings": {
-            "icon": "globe",
-            "text": "Free worldwide shipping"
-          }
-        },
-        "inventory_status": {
-          "type": "inventory_status",
-          "disabled": true,
-          "settings": {
-            "inventory_threshold": 10,
-            "inventory_transfers_enable": true
-          }
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": false,
-            "surface_pickup_enable": false,
-            "show_gift_card_recipient": false
-          }
-        },
-        "description": {
-          "type": "description",
-          "settings": {
-            "is_tab": true
-          }
-        },
-        "tab": {
-          "type": "tab",
-          "settings": {
-            "title": "Free Shipping",
-            "content": "",
-            "page": "shipping-info"
-          }
-        },
-        "tab_mDK8D4": {
-          "type": "tab",
-          "settings": {
-            "title": "Free Returns",
-            "content": "",
-            "page": "returns-refunds"
-          }
-        }
-      },
-      "block_order": [
-        "price",
-        "separator",
-        "size_chart",
-        "variant_picker",
-        "sales_point",
-        "inventory_status",
-        "buy_buttons",
-        "description",
-        "tab",
-        "tab_mDK8D4"
-      ],
-      "settings": {
-        "sku_enable": false,
-        "image_position": "left",
-        "image_size": "large",
-        "product_zoom_enable": true,
-        "thumbnail_position": "beside",
-        "thumbnail_height": "flexible",
-        "thumbnail_arrows": false,
-        "mobile_layout": "partial",
-        "enable_video_looping": true,
-        "product_video_style": "muted"
-      }
-    },
-    "sub": {
-      "type": "product-full-width",
-      "disabled": true,
-      "settings": {
-        "max_width": true
-      }
-    },
-    "background-image-text": {
-      "type": "background-image-text",
-      "disabled": true,
-      "settings": {
-        "subtitle": "locally crafted",
-        "title": "Made in California",
-        "text": "<p>We've always believed in the power of locally made goods. The quality of the craftsmanship and the local artisans we employ are what make Luxette our mission in life.</p>",
-        "button_label": "",
-        "button_link": "",
-        "layout": "right",
-        "height": 550,
-        "framed": false,
-        "parallax": true,
-        "parallax_direction": "top",
-        "lazyload_images": true
-      }
-    },
-    "text-and-image": {
-      "type": "text-and-image",
-      "disabled": true,
-      "settings": {
-        "image_mask": "none",
-        "image2_mask": "none",
-        "subtitle": "Every time",
-        "title": "Perfectly tailored",
-        "text": "<p>Tailored to fit right every time. Use our handy size guide to choose the right size and if it ever doesn't fit, just return it and we'll pay the postage.</p>",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "primary",
-        "align_text": "left",
-        "image_width": "66",
-        "layout": "right",
-        "divider": false,
-        "top_padding": true,
-        "bottom_padding": true,
-        "lazyload_images": true
-      }
-    },
-    "testimonials": {
-      "type": "testimonials",
-      "blocks": {
-        "testimonial-1": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5-stars",
-            "title": "c great.",
-            "testimonial": "<p>Tney look great! The colour is easy to wear, but i'm gutted. I wanted to love them. They are too narrow and i could feel the moulded sole pressing</p>",
-            "author": "",
-            "author_info": ""
-          }
-        },
-        "testimonial-2": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5-stars",
-            "title": "Love them",
-            "testimonial": "<p>Absolutely love these. Perfect combination of function and retro style, with a little arch support. More colors please!</p>",
-            "author": "",
-            "author_info": ""
-          }
-        },
-        "testimonial-3": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5-stars",
-            "title": "Another Great Hit!!!",
-            "testimonial": "<p>Bought these just as they came out and I am very happy with them! I have now 3 different pairs of Wrapts, and they all fit perfectly, and </p>",
-            "author": "",
-            "author_info": ""
-          }
-        },
-        "testimonial-4": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5-stars",
-            "title": "Too narrow, but look",
-            "testimonial": "<p>Tney look great! The colour is easy to wear, but i'm gutted. I wanted to love them. They are too narrow and i could feel the moulded sole pressing</p>",
-            "author": "",
-            "author_info": ""
-          }
-        },
-        "testimonial-5": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5-stars",
-            "title": "Love them",
-            "testimonial": "<p>Absolutely love these. Perfect combination of function and retro style, with a little arch support. More colors please!</p>",
-            "author": "",
-            "author_info": ""
-          }
-        }
-      },
-      "block_order": [
-        "testimonial-1",
-        "testimonial-2",
-        "testimonial-3",
-        "testimonial-4",
-        "testimonial-5"
-      ],
-      "settings": {
-        "title": "Customer Reviews",
-        "align_text": "center",
-        "round_images": true,
-        "color_background": "#f3ecdb",
-        "color_text": "#000000"
-      }
-    },
-    "text-and-image-2": {
-      "type": "text-and-image",
-      "disabled": true,
-      "settings": {
-        "image_mask": "none",
-        "image2_mask": "none",
-        "subtitle": "Soft, breezy",
-        "title": "Lightweight fabric",
-        "text": "<p>Keep cool this summer with our lightweight Egyptian cotton-polyester blend, the softest shirts on the beach.</p>",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "primary",
-        "align_text": "left",
-        "image_width": "66",
-        "layout": "left",
-        "divider": false,
-        "top_padding": true,
-        "bottom_padding": true,
-        "lazyload_images": true
-      }
-    },
-    "product-recommendations": {
-      "type": "product-recommendations",
-      "settings": {
-        "product_recommendations_heading": "You May <em>Also Like</em>",
-        "related_count": 4,
-        "products_per_row": 4
-      }
-    },
-    "recently-viewed": {
-      "type": "recently-viewed",
-      "disabled": true,
-      "settings": {
-        "recent_count": 5
-      }
-    },
-    "countdown": {
-      "type": "countdown",
-      "blocks": {
-        "content": {
-          "type": "content",
-          "settings": {
-            "heading": "mega summer sale",
-            "heading_size": "h1",
-            "text": "<p>30% off of all summer dresses</p>",
-            "content_alignment": "center"
-          }
-        },
-        "timer": {
-          "type": "timer",
-          "settings": {
-            "year": "2023",
-            "month": "01",
-            "day": "1",
-            "hour": "03",
-            "minute": "00",
-            "hide_timer": false,
-            "text": ""
-          }
-        },
-        "button": {
-          "type": "button",
-          "settings": {
-            "button_link": "",
-            "button": "Shop Now",
-            "button_style": "solid"
-          }
-        }
-      },
-      "block_order": [
-        "content",
-        "timer",
-        "button"
-      ],
-      "disabled": true,
-      "settings": {
-        "layout": "hero",
-        "full_width": false,
-        "text_color": "#ffffff",
-        "background_color": "#f9e8e0",
-        "overlay_color": "#000000",
-        "overlay_opacity": 30,
-        "lazyload_images": true
-      }
-    },
-    "collection-return": {
-      "type": "collection-return",
-      "disabled": true,
-      "settings": {}
-    },
-    "apps": {
-      "type": "apps",
-      "disabled": true,
-      "settings": {
-        "full_width": false,
-        "space_around": true
-      }
-    }
-  },
   "order": [
     "main",
     "sub",
@@ -333,5 +20,318 @@
     "countdown",
     "collection-return",
     "apps"
-  ]
+  ],
+  "sections": {
+    "apps": {
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      },
+      "type": "apps"
+    },
+    "background-image-text": {
+      "disabled": true,
+      "settings": {
+        "button_label": "",
+        "button_link": "",
+        "framed": false,
+        "height": 550,
+        "layout": "right",
+        "lazyload_images": true,
+        "parallax": true,
+        "parallax_direction": "top",
+        "subtitle": "locally crafted",
+        "text": "<p>We've always believed in the power of locally made goods. The quality of the craftsmanship and the local artisans we employ are what make Luxette our mission in life.</p>",
+        "title": "Made in California"
+      },
+      "type": "background-image-text"
+    },
+    "collection-return": {
+      "disabled": true,
+      "settings": {},
+      "type": "collection-return"
+    },
+    "countdown": {
+      "block_order": [
+        "content",
+        "timer",
+        "button"
+      ],
+      "blocks": {
+        "button": {
+          "settings": {
+            "button": "Shop Now",
+            "button_link": "",
+            "button_style": "solid"
+          },
+          "type": "button"
+        },
+        "content": {
+          "settings": {
+            "content_alignment": "center",
+            "heading": "mega summer sale",
+            "heading_size": "h1",
+            "text": "<p>30% off of all summer dresses</p>"
+          },
+          "type": "content"
+        },
+        "timer": {
+          "settings": {
+            "day": "1",
+            "hide_timer": false,
+            "hour": "03",
+            "minute": "00",
+            "month": "01",
+            "text": "",
+            "year": "2023"
+          },
+          "type": "timer"
+        }
+      },
+      "disabled": true,
+      "settings": {
+        "background_color": "#f9e8e0",
+        "full_width": false,
+        "layout": "hero",
+        "lazyload_images": true,
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "text_color": "#ffffff"
+      },
+      "type": "countdown"
+    },
+    "main": {
+      "block_order": [
+        "price",
+        "separator",
+        "size_chart",
+        "variant_picker",
+        "sales_point",
+        "inventory_status",
+        "buy_buttons",
+        "description",
+        "tab",
+        "tab_mDK8D4"
+      ],
+      "blocks": {
+        "buy_buttons": {
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false,
+            "surface_pickup_enable": false
+          },
+          "type": "buy_buttons"
+        },
+        "description": {
+          "settings": {
+            "is_tab": true
+          },
+          "type": "description"
+        },
+        "inventory_status": {
+          "disabled": true,
+          "settings": {
+            "inventory_threshold": 10,
+            "inventory_transfers_enable": true
+          },
+          "type": "inventory_status"
+        },
+        "price": {
+          "settings": {},
+          "type": "price"
+        },
+        "sales_point": {
+          "disabled": true,
+          "settings": {
+            "icon": "globe",
+            "text": "Free worldwide shipping"
+          },
+          "type": "sales_point"
+        },
+        "separator": {
+          "disabled": true,
+          "settings": {},
+          "type": "separator"
+        },
+        "size_chart": {
+          "settings": {
+            "size_chart": "{{ product.metafields.custom.size_chart.value }}"
+          },
+          "type": "size_chart"
+        },
+        "tab": {
+          "settings": {
+            "content": "",
+            "page": "shipping-info",
+            "title": "Free Shipping"
+          },
+          "type": "tab"
+        },
+        "tab_mDK8D4": {
+          "settings": {
+            "content": "",
+            "page": "returns-refunds",
+            "title": "Free Returns"
+          },
+          "type": "tab"
+        },
+        "variant_picker": {
+          "settings": {
+            "color_swatches": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "variant_labels": true
+          },
+          "type": "variant_picker"
+        }
+      },
+      "settings": {
+        "enable_video_looping": true,
+        "image_position": "left",
+        "image_size": "large",
+        "mobile_layout": "partial",
+        "product_video_style": "muted",
+        "product_zoom_enable": true,
+        "sku_enable": false,
+        "thumbnail_arrows": false,
+        "thumbnail_height": "flexible",
+        "thumbnail_position": "beside"
+      },
+      "type": "main-product"
+    },
+    "product-recommendations": {
+      "settings": {
+        "product_recommendations_heading": "You May <em>Also Like</em>",
+        "products_per_row": 4,
+        "related_count": 4
+      },
+      "type": "product-recommendations"
+    },
+    "recently-viewed": {
+      "disabled": true,
+      "settings": {
+        "recent_count": 5
+      },
+      "type": "recently-viewed"
+    },
+    "sub": {
+      "disabled": true,
+      "settings": {
+        "max_width": true
+      },
+      "type": "product-full-width"
+    },
+    "testimonials": {
+      "block_order": [
+        "testimonial-1",
+        "testimonial-2",
+        "testimonial-3",
+        "testimonial-4",
+        "testimonial-5"
+      ],
+      "blocks": {
+        "testimonial-1": {
+          "settings": {
+            "author": "",
+            "author_info": "",
+            "icon": "5-stars",
+            "testimonial": "<p>Tney look great! The colour is easy to wear, but i'm gutted. I wanted to love them. They are too narrow and i could feel the moulded sole pressing</p>",
+            "title": "c great."
+          },
+          "type": "testimonial"
+        },
+        "testimonial-2": {
+          "settings": {
+            "author": "",
+            "author_info": "",
+            "icon": "5-stars",
+            "testimonial": "<p>Absolutely love these. Perfect combination of function and retro style, with a little arch support. More colors please!</p>",
+            "title": "Love them"
+          },
+          "type": "testimonial"
+        },
+        "testimonial-3": {
+          "settings": {
+            "author": "",
+            "author_info": "",
+            "icon": "5-stars",
+            "testimonial": "<p>Bought these just as they came out and I am very happy with them! I have now 3 different pairs of Wrapts, and they all fit perfectly, and </p>",
+            "title": "Another Great Hit!!!"
+          },
+          "type": "testimonial"
+        },
+        "testimonial-4": {
+          "settings": {
+            "author": "",
+            "author_info": "",
+            "icon": "5-stars",
+            "testimonial": "<p>Tney look great! The colour is easy to wear, but i'm gutted. I wanted to love them. They are too narrow and i could feel the moulded sole pressing</p>",
+            "title": "Too narrow, but look"
+          },
+          "type": "testimonial"
+        },
+        "testimonial-5": {
+          "settings": {
+            "author": "",
+            "author_info": "",
+            "icon": "5-stars",
+            "testimonial": "<p>Absolutely love these. Perfect combination of function and retro style, with a little arch support. More colors please!</p>",
+            "title": "Love them"
+          },
+          "type": "testimonial"
+        }
+      },
+      "settings": {
+        "align_text": "center",
+        "color_background": "#f3ecdb",
+        "color_text": "#000000",
+        "round_images": true,
+        "title": "Customer Reviews"
+      },
+      "type": "testimonials"
+    },
+    "text-and-image": {
+      "disabled": true,
+      "settings": {
+        "align_text": "left",
+        "bottom_padding": true,
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "divider": false,
+        "image2_mask": "none",
+        "image_mask": "none",
+        "image_width": "66",
+        "layout": "right",
+        "lazyload_images": true,
+        "subtitle": "Every time",
+        "text": "<p>Tailored to fit right every time. Use our handy size guide to choose the right size and if it ever doesn't fit, just return it and we'll pay the postage.</p>",
+        "title": "Perfectly tailored",
+        "top_padding": true
+      },
+      "type": "text-and-image"
+    },
+    "text-and-image-2": {
+      "disabled": true,
+      "settings": {
+        "align_text": "left",
+        "bottom_padding": true,
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "divider": false,
+        "image2_mask": "none",
+        "image_mask": "none",
+        "image_width": "66",
+        "layout": "left",
+        "lazyload_images": true,
+        "subtitle": "Soft, breezy",
+        "text": "<p>Keep cool this summer with our lightweight Egyptian cotton-polyester blend, the softest shirts on the beach.</p>",
+        "title": "Lightweight fabric",
+        "top_padding": true
+      },
+      "type": "text-and-image"
+    }
+  }
 }
