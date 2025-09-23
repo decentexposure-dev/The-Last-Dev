@@ -187,54 +187,18 @@
   <p><strong>Please note:</strong> Sizes listed on this website are all US sizes. Conversions as per chart below.</p>
 </div>
 
-<!-- Top-Level Content -->
 <div id="top-tab-contents">
-
   <!-- Mens -->
   <div id="mens-tab" class="top-tab-content">
-    <!-- Nested Tabs -->
     <div class="nested-tab-container">
       <div class="tab-button active" data-tab="mens-shoes-tab">Boots/Shoes</div>
       <div class="tab-button" data-tab="mens-sandals-tab">Sandals</div>
       <div class="tab-button" data-tab="mens-clothing-tab">Clothing</div>
-      <div class="tab-button" data-tab="mens-bottoms-tab">Pants/Bottoms</div>
-      <div class="tab-button" data-tab="mens-socks-tab">Socks</div>
     </div>
 
-    <!-- Nested Tab Contents -->
-    <div id="mens-shoes-tab" class="nested-tab-content">
-      <h3>Mens Boots & Shoes</h3>
-      <div class="table-container">
-        <table class="table doubled-col">
-          <tbody>
-            <tr class="us"><td>US</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
-            <tr class="euro"><td>Euro</td><td>40</td><td>41</td><td>42</td><td>43</td><td>44</td></tr>
-            <tr class="uk"><td>UK</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
-            <tr class="cm"><td>CM</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div id="mens-sandals-tab" class="nested-tab-content">
-      <h3>Mens Sandals</h3>
-      <div class="table-container">Sandals table here</div>
-    </div>
-
-    <div id="mens-clothing-tab" class="nested-tab-content">
-      <h3>Mens Clothing</h3>
-      <div class="table-container">Clothing table here</div>
-    </div>
-
-    <div id="mens-bottoms-tab" class="nested-tab-content">
-      <h3>Mens Pants/Bottoms</h3>
-      <div class="table-container">Bottoms table here</div>
-    </div>
-
-    <div id="mens-socks-tab" class="nested-tab-content">
-      <h3>Mens Socks</h3>
-      <div class="table-container">Socks table here</div>
-    </div>
+    <div id="mens-shoes-tab" class="nested-tab-content">Mens Boots/Shoes table here</div>
+    <div id="mens-sandals-tab" class="nested-tab-content">Mens Sandals table here</div>
+    <div id="mens-clothing-tab" class="nested-tab-content">Mens Clothing table here</div>
   </div>
 
   <!-- Womens -->
@@ -242,35 +206,10 @@
     <div class="nested-tab-container">
       <div class="tab-button active" data-tab="womens-shoes-tab">Boots/Shoes</div>
       <div class="tab-button" data-tab="womens-sandals-tab">Sandals</div>
-      <div class="tab-button" data-tab="womens-clothing-tab">Clothing</div>
-      <div class="tab-button" data-tab="womens-bottoms-tab">Pants/Bottoms/Skirts</div>
-      <div class="tab-button" data-tab="womens-socks-tab">Socks</div>
     </div>
 
-    <div id="womens-shoes-tab" class="nested-tab-content">
-      <h3>Womens Boots & Shoes</h3>
-      <div class="table-container">Shoes table here</div>
-    </div>
-
-    <div id="womens-sandals-tab" class="nested-tab-content">
-      <h3>Womens Sandals</h3>
-      <div class="table-container">Sandals table here</div>
-    </div>
-
-    <div id="womens-clothing-tab" class="nested-tab-content">
-      <h3>Womens Clothing</h3>
-      <div class="table-container">Clothing table here</div>
-    </div>
-
-    <div id="womens-bottoms-tab" class="nested-tab-content">
-      <h3>Womens Pants/Bottoms/Skirts</h3>
-      <div class="table-container">Bottoms table here</div>
-    </div>
-
-    <div id="womens-socks-tab" class="nested-tab-content">
-      <h3>Womens Socks</h3>
-      <div class="table-container">Socks table here</div>
-    </div>
+    <div id="womens-shoes-tab" class="nested-tab-content">Womens Boots/Shoes table here</div>
+    <div id="womens-sandals-tab" class="nested-tab-content">Womens Sandals table here</div>
   </div>
 
   <!-- Kids -->
@@ -279,12 +218,8 @@
       <div class="tab-button active" data-tab="kids-shoes-tab">Boots/Shoes</div>
     </div>
 
-    <div id="kids-shoes-tab" class="nested-tab-content">
-      <h3>Kids Boots & Shoes</h3>
-      <div class="table-container">Kids table here</div>
-    </div>
+    <div id="kids-shoes-tab" class="nested-tab-content">Kids Boots/Shoes table here</div>
   </div>
-
 </div>
 
 <style>
@@ -293,60 +228,61 @@
 .tab-button.active { background: #fff; border-bottom: 3px solid #F4762D; }
 .top-tab-content, .nested-tab-content { display: none; margin-top: 10px; }
 .top-tab-content.active, .nested-tab-content.active { display: block; }
-.table-container { margin-top: 10px; overflow-x: auto; }
 </style>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  // Top-Level Tabs
-  const topTabs = document.querySelectorAll("#top-tabs .tab-button");
-  topTabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      const targetId = tab.dataset.tab;
-      if (!targetId) return;
 
-      // Activate top-level tab
-      topTabs.forEach(t => t.classList.remove("active"));
-      tab.classList.add("active");
+  function activateTopTab(tabButton) {
+    const targetId = tabButton.dataset.tab;
+    if (!targetId) return;
 
-      // Show only selected top-level content
-      document.querySelectorAll(".top-tab-content").forEach(tc => tc.classList.remove("active"));
-      const targetContent = document.getElementById(targetId);
-      if (targetContent) targetContent.classList.add("active");
+    // Activate top-level tabs
+    document.querySelectorAll("#top-tabs .tab-button").forEach(t => t.classList.remove("active"));
+    tabButton.classList.add("active");
 
-      // Activate first nested tab in this top-level tab
-      const firstNested = targetContent.querySelector(".nested-tab-container .tab-button");
-      if (firstNested) firstNested.click();
-    });
+    // Show only target top-level content
+    document.querySelectorAll(".top-tab-content").forEach(tc => tc.classList.remove("active"));
+    const targetContent = document.getElementById(targetId);
+    if (!targetContent) return;
+    targetContent.classList.add("active");
+
+    // Automatically activate first nested tab
+    const firstNested = targetContent.querySelector(".nested-tab-container .tab-button");
+    if (firstNested) activateNestedTab(firstNested);
+  }
+
+  function activateNestedTab(tabButton) {
+    const targetId = tabButton.dataset.tab;
+    if (!targetId) return;
+
+    const container = tabButton.closest(".nested-tab-container");
+    if (!container) return;
+
+    // Activate nested tabs
+    container.querySelectorAll(".tab-button").forEach(t => t.classList.remove("active"));
+    tabButton.classList.add("active");
+
+    // Show only nested content inside the parent top-level content
+    const parentTop = container.closest(".top-tab-content");
+    if (!parentTop) return;
+    parentTop.querySelectorAll(".nested-tab-content").forEach(tc => tc.classList.remove("active"));
+    const targetContent = document.getElementById(targetId);
+    if (targetContent) targetContent.classList.add("active");
+  }
+
+  // Add listeners
+  document.querySelectorAll("#top-tabs .tab-button").forEach(tab => {
+    tab.addEventListener("click", () => activateTopTab(tab));
   });
 
-  // Nested Tabs
-  const nestedContainers = document.querySelectorAll(".nested-tab-container");
-  nestedContainers.forEach(container => {
-    const tabs = container.querySelectorAll(".tab-button");
-    tabs.forEach(tab => {
-      tab.addEventListener("click", () => {
-        const targetId = tab.dataset.tab;
-        if (!targetId) return;
-
-        // Activate nested tab
-        tabs.forEach(t => t.classList.remove("active"));
-        tab.classList.add("active");
-
-        // Show only nested content inside same top-level tab
-        const parentTopContent = container.closest(".top-tab-content");
-        if (!parentTopContent) return;
-        parentTopContent.querySelectorAll(".nested-tab-content").forEach(tc => tc.classList.remove("active"));
-
-        const targetContent = document.getElementById(targetId);
-        if (targetContent) targetContent.classList.add("active");
-      });
-    });
+  document.querySelectorAll(".nested-tab-container .tab-button").forEach(tab => {
+    tab.addEventListener("click", () => activateNestedTab(tab));
   });
 
-  // Initialize first top-level tab
-  const firstTopTab = document.querySelector("#top-tabs .tab-button.active");
-  if (firstTopTab) firstTopTab.click();
+  // Initialize
+  const firstTop = document.querySelector("#top-tabs .tab-button.active");
+  if (firstTop) activateTopTab(firstTop);
 });
 </script>
 
