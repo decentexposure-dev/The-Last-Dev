@@ -214,6 +214,7 @@
         "testimonial-4",
         "testimonial-5"
       ],
+      "disabled": true,
       "settings": {
         "title": "Customer Reviews",
         "align_text": "center",
