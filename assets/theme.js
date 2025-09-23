@@ -3786,7 +3786,7 @@ theme.recentlyViewed = {
     }
   
     _open(context, insertedHtml) {
-      console.log('this.el',this.el.dataset.toolTip);
+      console.log('this.el',this.el);
       this.toolTipContent.innerHTML = insertedHtml;
       if (typeof initializeTabs === "function" &&  this.el.dataset.toolTip == 'size-chart') {
         window.initializeTabs();
