@@ -27,10 +27,10 @@ function handleTabClick(event) {
     const clickedTab = event.currentTarget;
     const tabContainer = clickedTab.parentElement;
     const targetContentId = clickedTab.getAttribute("data-tab");
-    
+    const parent = clickedTab.closest('.tool-tip__content');
     if (!targetContentId) return; // Safeguard against missing data-tab attributes
     
-    const targetContent = document.getElementById(targetContentId);
+    const targetContent = parent.getElementById(targetContentId);
     if (!targetContent) {
         console.warn("Target content not found for tab:", clickedTab);
         return;
