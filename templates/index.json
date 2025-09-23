@@ -9,251 +9,68 @@
  */
 {
   "sections": {
-    "featured_categories_aAEYC8": {
-      "type": "featured-categories",
+    "slideshow": {
+      "type": "slideshow",
       "blocks": {
-        "image_r7KMN7": {
+        "image-1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/cat-jacket.png",
-            "title": "Women's Apparel",
-            "link": "",
-            "bgcolor": "#f3ecdb",
-            "color": "#1b0d0d"
-          }
-        },
-        "image_4EpEpm": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/cat-shoe-w_8c669362-8530-42e1-a62e-8a3e6aa24386.png",
-            "title": "Women's Footwear",
-            "link": "",
-            "bgcolor": "#f3ecdb",
-            "color": "#1b0d0d"
-          }
-        },
-        "image_EKXppG": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/cat-accessories_7665051a-061a-4599-b38b-11b2e6041368.png",
-            "title": "Accessories",
-            "link": "",
-            "bgcolor": "#f3ecdb",
-            "color": "#1b0d0d"
-          }
-        },
-        "image_RDkEBR": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Bookmark_Favorite_Label.png",
-            "title": "Under $50",
-            "link": "",
-            "bgcolor": "#1b0d0d",
-            "color": "#f3ecdb"
-          }
-        },
-        "image_Nh6L3r": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Bookmark_Favorite_Label.png",
-            "title": "Under $50",
-            "link": "",
-            "bgcolor": "#1b0d0d",
-            "color": "#f3ecdb"
+            "block_image": "shopify://shop_images/Group_16.png",
+            "top_subheading": "",
+            "title": "Final Days. <em>Extra Savings.</em>",
+            "title_size": 48,
+            "subheading": "Your last chance to land high-quality gear at clearance prices — always on sale, never second-rate.",
+            "link": "shopify://collections/mens-under-50",
+            "link_text": "Deals Under $50",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#1b4b23",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify://shop_images/Rectangle_51.jpg",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
           }
         }
       },
       "block_order": [
-        "image_r7KMN7",
-        "image_4EpEpm",
-        "image_EKXppG",
-        "image_RDkEBR",
-        "image_Nh6L3r"
+        "image-1"
       ],
-      "name": "Categories",
+      "custom_css": [
+        ".slideshow-wrapper {--colorHeroText: #1b0d0d;}"
+      ],
       "settings": {
-        "title": "Explore <em>What’s Hot</em>",
-        "divider": false,
-        "per_row": 4,
-        "enable_gutter": true
+        "container_width": false,
+        "section_height": "100vh",
+        "mobile_height": "500px",
+        "parallax": false,
+        "style": "bars",
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "lazyload_images": true,
+        "class_name": ""
       }
     },
-    "featured_product_new_QfCDTQ": {
-      "type": "featured-product-new",
+    "rich_text_RFyUMR": {
+      "type": "rich-text",
       "blocks": {
-        "price_JzqmMC": {
-          "type": "price",
-          "settings": {}
-        },
-        "variant_picker_iJz8DY": {
-          "type": "variant_picker",
+        "heading_pGLyFP": {
+          "type": "heading",
           "settings": {
-            "variant_labels": true,
-            "picker_type": "button",
-            "product_dynamic_variants_enable": true,
-            "color_swatches": true
-          }
-        },
-        "buy_buttons_hc6LGp": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": false,
-            "surface_pickup_enable": false,
-            "show_gift_card_recipient": false
+            "title": "Explore our <em>Top Picks</em>"
           }
         }
       },
       "block_order": [
-        "price_JzqmMC",
-        "variant_picker_iJz8DY",
-        "buy_buttons_hc6LGp"
+        "heading_pGLyFP"
       ],
-      "name": "Product section",
-      "settings": {
-        "featured_product": "moab-speed-2-leather-waterproof-mens-1",
-        "image": "shopify://shop_images/Group_35.png",
-        "sku_enable": false,
-        "bgimage": "shopify://shop_images/highlight-product-bg.jpg",
-        "bgcolor": "#402323",
-        "color": "#f3ecdb",
-        "image_position": "left",
-        "image_size": "medium",
-        "product_zoom_enable": true,
-        "thumbnail_position": "below",
-        "thumbnail_arrows": true,
-        "mobile_layout": "partial",
-        "enable_video_looping": true,
-        "product_video_style": "muted"
-      }
-    },
-    "gallery_collage_GgcLBK": {
-      "type": "gallery-collage",
-      "blocks": {
-        "image_gg3Wp9": {
-          "type": "image",
-          "settings": {
-            "gallery_image": "shopify://shop_images/Rectangle_28.png"
-          }
-        },
-        "image_HP7MCt": {
-          "type": "image",
-          "settings": {
-            "gallery_image": "shopify://shop_images/Rectangle_31.png"
-          }
-        },
-        "image_wh6JCw": {
-          "type": "image",
-          "settings": {
-            "gallery_image": "shopify://shop_images/Rectangle_32.png"
-          }
-        },
-        "image_JgECMP": {
-          "type": "image",
-          "settings": {
-            "gallery_image": "shopify://shop_images/Rectangle_29.png"
-          }
-        },
-        "image_3gXfiE": {
-          "type": "image",
-          "settings": {
-            "gallery_image": "shopify://shop_images/Rectangle_30.png"
-          }
-        },
-        "image_bJrB4J": {
-          "type": "image",
-          "settings": {
-            "gallery_image": "shopify://shop_images/Rectangle_33.png"
-          }
-        }
-      },
-      "block_order": [
-        "image_gg3Wp9",
-        "image_HP7MCt",
-        "image_wh6JCw",
-        "image_JgECMP",
-        "image_3gXfiE",
-        "image_bJrB4J"
+      "custom_css": [
+        "@media only screen and (min-width: 769px) {{margin-top: 70px; margin-bottom: 45px; }}"
       ],
-      "disabled": true,
-      "name": "Collage Gallery",
+      "name": "t:sections.rich-text.presets.rich_text.name",
       "settings": {
-        "title": "What our <em>Community says</em>",
-        "text": "See how others are styling their finds"
-      }
-    },
-    "newsletter_zfYc6d": {
-      "type": "newsletter",
-      "blocks": {
-        "title_j4rGna": {
-          "type": "title",
-          "settings": {
-            "title": "Be First to",
-            "heading_size": "h2"
-          }
-        },
-        "text_finAfK": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Sign up to get first dibs on new drops, exclusive offers, and outlet-only collections.</p>"
-          }
-        },
-        "form_G3CjRm": {
-          "type": "form",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "title_j4rGna",
-        "text_finAfK",
-        "form_G3CjRm"
-      ],
-      "name": "t:sections.newsletter.presets.email_signup.name",
-      "settings": {
-        "align_text": "left",
-        "image_width": "33",
-        "image_mask": "none",
-        "image_position": "right",
-        "color_background": "#1b0d0d",
-        "color_text": "#f3ecdb",
-        "top_padding": true,
-        "bottom_padding": true,
-        "bgimage": "shopify://shop_images/Rectangle_26.png"
-      }
-    },
-    "product_slider_W9AHfK": {
-      "type": "product-slider",
-      "name": "Product Slider",
-      "settings": {
-        "title": "Recommended for <em>you</em>",
-        "home_featured_products": "merrell",
-        "per_row": 4,
-        "rows": 3,
-        "view_all": false,
-        "divider": false,
-        "bgcolor": "#f5f1e9",
-        "remove_margin": true,
-        "padding_top": 64,
-        "padding_bottom": 44,
-        "padding_top_mb": 36,
-        "padding_bottom_mb": 36
-      }
-    },
-    "product_slider_XMUbWX": {
-      "type": "product-slider",
-      "name": "Product Slider",
-      "settings": {
-        "title": "<em>Women’s </em>Footwear",
-        "home_featured_products": "womens-footwear",
-        "per_row": 4,
-        "rows": 2,
-        "view_all": false,
-        "divider": false,
-        "bgcolor": "#f5f1e9",
-        "remove_margin": true,
-        "padding_top": 68,
-        "padding_bottom": 52,
-        "padding_top_mb": 36,
-        "padding_bottom_mb": 36
+        "align_text": "center",
+        "narrow_column": false,
+        "divider": false
       }
     },
     "promo-grid-1": {
@@ -336,68 +153,121 @@
         "lazyload_images": true
       }
     },
-    "rich_text_RFyUMR": {
-      "type": "rich-text",
+    "featured_product_new_QfCDTQ": {
+      "type": "featured-product-new",
       "blocks": {
-        "heading_pGLyFP": {
-          "type": "heading",
+        "price_JzqmMC": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_iJz8DY": {
+          "type": "variant_picker",
           "settings": {
-            "title": "Explore our <em>Top Picks</em>"
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": true
+          }
+        },
+        "buy_buttons_hc6LGp": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "surface_pickup_enable": false,
+            "show_gift_card_recipient": false
           }
         }
       },
       "block_order": [
-        "heading_pGLyFP"
+        "price_JzqmMC",
+        "variant_picker_iJz8DY",
+        "buy_buttons_hc6LGp"
       ],
-      "custom_css": [
-        "@media only screen and (min-width: 769px) {{margin-top: 70px; margin-bottom: 45px; }}"
-      ],
-      "name": "t:sections.rich-text.presets.rich_text.name",
+      "name": "Product section",
       "settings": {
-        "align_text": "center",
-        "narrow_column": false,
-        "divider": false
+        "featured_product": "moab-speed-2-leather-waterproof-mens-1",
+        "image": "shopify://shop_images/Group_35.png",
+        "sku_enable": false,
+        "bgimage": "shopify://shop_images/highlight-product-bg.jpg",
+        "bgcolor": "#402323",
+        "color": "#f3ecdb",
+        "image_position": "left",
+        "image_size": "medium",
+        "product_zoom_enable": true,
+        "thumbnail_position": "below",
+        "thumbnail_arrows": true,
+        "mobile_layout": "partial",
+        "enable_video_looping": true,
+        "product_video_style": "muted"
       }
     },
-    "slideshow": {
-      "type": "slideshow",
+    "featured_categories_aAEYC8": {
+      "type": "featured-categories",
       "blocks": {
-        "image-1": {
+        "image_r7KMN7": {
           "type": "image",
           "settings": {
-            "block_image": "shopify://shop_images/Group_16.png",
-            "top_subheading": "",
-            "title": "Final Days. <em>Extra Savings.</em>",
-            "title_size": 48,
-            "subheading": "Your last chance to land high-quality gear at clearance prices — always on sale, never second-rate.",
-            "link": "shopify://collections/boat-shoes-mens",
-            "link_text": "Deals Under $50",
-            "link_2": "",
-            "link_text_2": "",
-            "color_accent": "#1b4b23",
-            "text_align": "vertical-bottom horizontal-center",
-            "image": "shopify://shop_images/Rectangle_51.jpg",
-            "parallax_direction": "top",
-            "overlay_opacity": 0
+            "image": "shopify://shop_images/cat-jacket.png",
+            "title": "Women's Apparel",
+            "link": "shopify://collections/womens-apparel",
+            "bgcolor": "#f3ecdb",
+            "color": "#1b0d0d"
+          }
+        },
+        "image_4EpEpm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/cat-shoe-w_8c669362-8530-42e1-a62e-8a3e6aa24386.png",
+            "title": "Women's Footwear",
+            "link": "shopify://collections/womens-footwear",
+            "bgcolor": "#f3ecdb",
+            "color": "#1b0d0d"
+          }
+        },
+        "image_EKXppG": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/cat-accessories_7665051a-061a-4599-b38b-11b2e6041368.png",
+            "title": "Accessories",
+            "link": "shopify://collections/womens-accessories",
+            "bgcolor": "#f3ecdb",
+            "color": "#1b0d0d"
+          }
+        },
+        "image_RDkEBR": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bookmark_Favorite_Label.png",
+            "title": "Under $50",
+            "link": "shopify://collections/womens-under-50",
+            "bgcolor": "#1b0d0d",
+            "color": "#f3ecdb"
+          }
+        },
+        "image_Nh6L3r": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Bookmark_Favorite_Label.png",
+            "title": "Under $100",
+            "link": "shopify://collections/womens-under-100",
+            "bgcolor": "#1b0d0d",
+            "color": "#f3ecdb"
           }
         }
       },
       "block_order": [
-        "image-1"
+        "image_r7KMN7",
+        "image_4EpEpm",
+        "image_EKXppG",
+        "image_RDkEBR",
+        "image_Nh6L3r"
       ],
-      "custom_css": [
-        ".slideshow-wrapper {--colorHeroText: #1b0d0d;}"
-      ],
+      "name": "Categories",
       "settings": {
-        "container_width": false,
-        "section_height": "100vh",
-        "mobile_height": "500px",
-        "parallax": false,
-        "style": "bars",
-        "autoplay": true,
-        "autoplay_speed": 5,
-        "lazyload_images": true,
-        "class_name": ""
+        "title": "Explore <em>What’s Hot</em>",
+        "divider": false,
+        "per_row": 4,
+        "enable_gutter": true
       }
     },
     "slideshow_VVkjm9": {
@@ -410,7 +280,7 @@
             "title": "Feel the <em>Freedom.</em>",
             "title_size": 40,
             "subheading": "From city streets to scenic trails — find your fit at final markdowns.",
-            "link": "#",
+            "link": "shopify://collections/women",
             "link_text": "Shop now",
             "link_2": "",
             "link_text_2": "",
@@ -442,6 +312,136 @@
         "class_name": "freedombanner"
       }
     },
+    "product_slider_W9AHfK": {
+      "type": "product-slider",
+      "name": "Product Slider",
+      "settings": {
+        "title": "Recommended for <em>you</em>",
+        "home_featured_products": "merrell",
+        "per_row": 4,
+        "rows": 3,
+        "view_all": false,
+        "divider": false,
+        "bgcolor": "#f5f1e9",
+        "remove_margin": true,
+        "padding_top": 64,
+        "padding_bottom": 44,
+        "padding_top_mb": 36,
+        "padding_bottom_mb": 36
+      }
+    },
+    "newsletter_zfYc6d": {
+      "type": "newsletter",
+      "blocks": {
+        "title_j4rGna": {
+          "type": "title",
+          "settings": {
+            "title": "Be First to",
+            "heading_size": "h2"
+          }
+        },
+        "text_finAfK": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Sign up to get first dibs on new drops, exclusive offers, and outlet-only collections.</p>"
+          }
+        },
+        "form_G3CjRm": {
+          "type": "form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title_j4rGna",
+        "text_finAfK",
+        "form_G3CjRm"
+      ],
+      "name": "t:sections.newsletter.presets.email_signup.name",
+      "settings": {
+        "align_text": "left",
+        "image_width": "33",
+        "image_mask": "none",
+        "image_position": "right",
+        "color_background": "#1b0d0d",
+        "color_text": "#f3ecdb",
+        "top_padding": true,
+        "bottom_padding": true,
+        "bgimage": "shopify://shop_images/Rectangle_26.png"
+      }
+    },
+    "gallery_collage_GgcLBK": {
+      "type": "gallery-collage",
+      "blocks": {
+        "image_gg3Wp9": {
+          "type": "image",
+          "settings": {
+            "gallery_image": "shopify://shop_images/Rectangle_28.png"
+          }
+        },
+        "image_HP7MCt": {
+          "type": "image",
+          "settings": {
+            "gallery_image": "shopify://shop_images/Rectangle_31.png"
+          }
+        },
+        "image_wh6JCw": {
+          "type": "image",
+          "settings": {
+            "gallery_image": "shopify://shop_images/Rectangle_32.png"
+          }
+        },
+        "image_JgECMP": {
+          "type": "image",
+          "settings": {
+            "gallery_image": "shopify://shop_images/Rectangle_29.png"
+          }
+        },
+        "image_3gXfiE": {
+          "type": "image",
+          "settings": {
+            "gallery_image": "shopify://shop_images/Rectangle_30.png"
+          }
+        },
+        "image_bJrB4J": {
+          "type": "image",
+          "settings": {
+            "gallery_image": "shopify://shop_images/Rectangle_33.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_gg3Wp9",
+        "image_HP7MCt",
+        "image_wh6JCw",
+        "image_JgECMP",
+        "image_3gXfiE",
+        "image_bJrB4J"
+      ],
+      "disabled": true,
+      "name": "Collage Gallery",
+      "settings": {
+        "title": "What our <em>Community says</em>",
+        "text": "See how others are styling their finds"
+      }
+    },
+    "product_slider_XMUbWX": {
+      "type": "product-slider",
+      "name": "Product Slider",
+      "settings": {
+        "title": "<em>Women’s </em>Footwear",
+        "home_featured_products": "womens-footwear",
+        "per_row": 4,
+        "rows": 2,
+        "view_all": false,
+        "divider": false,
+        "bgcolor": "#f5f1e9",
+        "remove_margin": true,
+        "padding_top": 68,
+        "padding_bottom": 52,
+        "padding_top_mb": 36,
+        "padding_bottom_mb": 36
+      }
+    },
     "slideshow_XUTMWx": {
       "type": "slideshow",
       "blocks": {
@@ -452,7 +452,7 @@
             "title": "Don’t Wait.\n<em>Inventory Moves Fast.</em>",
             "title_size": 40,
             "subheading": "Explore hundreds of styles with prices you won’t see twice.",
-            "link": "#",
+            "link": "shopify://collections/all",
             "link_text": "Shop All Deals",
             "link_2": "",
             "link_text_2": "",
