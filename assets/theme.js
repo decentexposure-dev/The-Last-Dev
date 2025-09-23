@@ -3786,9 +3786,8 @@ theme.recentlyViewed = {
     }
   
     _open(context, insertedHtml) {
-      console.log('this.el',this.el);
       this.toolTipContent.innerHTML = insertedHtml;
-      if (typeof initializeTabs === "function" &&  this.el.dataset.toolTip == 'size-chart') {
+      if (typeof initializeTabs === "function" &&  context == 'size-chart') {
         window.initializeTabs();
       }
       // Ensure we set a title for product availability
