@@ -8351,6 +8351,3 @@ theme.recentlyViewed = {
   });
 
 })();
-
-
-// sizechart
