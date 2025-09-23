@@ -6,57 +6,44 @@ window.initializeTabs = function() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", window.initializeTabs());
 function updateActiveState(tabContainer, activeTab, contentContainer, targetContent) {
-  // Deactivate currently active tab
-  const currentActiveTab = tabContainer.querySelector(".tab-button.active");
-  if (currentActiveTab) currentActiveTab.classList.remove("active");
+    const currentActiveTab = tabContainer.querySelector(".tab-button.active");
+    if (currentActiveTab) currentActiveTab.classList.remove("active");
   
-//   alert(currentActiveTab.id);
 
-  // Activate clicked tab
-  activeTab.classList.add("active");
-  
-//   alert(activeTab.id);
-  
-//   alert(contentContainer.id);
-
-  // Deactivate currently active content
-  const currentActiveContent = contentContainer.querySelector(":scope > .tab-content.active");
-  if (currentActiveContent) currentActiveContent.classList.remove("active");
-  
-//   alert(currentActiveContent.id);
-
-  // Activate target content
-  if (targetContent) {
-    targetContent.classList.add("active");
+    activeTab.classList.add("active");
     
-    // alert(targetContent.id);
+    const currentActiveContent = contentContainer.querySelector(":scope > .tab-content.active");
+    if (currentActiveContent) currentActiveContent.classList.remove("active");
     
-  } else {
-    console.warn("Target content not found for id:", targetContentId);
-  }
+    if (targetContent) {
+        targetContent.classList.add("active");
+    } else {
+        console.warn("Target content not found for id:", targetContentId);
+    }
 }
 
 function handleTabClick(event) {
-  const clickedTab = event.currentTarget;
-  const tabContainer = clickedTab.parentElement;
-  const targetContentId = clickedTab.getAttribute("data-tab");
-  
-  if (!targetContentId) return; // Safeguard against missing data-tab attributes
-
-  const targetContent = document.getElementById(targetContentId);
-  if (!targetContent) {
-    console.warn("Target content not found for tab:", clickedTab);
-    return;
-  }
-  
+    const clickedTab = event.currentTarget;
+    const tabContainer = clickedTab.parentElement;
+    const targetContentId = clickedTab.getAttribute("data-tab");
+    
+    if (!targetContentId) return; // Safeguard against missing data-tab attributes
+    
+    const targetContent = document.getElementById(targetContentId);
+    if (!targetContent) {
+        console.warn("Target content not found for tab:", clickedTab);
+        return;
+    }
+    
   const contentContainer = targetContent.parentElement;
-
+  
   if (!contentContainer) {
-    console.warn("Content container not found for tab:", clickedTab);
-    return;
-  }
-  // Update active state for tabs and content
-  updateActiveState(tabContainer, clickedTab, contentContainer, targetContent);
+      console.warn("Content container not found for tab:", clickedTab);
+      return;
+    }
+    // Update active state for tabs and content
+    updateActiveState(tabContainer, clickedTab, contentContainer, targetContent);
 }
+
+document.addEventListener("DOMContentLoaded", window.initializeTabs());
