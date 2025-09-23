@@ -174,87 +174,7 @@
 
 {% if template == 'product' %}
  
-  <h2>Merrell Size Guide</h2>
-
-<!-- Top-Level Tabs -->
-<div id="top-tabs" class="tab-container">
-  <div class="tab-button active" data-tab="mens-tab">Mens</div>
-  <div class="tab-button" data-tab="womens-tab">Womens</div>
-  <div class="tab-button" data-tab="kids-tab">Kids</div>
-</div>
-
-<div class="note">
-  <p><strong>Please note:</strong> Sizes listed on this website are all US sizes. Conversions as per chart below.</p>
-</div>
-
-<!-- Top-Level Content -->
-<div id="top-tab-contents">
-  <!-- Mens -->
-  <div id="mens-tab" class="top-tab-content active">
-    <!-- Nested Tabs -->
-    <div class="nested-tab-container">
-      <div class="tab-button active" data-tab="mens-shoes-tab">Boots/Shoes</div>
-      <div class="tab-button" data-tab="mens-sandals-tab">Sandals</div>
-      <div class="tab-button" data-tab="mens-clothing-tab">Clothing</div>
-    </div>
-
-    <div id="mens-shoes-tab" class="nested-tab-content active">
-      <h3>Mens Boots & Shoes</h3>
-      <div class="table-container">a</div>
-    </div>
-
-    <div id="mens-sandals-tab" class="nested-tab-content">
-      <h3>Mens Sandals</h3>
-      <div class="table-container">b</div>
-    </div>
-
-    <div id="mens-clothing-tab" class="nested-tab-content">
-      <h3>Mens Clothing</h3>
-      <div class="table-container">c</div>
-    </div>
-  </div>
-
-  <!-- Womens -->
-  <div id="womens-tab" class="top-tab-content">
-    <div class="nested-tab-container">
-      <div class="tab-button active" data-tab="womens-shoes-tab">Boots/Shoes</div>
-      <div class="tab-button" data-tab="womens-sandals-tab">Sandals</div>
-    </div>
-
-    <div id="womens-shoes-tab" class="nested-tab-content active">
-      <h3>Womens Boots & Shoes</h3>
-      <div class="table-container">d</div>
-    </div>
-
-    <div id="womens-sandals-tab" class="nested-tab-content">
-      <h3>Womens Sandals</h3>
-      <div class="table-container">e</div>
-    </div>
-  </div>
-
-  <!-- Kids -->
-  <div id="kids-tab" class="top-tab-content">
-    <div class="nested-tab-container">
-      <div class="tab-button active" data-tab="kids-shoes-tab">Boots/Shoes</div>
-    </div>
-
-    <div id="kids-shoes-tab" class="nested-tab-content active">
-      <h3>Kids Boots & Shoes</h3>
-      <div class="table-container">f</div>
-    </div>
-  </div>
-</div>
-
-<style>
-.tab-container { display: flex; gap: 5px; margin-top: 10px; flex-wrap: wrap; }
-.tab-button { padding: 8px 15px; cursor: pointer; background: #f0f0f0; border-radius: 5px; font-weight: bold; }
-.tab-button.active { background: #fff; border-bottom: 3px solid #F4762D; }
-.top-tab-content, .nested-tab-content { display: none; margin-top: 10px; }
-.top-tab-content.active, .nested-tab-content.active { display: block; }
-.table-container { margin-top: 10px; overflow-x: auto; }
-</style>
-
-<script>
+  <script>
 document.addEventListener("DOMContentLoaded", () => {
   // Top-Level Tabs
   const topTabs = document.querySelectorAll("#top-tabs .tab-button");
@@ -263,14 +183,20 @@ document.addEventListener("DOMContentLoaded", () => {
       const targetId = tab.dataset.tab;
       if (!targetId) return;
 
-      // Activate tab
+      // Activate top-level tab
       topTabs.forEach(t => t.classList.remove("active"));
       tab.classList.add("active");
 
-      // Show content
+      // Show only the selected top-level content
       document.querySelectorAll(".top-tab-content").forEach(tc => tc.classList.remove("active"));
       const targetContent = document.getElementById(targetId);
-      if (targetContent) targetContent.classList.add("active");
+      if (targetContent) {
+        targetContent.classList.add("active");
+
+        // Ensure the first nested tab inside it is active
+        const firstNestedTab = targetContent.querySelector(".nested-tab-container .tab-button");
+        if (firstNestedTab) firstNestedTab.click();
+      }
     });
   });
 
@@ -287,14 +213,20 @@ document.addEventListener("DOMContentLoaded", () => {
         tabs.forEach(t => t.classList.remove("active"));
         tab.classList.add("active");
 
-        // Show nested content inside same parent
-        const parentContent = container.parentElement;
-        parentContent.querySelectorAll(".nested-tab-content").forEach(tc => tc.classList.remove("active"));
+        // Show only nested content inside the same top-level content
+        const parentTopContent = container.closest(".top-tab-content");
+        if (!parentTopContent) return;
+        parentTopContent.querySelectorAll(".nested-tab-content").forEach(tc => tc.classList.remove("active"));
+
         const targetContent = document.getElementById(targetId);
         if (targetContent) targetContent.classList.add("active");
       });
     });
   });
+
+  // Trigger click on first top-level tab to initialize
+  const firstTopTab = document.querySelector("#top-tabs .tab-button.active");
+  if (firstTopTab) firstTopTab.click();
 });
 </script>
 
