@@ -272,7 +272,7 @@
 {% for product in collection.products %}
   {% for variant in product.variants %}
     {% if variant.available %}
-      {% assign size = variant.option1 %}
+      {% assign size = variant.option2 %}
       {% unless sizes_in_stock contains size %}
         {% assign sizes_in_stock = sizes_in_stock | push: size %}
       {% endunless %}
