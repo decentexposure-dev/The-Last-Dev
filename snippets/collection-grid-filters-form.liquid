@@ -266,4 +266,29 @@
     </div>
   </div>
 {%- endfor -%}
+
+{% assign in_stock_sizes = "" | split: "," %}
+
+{% for product in collection.products %}
+  {% for variant in product.variants %}
+    {% if variant.available %}
+      {% assign variant_size = variant.option1 %} {# assuming size is option1 #}
+      {% unless in_stock_sizes contains variant_size %}
+        {% assign in_stock_sizes = in_stock_sizes | push: variant_size %}
+      {% endunless %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+<div class="size-filter">
+  <h4>Filter by Size</h4>
+  <ul>
+    {% for size in in_stock_sizes %}
+      <li>
+        <a href="?filter.size={{ size | url_encode }}">{{ size }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
 </form>
