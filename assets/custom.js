@@ -50,43 +50,35 @@ document.addEventListener("DOMContentLoaded", window.initializeTabs());
 
 document.addEventListener('DOMContentLoaded', function() {
   const filterForm = document.querySelector('.filter-form');
-
   if (!filterForm) return;
 
-  // Create a hidden input for in-stock filter if not already present
-  let availabilityInput = document.getElementById('availability-filter');
-  if (!availabilityInput) {
-    availabilityInput = document.createElement('input');
-    availabilityInput.type = 'hidden';
-    availabilityInput.name = 'filter.v.availability';
-    availabilityInput.id = 'availability-filter';
-    availabilityInput.value = '1';
-    filterForm.prepend(availabilityInput);
-  }
+  // Detect size filter checkboxes
+  const sizeCheckboxes = filterForm.querySelectorAll('input[type="checkbox"][name*="size"]');
 
-  // Function to trigger Ajax update or page reload
-  function applyFilters() {
-    // Check if theme uses Ajax
-    if (typeof window.updateCollection === 'function') {
-      // Impulse Ajax filter
-      window.updateCollection(); // Impulse default Ajax function
-    } else {
-      // Fallback: reload page with form
-      filterForm.submit();
-    }
-  }
+  sizeCheckboxes.forEach(function(checkbox) {
+    checkbox.addEventListener('change', function() {
+      // Only when a size checkbox is checked
+      if (checkbox.checked) {
+        // Append ?filter.v.availability=1 to this checkbox URL (if using links) or enable hidden input
+        let availabilityInput = document.getElementById('availability-filter');
+        if (!availabilityInput) {
+          availabilityInput = document.createElement('input');
+          availabilityInput.type = 'hidden';
+          availabilityInput.name = 'filter.v.availability';
+          availabilityInput.id = 'availability-filter';
+          availabilityInput.value = '1';
+          filterForm.appendChild(availabilityInput);
+        }
 
-  // Detect checkbox changes for size filters
-  filterForm.addEventListener('change', function(e) {
-    const target = e.target;
-    if (target.type === 'checkbox' && target.name.toLowerCase().includes('size')) {
-      availabilityInput.disabled = false; // ensure availability is included
-      applyFilters();
-    }
-  });
+        availabilityInput.disabled = false;
 
-  // Ensure availability included on form submit
-  filterForm.addEventListener('submit', function() {
-    availabilityInput.disabled = false;
+        // If Ajax filtering exists
+        if (typeof window.updateCollection === 'function') {
+          window.updateCollection();
+        } else {
+          filterForm.submit();
+        }
+      }
+    });
   });
 });
