@@ -8370,6 +8370,11 @@ document.addEventListener('DOMContentLoaded', function () {
         params.append(key, value);
       }
     });
+    formData.forEach((value, key) => {
+      if (key.toLowerCase().includes('size')) {
+        params.append(key, value);
+      }
+    });
 
     // Always enforce availability
     params.set('filter.v.availability', '1');
