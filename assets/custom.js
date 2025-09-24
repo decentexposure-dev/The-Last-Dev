@@ -50,36 +50,43 @@ document.addEventListener("DOMContentLoaded", window.initializeTabs());
 
 document.addEventListener('DOMContentLoaded', function() {
   const filterForm = document.querySelector('.filter-form');
-  const availabilityInput = document.getElementById('availability-filter');
 
-  if (!filterForm || !availabilityInput) return;
+  if (!filterForm) return;
 
-  // Detect any size filter change
+  // Create a hidden input for in-stock filter if not already present
+  let availabilityInput = document.getElementById('availability-filter');
+  if (!availabilityInput) {
+    availabilityInput = document.createElement('input');
+    availabilityInput.type = 'hidden';
+    availabilityInput.name = 'filter.v.availability';
+    availabilityInput.id = 'availability-filter';
+    availabilityInput.value = '1';
+    filterForm.prepend(availabilityInput);
+  }
+
+  // Function to trigger Ajax update or page reload
+  function applyFilters() {
+    // Check if theme uses Ajax
+    if (typeof window.updateCollection === 'function') {
+      // Impulse Ajax filter
+      window.updateCollection(); // Impulse default Ajax function
+    } else {
+      // Fallback: reload page with form
+      filterForm.submit();
+    }
+  }
+
+  // Detect checkbox changes for size filters
   filterForm.addEventListener('change', function(e) {
     const target = e.target;
-    if (target.classList.contains('size-filter')) {
-      availabilityInput.disabled = false; // ensure it's included
+    if (target.type === 'checkbox' && target.name.toLowerCase().includes('size')) {
+      availabilityInput.disabled = false; // ensure availability is included
+      applyFilters();
     }
   });
 
-  // Ensure availability is always included on form submit
+  // Ensure availability included on form submit
   filterForm.addEventListener('submit', function() {
     availabilityInput.disabled = false;
   });
 });
-
-function updateProductsAjax() {
-  const form = document.querySelector('.filter-form');
-  const formData = new FormData(form);
-  const params = new URLSearchParams(formData).toString();
-  const collectionUrl = window.location.pathname + '?' + params;
-
-  fetch(collectionUrl, { headers: { 'X-Requested-With': 'XMLHttpRequest' } })
-    .then(res => res.text())
-    .then(html => {
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      const productsGrid = doc.querySelector('.collection-products');
-      document.querySelector('.collection-products').innerHTML = productsGrid.innerHTML;
-    });
-}
