@@ -4,7 +4,7 @@
   {%- for product in collection.products -%}
     {%- for variant in product.variants -%}
       {%- if variant.available -%}
-        {%- assign size_value = variant.option1 -%} 
+        {%- assign size_value = variant.option2 -%} 
         {%- unless sizes contains size_value -%}
           {%- assign sizes = sizes | append: size_value | append: ',' -%}
         {%- endunless -%}
