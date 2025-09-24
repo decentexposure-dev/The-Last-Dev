@@ -48,3 +48,19 @@ function handleTabClick(event) {
 
 document.addEventListener("DOMContentLoaded", window.initializeTabs());
 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const sizeFilter = document.querySelector('input[name="filter.v.option.size"]');
+    const inStockFilter = document.querySelector('input[name="filter.v.availability"]');
+
+    if (sizeFilter && inStockFilter) {
+      // Set the 'In Stock' filter to checked by default
+      inStockFilter.checked = true;
+
+      // Update the URL to include the 'In Stock' filter
+      const url = new URL(window.location.href);
+      url.searchParams.set('filter.v.availability', '1');
+      window.history.replaceState({}, '', url);
+    }
+  });
+</script>
