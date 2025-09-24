@@ -8365,11 +8365,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const params = new URLSearchParams();
 
     // Append all selected filters
-    formData.forEach((value, key) => {
+    /*formData.forEach((value, key) => {
       if (value) {
         params.append(key, value);
       }
-    });
+    });*/
     formData.forEach((value, key) => {
       if (key.toLowerCase().includes('size')) {
         params.append(key, value);
