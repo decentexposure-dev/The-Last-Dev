@@ -9,7 +9,7 @@
   {%- assign filter_index = forloop.index -%}
 
   {%- for filter_value in filter.active_values -%}
-  <li class="tag tag--remove">
+  <li class="tag tag--remove {{ filter_value.label | handleize }}">
     <a class="btn btn--small" href="{{ filter_value.url_to_remove }}">
       {{ filter_value.label | escape }}
     </a>
