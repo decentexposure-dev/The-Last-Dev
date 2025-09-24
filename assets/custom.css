@@ -69,6 +69,6 @@ transform: scale(1.03);*/
   border-color: #FFF3;
 }
 
-.filter-form .availability {
+#CollectionSidebar .filter-form .availability {
   display: none;
 }
