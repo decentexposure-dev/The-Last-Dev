@@ -49,22 +49,36 @@ function handleTabClick(event) {
 document.addEventListener("DOMContentLoaded", window.initializeTabs());
 
 
-document.addEventListener('DOMContentLoaded', function() {
-  // Select all size filter links
-  const sizeFilterLinks = document.querySelectorAll('[data-filter-name="Size"] .facets__link');
+document.addEventListener('DOMContentLoaded', function () {
+  const filterForm = document.querySelector('.filter-form');
 
-  sizeFilterLinks.forEach(link => {
-    link.addEventListener('click', function(event) {
-      event.preventDefault();
+  if (!filterForm) return;
 
-      // Get the current link URL
-      let url = new URL(link.href);
+  filterForm.addEventListener('submit', function (event) {
+    // Prevent default form submission to modify URL
+    event.preventDefault();
 
-      // Add availability filter
-      url.searchParams.set('filter.v.availability', '1');
+    const formData = new FormData(filterForm);
+    const params = new URLSearchParams();
 
-      // Redirect to the updated URL
-      window.location.href = url.toString();
+    // Append all selected filters
+    formData.forEach((value, key) => {
+      params.append(key, value);
     });
+
+    // Always enforce availability
+    params.set('filter.v.availability', '1');
+
+    // Build new URL
+    const collectionUrl = window.location.pathname + '?' + params.toString();
+
+    // Redirect
+    window.location.href = collectionUrl;
+  });
+
+  // Optional: Trigger submit when a checkbox changes (for auto-filter)
+  const checkboxes = filterForm.querySelectorAll('.tag__input');
+  checkboxes.forEach(input => {
+    input.addEventListener('change', () => filterForm.dispatchEvent(new Event('submit')));
   });
 });
