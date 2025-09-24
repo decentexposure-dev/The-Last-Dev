@@ -52,21 +52,20 @@ document.addEventListener('DOMContentLoaded', function () {
   const filterForm = document.querySelector('.filter-form');
   if (!filterForm) return;
 
-  // Helper: check if input belongs to the Size filter
-  const isSizeFilter = (input) => input.name.toLowerCase().includes('size');
+  // Check if input belongs to the Size filter
+  const isSizeFilter = (input) => input.name && input.name.toLowerCase().includes('size');
 
   const buildFilterUrl = () => {
     const formData = new FormData(filterForm);
     const params = new URLSearchParams();
 
+    // Add all selected filters
     formData.forEach((value, key) => {
-      if (value) {
-        params.append(key, value);
-      }
+      if (value) params.append(key, value);
     });
 
-    // If any size filter is selected, enforce availability
-    let sizeSelected = Array.from(filterForm.querySelectorAll('.tag__input'))
+    // Add availability only if at least one size is selected
+    const sizeSelected = Array.from(filterForm.querySelectorAll('.tag__input'))
       .some(input => isSizeFilter(input) && input.checked);
 
     if (sizeSelected) {
@@ -78,13 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return window.location.pathname + '?' + params.toString();
   };
 
-  // Submit handler
-  filterForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-    window.location.href = buildFilterUrl();
-  });
-
-  // Auto-submit on size checkbox/swatches change
+  // Auto-submit when size filters change
   const sizeInputs = Array.from(filterForm.querySelectorAll('.tag__input')).filter(isSizeFilter);
   sizeInputs.forEach(input => {
     input.addEventListener('change', () => {
@@ -92,20 +85,21 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Optional: handle active tag remove buttons for size filters
+  // Handle removing active tags
   const removeTags = document.querySelectorAll('.tag--remove a');
   removeTags.forEach(link => {
     link.addEventListener('click', function (event) {
       event.preventDefault();
+
+      // Remove the filter from URL manually
       const url = new URL(link.href);
-
-      // Only add availability if removing a size tag
       const removedParam = link.href.split('?')[1];
-      if (removedParam && removedParam.toLowerCase().includes('size')) {
-        url.searchParams.set('filter.v.availability', '1');
-      }
 
-      window.location.href = url.toString();
+      // Wait a tick to let the input uncheck (for formData to reflect)
+      setTimeout(() => {
+        window.location.href = buildFilterUrl();
+      }, 50);
     });
   });
 });
+
