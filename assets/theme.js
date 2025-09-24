@@ -8359,6 +8359,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const filterForm = document.querySelector('.filter-form');
   if (!filterForm) return;
 
+  const isSizeFilter = (input) => input.name.toLowerCase().includes('size');
+
   // Function to build URL from selected filters
   const buildFilterUrl = () => {
     const formData = new FormData(filterForm);
