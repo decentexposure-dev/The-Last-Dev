@@ -8353,5 +8353,3 @@ theme.recentlyViewed = {
   });
 
 })();
-
-
