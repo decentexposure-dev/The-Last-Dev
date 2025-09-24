@@ -48,64 +48,21 @@ function handleTabClick(event) {
 
 document.addEventListener("DOMContentLoaded", window.initializeTabs());
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
   const filterForm = document.querySelector('.filter-form');
-  if (!filterForm) return;
+  const availabilityInput = document.getElementById('availability-filter');
 
-  // Helper: check if input belongs to the Size filter
-  const isSizeFilter = (input) => input.name.toLowerCase().includes('size');
-
-  const buildFilterUrl = () => {
-    const formData = new FormData(filterForm);
-    const params = new URLSearchParams();
-
-    formData.forEach((value, key) => {
-      if (value) {
-        params.append(key, value);
-      }
-    });
-
-    // If any size filter is selected, enforce availability
-    let sizeSelected = Array.from(filterForm.querySelectorAll('.tag__input'))
-      .some(input => isSizeFilter(input) && input.checked);
-
-    if (sizeSelected) {
-      params.set('filter.v.availability', '1');
-    } else {
-      params.delete('filter.v.availability');
+  filterForm.addEventListener('change', function(e) {
+    // Check if a size filter checkbox was clicked
+    const target = e.target;
+    if (target.type === 'checkbox' && target.name.toLowerCase().includes('size')) {
+      // Add the availability parameter
+      availabilityInput.disabled = false;
     }
-
-    return window.location.pathname + '?' + params.toString();
-  };
-
-  // Submit handler
-  filterForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-    window.location.href = buildFilterUrl();
   });
 
-  // Auto-submit on size checkbox/swatches change
-  const sizeInputs = Array.from(filterForm.querySelectorAll('.tag__input')).filter(isSizeFilter);
-  sizeInputs.forEach(input => {
-    input.addEventListener('change', () => {
-      window.location.href = buildFilterUrl();
-    });
-  });
-
-  // Optional: handle active tag remove buttons for size filters
-  const removeTags = document.querySelectorAll('.tag--remove a');
-  removeTags.forEach(link => {
-    link.addEventListener('click', function (event) {
-      event.preventDefault();
-      const url = new URL(link.href);
-
-      // Only add availability if removing a size tag
-      const removedParam = link.href.split('?')[1];
-      if (removedParam && removedParam.toLowerCase().includes('size')) {
-        url.searchParams.set('filter.v.availability', '1');
-      }
-
-      window.location.href = url.toString();
-    });
+  filterForm.addEventListener('submit', function() {
+    // Always ensure availability is included
+    availabilityInput.disabled = false;
   });
 });
