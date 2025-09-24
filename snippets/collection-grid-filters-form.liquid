@@ -94,34 +94,23 @@
 
                   <ul class="no-bullets tag-list {% if is_color %} tag-list--swatches{% endif %}">
   {%- for filter_value in filter.values -%}
-    {%- assign option_available = false -%}
+    {%- assign option_available = 0 -%}
 
     {%- for product in collection.products -%}
       {%- for variant in product.variants -%}
         {%- if variant.available -%}
-          {%- if variant.option1 == filter_value.label -%}
-            {%- assign option_available = true -%}
-          {%- elsif variant.option2 == filter_value.label -%}
-            {%- assign option_available = true -%}
-          {%- elsif variant.option3 == filter_value.label -%}
-            {%- assign option_available = true -%}
+          {%- if variant.option1 == filter_value.label or variant.option2 == filter_value.label or variant.option3 == filter_value.label -%}
+            {%- assign option_available = option_available | plus: 1 -%}
           {%- endif -%}
         {%- endif -%}
       {%- endfor -%}
     {%- endfor -%}
 
-    {%- if option_available -%}
-      {%- liquid
-        assign filter_value_index = forloop.index
-        assign color_file_name = filter_value.label | handle | append: '.' | append: swatch_file_extension
-        assign color_image = color_file_name | file_img_url: '50x50' | prepend: 'https:' | split: '?' | first
-        assign color_swatch_fallback = filter_value.label | split: ' ' | last | handle
-      -%}
-
+    {%- if option_available > 0 -%}   {# ✅ only show if an in-stock variant exists #}
       <li class="tag{% if filter_value.active %} tag--active{% endif %}{% if is_color %} tag--swatch {% if enable_swatch_labels %}tag--show-label{% endif %}{% endif %}">
-        <label id="tag-{{ filter_value.value | handle }}" class="tag__checkbox-wrapper text-label" for="tagInput-{{ filter_value.param_name }}-{{ filter_value_index }}">
+        <label id="tag-{{ filter_value.value | handle }}" class="tag__checkbox-wrapper text-label" for="tagInput-{{ filter_value.param_name }}-{{ forloop.index }}">
           <input
-            id="tagInput-{{ filter_value.param_name }}-{{ filter_value_index }}"
+            id="tagInput-{{ filter_value.param_name }}-{{ forloop.index }}"
             type="checkbox"
             class="tag__input"
             name="{{ filter_value.param_name }}"
@@ -129,21 +118,13 @@
             {% if filter_value.active %}checked{% endif %}>
           
           {%- if is_color -%}
-            <span
-              class="color-swatch color-swatch--filter color-swatch--{{ filter_value.label | handle }}"
-              title="{{ filter_value.label }}"
-              style="background-color: {{ color_swatch_fallback }};{% if images[color_file_name] != blank %} background-image: url({{ color_image }});{% endif %}"
-            >
+            <span class="color-swatch color-swatch--filter color-swatch--{{ filter_value.label | handle }}" title="{{ filter_value.label }}">
               {{ filter_value.label }}
             </span>
-            <span class="tag__text {% unless is_color and enable_swatch_labels %}hide{% endunless %}">
-              {{ filter_value.label | escape }}
-            </span>
+            <span class="tag__text {% unless is_color and enable_swatch_labels %}hide{% endunless %}">{{ filter_value.label }}</span>
           {%- else -%}
             <span class="tag__checkbox"></span>
-            <span>
-              <span class="tag__text">{{ filter_value.label }}</span>
-            </span>
+            <span><span class="tag__text">{{ filter_value.label }}</span></span>
           {%- endif -%}
         </label>
       </li>
