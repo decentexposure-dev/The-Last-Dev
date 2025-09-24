@@ -69,6 +69,6 @@ transform: scale(1.03);*/
   border-color: #FFF3;
 }
 
-.filter--availability {
+.filter-form .availability {
   display: none;
 }
