@@ -1,0 +1,30 @@
+<ul class="facets__list">
+  {%- assign sizes = '' -%}
+
+  {%- for product in collection.products -%}
+    {%- for variant in product.variants -%}
+      {%- if variant.available -%}
+        {%- assign size_value = variant.option1 -%} 
+        {%- unless sizes contains size_value -%}
+          {%- assign sizes = sizes | append: size_value | append: ',' -%}
+        {%- endunless -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endfor -%}
+
+  {%- assign sizes_array = sizes | split: ',' | uniq -%}
+
+  {%- for size in sizes_array -%}
+    {%- if size != '' -%}
+      <li class="facets__item">
+        <label class="facet-checkbox">
+          <input type="checkbox"
+                 name="filter.v.option.size"
+                 value="{{ size | escape }}"
+                 class="facet-checkbox__input">
+          <span class="facet-checkbox__label">{{ size }}</span>
+        </label>
+      </li>
+    {%- endif -%}
+  {%- endfor -%}
+</ul>
