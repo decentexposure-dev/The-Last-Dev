@@ -52,17 +52,34 @@ document.addEventListener('DOMContentLoaded', function() {
   const filterForm = document.querySelector('.filter-form');
   const availabilityInput = document.getElementById('availability-filter');
 
+  if (!filterForm || !availabilityInput) return;
+
+  // Detect any size filter change
   filterForm.addEventListener('change', function(e) {
-    // Check if a size filter checkbox was clicked
     const target = e.target;
-    if (target.type === 'checkbox' && target.name.toLowerCase().includes('size')) {
-      // Add the availability parameter
-      availabilityInput.disabled = false;
+    if (target.classList.contains('size-filter')) {
+      availabilityInput.disabled = false; // ensure it's included
     }
   });
 
+  // Ensure availability is always included on form submit
   filterForm.addEventListener('submit', function() {
-    // Always ensure availability is included
     availabilityInput.disabled = false;
   });
 });
+
+function updateProductsAjax() {
+  const form = document.querySelector('.filter-form');
+  const formData = new FormData(form);
+  const params = new URLSearchParams(formData).toString();
+  const collectionUrl = window.location.pathname + '?' + params;
+
+  fetch(collectionUrl, { headers: { 'X-Requested-With': 'XMLHttpRequest' } })
+    .then(res => res.text())
+    .then(html => {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      const productsGrid = doc.querySelector('.collection-products');
+      document.querySelector('.collection-products').innerHTML = productsGrid.innerHTML;
+    });
+}
