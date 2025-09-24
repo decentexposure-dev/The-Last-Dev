@@ -47,3 +47,12 @@ function handleTabClick(event) {
 }
 
 document.addEventListener("DOMContentLoaded", window.initializeTabs());
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const inStockCheckbox = document.querySelector('input[name="availability[in_stock]"]');
+  if (inStockCheckbox) {
+    inStockCheckbox.checked = true;
+  }
+});
