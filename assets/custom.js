@@ -48,37 +48,64 @@ function handleTabClick(event) {
 
 document.addEventListener("DOMContentLoaded", window.initializeTabs());
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const filterForm = document.querySelector('.filter-form');
   if (!filterForm) return;
 
-  // Detect size filter checkboxes
-  const sizeCheckboxes = filterForm.querySelectorAll('input[type="checkbox"][name*="size"]');
+  // Helper: check if input belongs to the Size filter
+  const isSizeFilter = (input) => input.name.toLowerCase().includes('size');
 
-  sizeCheckboxes.forEach(function(checkbox) {
-    checkbox.addEventListener('change', function() {
-      // Only when a size checkbox is checked
-      if (checkbox.checked) {
-        // Append ?filter.v.availability=1 to this checkbox URL (if using links) or enable hidden input
-        let availabilityInput = document.getElementById('availability-filter');
-        if (!availabilityInput) {
-          availabilityInput = document.createElement('input');
-          availabilityInput.type = 'hidden';
-          availabilityInput.name = 'filter.v.availability';
-          availabilityInput.id = 'availability-filter';
-          availabilityInput.value = '1';
-          filterForm.appendChild(availabilityInput);
-        }
+  const buildFilterUrl = () => {
+    const formData = new FormData(filterForm);
+    const params = new URLSearchParams();
 
-        availabilityInput.disabled = false;
-
-        // If Ajax filtering exists
-        if (typeof window.updateCollection === 'function') {
-          window.updateCollection();
-        } else {
-          filterForm.submit();
-        }
+    formData.forEach((value, key) => {
+      if (value) {
+        params.append(key, value);
       }
+    });
+
+    // If any size filter is selected, enforce availability
+    let sizeSelected = Array.from(filterForm.querySelectorAll('.tag__input'))
+      .some(input => isSizeFilter(input) && input.checked);
+
+    if (sizeSelected) {
+      params.set('filter.v.availability', '1');
+    } else {
+      params.delete('filter.v.availability');
+    }
+
+    return window.location.pathname + '?' + params.toString();
+  };
+
+  // Submit handler
+  filterForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    window.location.href = buildFilterUrl();
+  });
+
+  // Auto-submit on size checkbox/swatches change
+  const sizeInputs = Array.from(filterForm.querySelectorAll('.tag__input')).filter(isSizeFilter);
+  sizeInputs.forEach(input => {
+    input.addEventListener('change', () => {
+      window.location.href = buildFilterUrl();
+    });
+  });
+
+  // Optional: handle active tag remove buttons for size filters
+  const removeTags = document.querySelectorAll('.tag--remove a');
+  removeTags.forEach(link => {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      const url = new URL(link.href);
+
+      // Only add availability if removing a size tag
+      const removedParam = link.href.split('?')[1];
+      if (removedParam && removedParam.toLowerCase().includes('size')) {
+        url.searchParams.set('filter.v.availability', '1');
+      }
+
+      window.location.href = url.toString();
     });
   });
 });
