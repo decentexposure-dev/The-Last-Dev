@@ -157,15 +157,17 @@
             </div>
         </div>
         
-        <div class="product-section-image {% if section.settings.image != blank  %} featuredcustomimage{% endif %}">
-            <div class="productsingleimage-wrap">
-            {%- render 'image-element',
-              img: section.settings.image,
-              img_width: 2400,
-              loading: loading,
-              classes: 'productsingleimage',
-            -%}
-            </div>
+        <div class="product-section-image {% if section.settings.image != blank  %} featuredcustomimage{% else %} featurednocustomimage{% endif %}">
+            {% if section.settings.image != blank  %}   
+              <div class="productsingleimage-wrap">
+                {%- render 'image-element',
+                  img: section.settings.image,
+                  img_width: 2400,
+                  loading: loading,
+                  classes: 'productsingleimage',
+                -%}
+              </div>
+            {% endif %} 
             {%- render 'product-images',
               section_id: section_id,
               product: product,
