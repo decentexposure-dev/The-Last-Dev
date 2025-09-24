@@ -69,6 +69,7 @@ transform: scale(1.03);*/
   border-color: #FFF3;
 }
 
-#CollectionSidebar .filter-form .availability {
-  display: none;
+#CollectionSidebar .filter-form .availability,
+.tag.tag--remove.in-stock {
+  display: none !important;
 }
