@@ -8355,37 +8355,51 @@ theme.recentlyViewed = {
 })();
 
 
-
 document.addEventListener('DOMContentLoaded', function () {
   const filterForm = document.querySelector('.filter-form');
-
   if (!filterForm) return;
 
-  filterForm.addEventListener('submit', function (event) {
-    // Prevent default form submission to modify URL
-    event.preventDefault();
-
+  // Function to build URL from selected filters
+  const buildFilterUrl = () => {
     const formData = new FormData(filterForm);
     const params = new URLSearchParams();
 
     // Append all selected filters
     formData.forEach((value, key) => {
-      params.append(key, value);
+      if (value) {
+        params.append(key, value);
+      }
     });
 
     // Always enforce availability
     params.set('filter.v.availability', '1');
 
-    // Build new URL
-    const collectionUrl = window.location.pathname + '?' + params.toString();
+    // Build full collection URL
+    return window.location.pathname + '?' + params.toString();
+  };
 
-    // Redirect
-    window.location.href = collectionUrl;
+  // Submit handler
+  filterForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    window.location.href = buildFilterUrl();
   });
 
-  // Optional: Trigger submit when a checkbox changes (for auto-filter)
-  const checkboxes = filterForm.querySelectorAll('.tag__input');
-  checkboxes.forEach(input => {
-    input.addEventListener('change', () => filterForm.dispatchEvent(new Event('submit')));
+  // Auto-submit on checkbox/swatches change
+  const inputs = filterForm.querySelectorAll('.tag__input');
+  inputs.forEach(input => {
+    input.addEventListener('change', () => {
+      window.location.href = buildFilterUrl();
+    });
+  });
+
+  // Optional: Also handle active tag remove buttons
+  const removeTags = document.querySelectorAll('.tag--remove a');
+  removeTags.forEach(link => {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      const url = new URL(link.href);
+      url.searchParams.set('filter.v.availability', '1');
+      window.location.href = url.toString();
+    });
   });
 });
