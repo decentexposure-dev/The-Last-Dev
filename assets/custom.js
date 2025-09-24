@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", window.initializeTabs());
 
 
 document.addEventListener("DOMContentLoaded", function() {
-  const inStockCheckbox = document.querySelector('input[name="availability[in_stock]"]');
+  const inStockCheckbox = document.querySelector('input[name="availability[filter.v.availability]"]');
   if (inStockCheckbox) {
     inStockCheckbox.checked = true;
   }
