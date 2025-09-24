@@ -8353,3 +8353,11 @@ theme.recentlyViewed = {
   });
 
 })();
+
+
+updateURLHash(searchParams) {
+  if (searchParams.has('filter.v.availability') === false) {
+    searchParams.set('filter.v.availability', 1);
+  }
+  history.pushState({ searchParams }, '', `${window.location.pathname}${searchParams && '?'.concat(searchParams.toString())}`);
+}
