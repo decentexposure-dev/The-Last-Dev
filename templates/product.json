@@ -137,7 +137,7 @@
             "border_color": "#108474",
             "show_drop_shadow": false,
             "transition_speed": 5,
-            "header_text": "Customers are saying",
+            "header_text": "Customer Reviews",
             "show_average_rating": false
           }
         }
@@ -146,7 +146,7 @@
         "judge_me_reviews_testimonials_carousel_wQCFng"
       ],
       "custom_css": [
-        ".header-text{}"
+        ".jdgm-title {font-family: \"dm sans\"; font-weight: 700; font-size: 32px;}"
       ],
       "settings": {
         "full_width": false,
