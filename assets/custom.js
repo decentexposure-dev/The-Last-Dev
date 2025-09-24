@@ -47,14 +47,3 @@ function handleTabClick(event) {
 }
 
 document.addEventListener("DOMContentLoaded", window.initializeTabs());
-
-
-
-createSearchParams(form) {
-const formData = new FormData(form);
-let newSearchParams = new URLSearchParams(formData).toString();
-if (newSearchParams.includes("filter.v.option") && ! newSearchParams.includes("filter.v.availability")) {
-    newSearchParams = newSearchParams + "&filter.v.availability=1";
-}
-return newSearchParams;
-}
