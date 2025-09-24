@@ -47,3 +47,24 @@ function handleTabClick(event) {
 }
 
 document.addEventListener("DOMContentLoaded", window.initializeTabs());
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Select all size filter links
+  const sizeFilterLinks = document.querySelectorAll('[data-filter-name="Size"] .facets__link');
+
+  sizeFilterLinks.forEach(link => {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+
+      // Get the current link URL
+      let url = new URL(link.href);
+
+      // Add availability filter
+      url.searchParams.set('filter.v.availability', '1');
+
+      // Redirect to the updated URL
+      window.location.href = url.toString();
+    });
+  });
+});
