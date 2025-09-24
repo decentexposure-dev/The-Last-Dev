@@ -1,30 +1,42 @@
-<ul class="facets__list">
-  {%- assign sizes = '' -%}
+{%- for filter_value in filter.values -%}
+  {%- assign show_value = false -%}
 
   {%- for product in collection.products -%}
     {%- for variant in product.variants -%}
-      {%- if variant.available -%}
-        {%- assign size_value = variant.option2 -%} 
-        {%- unless sizes contains size_value -%}
-          {%- assign sizes = sizes | append: size_value | append: ',' -%}
-        {%- endunless -%}
+      {%- if variant.available and variant.option1 == filter_value.label -%}
+        {%- assign show_value = true -%}
       {%- endif -%}
     {%- endfor -%}
   {%- endfor -%}
 
-  {%- assign sizes_array = sizes | split: ',' | uniq -%}
-
-  {%- for size in sizes_array -%}
-    {%- if size != '' -%}
-      <li class="facets__item">
-        <label class="facet-checkbox">
-          <input type="checkbox"
-                 name="filter.v.option.size"
-                 value="{{ size | escape }}"
-                 class="facet-checkbox__input">
-          <span class="facet-checkbox__label">{{ size }}</span>
-        </label>
-      </li>
-    {%- endif -%}
-  {%- endfor -%}
-</ul>
+  {%- if show_value -%}
+    <li class="tag{% if filter_value.active %} tag--active{% endif %}{% if is_color %} tag--swatch {% if enable_swatch_labels %}tag--show-label{% endif %}{% endif %}">
+      <label id="tag-{{ filter_value.value | handle }}" class="tag__checkbox-wrapper text-label" for="tagInput-{{ filter_value.param_name }}-{{ forloop.index }}">
+          <input
+          id="tagInput-{{ filter_value.param_name }}-{{ forloop.index }}"
+          type="checkbox"
+          class="tag__input"
+          name="{{ filter_value.param_name }}"
+          value="{{ filter_value.value }}"
+          {% if filter_value.active %}checked{% endif %}>
+          {%- if is_color -%}
+          <span
+              class="color-swatch color-swatch--filter color-swatch--{{ filter_value.label | handle }}"
+              title="{{ filter_value.label }}"
+              style="background-color: {{ color_swatch_fallback }};{% if images[color_file_name] != blank %}  background-image: url({{ color_image }});{% endif %}"
+          >
+            {{ filter_value.label }}
+          </span>
+          <span class="tag__text {% unless is_color and enable_swatch_labels %}hide{% endunless %}">{{ filter_value.label | escape }}</span>
+          {%- else -%}
+          <span class="tag__checkbox"></span>
+          <span>
+              <span class="tag__text">
+                {{ filter_value.label }}
+              </span>
+          </span>
+          {%- endif -%}
+      </label>
+    </li>
+  {%- endif -%}
+{%- endfor -%}
