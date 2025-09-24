@@ -91,6 +91,10 @@
                       endif
                     endif
                   -%}
+                  {% if filter.label == 'Size' %}
+  {% render 'custom-size-filter' %}
+{% endif %}
+
 
                   <ul class="no-bullets tag-list {% if is_color %} tag-list--swatches{% endif %}">
                     {%- assign tag_count = filter.values.size -%}
