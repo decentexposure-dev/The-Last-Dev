@@ -106,7 +106,7 @@
                       -%}
 
                       <li class="tag{% if filter_value.active %} tag--active{% endif %}{% if is_color %} tag--swatch {% if enable_swatch_labels %}tag--show-label{% endif %}{% endif %}{% if filter_value.count == 0 %} hide{% endif %}">
-                        <label id="tag-{{ filter_value.value | handle }}" class="tag__checkbox-wrapper text-label" for="tagInput-{{ filter_value.param_name }}-{{ filter_value_index }}&filter.v.availability=1">
+                        <label id="tag-{{ filter_value.value | handle }}" class="tag__checkbox-wrapper text-label" for="tagInput-{{ filter_value.param_name }}-{{ filter_value_index }}">
                             <input
                             id="tagInput-{{ filter_value.param_name }}-{{ filter_value_index }}"
                             type="checkbox"
