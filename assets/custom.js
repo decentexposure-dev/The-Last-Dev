@@ -50,13 +50,6 @@ document.addEventListener("DOMContentLoaded", window.initializeTabs());
 
 
 
-document.addEventListener("DOMContentLoaded", function() {
-  const inStockCheckbox = document.querySelector('input[name="filter.v.availability"]');
-  if (inStockCheckbox) {
-    inStockCheckbox.checked = true;
-  }
-});
-
 createSearchParams(form) {
 const formData = new FormData(form);
 let newSearchParams = new URLSearchParams(formData).toString();
