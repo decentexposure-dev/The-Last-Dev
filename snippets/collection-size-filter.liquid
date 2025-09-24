@@ -8,7 +8,7 @@
 {%- for product in collection.products -%}
   {%- for variant in product.variants -%}
     {%- if variant.available -%}
-      {%- assign size_option = variant.options_by_name['Size'] | default: variant.option1 -%}
+      {%- assign size_option = variant.options_by_name['Size'] | default: variant.option2 -%}
       {%- unless available_sizes contains size_option -%}
         {%- assign available_sizes = available_sizes | append: size_option | append: ',' -%}
       {%- endunless -%}
