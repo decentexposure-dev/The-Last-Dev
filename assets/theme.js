@@ -8353,3 +8353,39 @@ theme.recentlyViewed = {
   });
 
 })();
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const filterForm = document.querySelector('.filter-form');
+
+  if (!filterForm) return;
+
+  filterForm.addEventListener('submit', function (event) {
+    // Prevent default form submission to modify URL
+    event.preventDefault();
+
+    const formData = new FormData(filterForm);
+    const params = new URLSearchParams();
+
+    // Append all selected filters
+    formData.forEach((value, key) => {
+      params.append(key, value);
+    });
+
+    // Always enforce availability
+    params.set('filter.v.availability', '1');
+
+    // Build new URL
+    const collectionUrl = window.location.pathname + '?' + params.toString();
+
+    // Redirect
+    window.location.href = collectionUrl;
+  });
+
+  // Optional: Trigger submit when a checkbox changes (for auto-filter)
+  const checkboxes = filterForm.querySelectorAll('.tag__input');
+  checkboxes.forEach(input => {
+    input.addEventListener('change', () => filterForm.dispatchEvent(new Event('submit')));
+  });
+});
