@@ -266,43 +266,4 @@
     </div>
   </div>
 {%- endfor -%}
-
-{% assign sizes_in_stock = "" | split: "," %}
-
-{% for product in collection.products %}
-  {% for variant in product.variants %}
-    {% if variant.available %}
-      {% assign size = variant.option2 %}
-      {% unless sizes_in_stock contains size %}
-        {% assign sizes_in_stock = sizes_in_stock | push: size %}
-      {% endunless %}
-    {% endif %}
-  {% endfor %}
-{% endfor %}
-
-{% if sizes_in_stock.size > 0 %}
-  <div class="size-filter">
-    <h4>Filter by Size</h4>
-    {% for size in sizes_in_stock %}
-      <label>
-        <input type="checkbox" class="size-checkbox" value="{{ size }}">
-        {{ size }}
-      </label>
-    {% endfor %}
-  </div>
-{% endif %}
-<script>
-  document.querySelectorAll('.size-checkbox').forEach(cb => {
-  cb.addEventListener('change', () => {
-    const selectedSizes = Array.from(document.querySelectorAll('.size-checkbox:checked')).map(el => el.value);
-
-    document.querySelectorAll('.grid__item').forEach(productCard => {
-      const productSizes = productCard.dataset.sizes.split(',');
-      const visible = selectedSizes.length === 0 || selectedSizes.some(s => productSizes.includes(s));
-      productCard.style.display = visible ? '' : 'none';
-    });
-  });
-});
-
-</script>
 </form>
