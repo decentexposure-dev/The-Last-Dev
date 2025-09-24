@@ -157,8 +157,7 @@
             </div>
         </div>
         
-        <div class="product-section-image">
-          {% if section.settings.image != blank  %}
+        <div class="product-section-image {% if section.settings.image != blank  %} featuredcustomimage{% endif %}">
             <div class="productsingleimage-wrap">
             {%- render 'image-element',
               img: section.settings.image,
@@ -167,7 +166,6 @@
               classes: 'productsingleimage',
             -%}
             </div>
-          {%  else %}  
             {%- render 'product-images',
               section_id: section_id,
               product: product,
@@ -188,7 +186,6 @@
               mobile_layout: mobile_layout,
               featured_product_arrow: true
             -%}
-            {% endif %}  
         </div>
         
         <div class="product-section-bottom" data-product-blocks>
