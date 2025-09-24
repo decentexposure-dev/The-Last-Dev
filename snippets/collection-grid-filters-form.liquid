@@ -24,7 +24,7 @@
   {%- capture filter_id -%}filter-{{ filter.label | handleize }}{%- endcapture -%}
   {%- assign filter_index = forloop.index -%}
 
-  <div class="collection-sidebar__group--{{ filter_index }}">
+  <div class="collection-sidebar__group--{{ filter_index }} {{ filter.label | handleize }}">
     <div class="collection-sidebar__group">
       <button
           type="button"
