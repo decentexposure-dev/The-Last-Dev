@@ -82,3 +82,9 @@ document.addEventListener('DOMContentLoaded', function () {
     input.addEventListener('change', () => filterForm.dispatchEvent(new Event('submit')));
   });
 });
+
+formData.forEach((value, key) => {
+  if (key.toLowerCase().includes('size')) {
+    params.append(key, value);
+  }
+});
