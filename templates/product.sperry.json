@@ -36,6 +36,12 @@
             "color_swatches": true
           }
         },
+        "text_9DaECw": {
+          "type": "text",
+          "settings": {
+            "text": "Please note: Sperry footwear is in US sizing."
+          }
+        },
         "sales_point": {
           "type": "sales_point",
           "disabled": true,
@@ -88,6 +94,7 @@
         "separator",
         "size_chart",
         "variant_picker",
+        "text_9DaECw",
         "sales_point",
         "inventory_status",
         "buy_buttons",
@@ -117,6 +124,9 @@
             "show_sample_reviews": true,
             "reviews_selection": "all",
             "products": [],
+            "filter_pinned": false,
+            "filter_featured": false,
+            "filter_custom_tags": "",
             "star_rating": "4_to_5_star",
             "max_reviews": 6,
             "quote_marks_size": "small",
@@ -138,7 +148,8 @@
             "show_drop_shadow": false,
             "transition_speed": 5,
             "header_text": "Customer Reviews",
-            "show_average_rating": false
+            "show_average_rating": false,
+            "rating_display": "default"
           }
         }
       },
