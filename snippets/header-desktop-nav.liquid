@@ -103,13 +103,7 @@
                   <a href="{{ block.settings[column_link] }}">
                     {% if block.settings[column_image] != blank %}
                     <div class="megamenuimage">
-                    {%- render 'image-element',
-                      img: block.settings[column_image],
-                      sizeVariable: 50vw,
-                      widths: '360, 540, 720, 900, 1080, 1600',
-                      alt: block.settings[column_heading],
-                      loading: loading,
-                    -%}
+                    {%- render 'image-element', img: block.settings[column_image], sizeVariable: renamed_variable_50vw, widths: '360, 540, 720, 900, 1080, 1600', alt: block.settings[column_heading], loading: loading -%}
                     </div>
                   {% endif %}
                   <div class="h5 menucolumn-title">
@@ -292,3 +286,22 @@
   {% endif %}
   {%- endfor -%}
 </ul>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%- render 'image-element',
+                          img: block.settings[column_image],
+                          sizeVariable: 50vw,
+                          widths: '360, 540, 720, 900, 1080, 1600',
+                          alt: block.settings[column_heading],
+                          loading: loading,
+                        -%}
+  to: "{%- render 'image-element', img: block.settings[column_image], sizeVariable:
+    renamed_variable_50vw, widths: '360, 540, 720, 900, 1080, 1600', alt: block.settings[column_heading],
+    loading: loading -%}"
+  position: 4621..4820
+{% endcomment %}
